@@ -1,10 +1,10 @@
 # Generic OS setup
 
-Files are grouped by major Operating System type, so I have got
+Files are grouped by major Operating System type:
 
 - [debian](./debian) for Debian-based systems
 - [macos](./macos) for MacOS
-- [nix](./nix) for NixOS
+- [nixos](./nix) for NixOS
 - [windows](./windows) for Windows systems
 - [common](./common) for OS-independent files
 
