@@ -7,6 +7,7 @@ bufferline = "multiple"
 
 [editor.cursor-shape]
 insert = "bar"
+select = "underline"
 
 [editor.soft-wrap]
 enable = true
@@ -14,6 +15,17 @@ enable = true
 [keys.normal]
 esc = ["collapse_selection", "keep_primary_selection"]
 
+[keys.insert]
+up = "no_op"
+down = "no_op"
+left = "no_op"
+right = "no_op"
+pageup = "no_op"
+pagedown = "no_op"
+home = "no_op"
+end = "no_op"
+
 [keys.normal.space.t]
 c = [":write-all", ":config-reload"]
-z = [":vsplit-new", ":pipe (curl --silent https://raw.githubusercontent.com/helix-editor/helix/master/helix-term/src/commands.rs | grep -e '^fn [^(]*([a-z]*: &mut Context)' | sed -E 's%^fn ([^(]*).*%\\1%') | sort"]
+w = ":sh pwd"
+h = [":vsplit-new", ":pipe (curl --silent https://raw.githubusercontent.com/helix-editor/helix/master/helix-term/src/commands.rs | grep -e '^fn [^(]*([a-z]*: &mut Context)' | sed -E 's%^fn ([^(]*).*%\\1%') | sort"]
