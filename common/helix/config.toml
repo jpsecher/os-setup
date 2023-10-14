@@ -14,6 +14,10 @@ enable = true
 
 [keys.normal]
 esc = ["collapse_selection", "keep_primary_selection"]
+n = "extend_search_next"
+N = "extend_search_prev"
+"A-n" = "search_next"
+"A-N" = "search_prev"
 
 [keys.insert]
 up = "no_op"
