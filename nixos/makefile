@@ -71,17 +71,19 @@ bootstrap-vm-step-2:
 	"
 
 copy-secrets-to-vm:
-	rsync -av -e 'ssh $(ssh_options)' \
+	rsync -av --copy-links -e 'ssh $(ssh_options)' \
 		--exclude='.#*' \
 		--exclude='S.*' \
 		--exclude='*.conf' \
 		$(HOME)/.gnupg/ $(NIXUSER)@$(NIXADDR):~/.gnupg
-	rsync -av -e 'ssh $(ssh_options)' \
+	rsync -av --copy-links -e 'ssh $(ssh_options)' \
 		--exclude='environment' \
 		$(HOME)/.ssh/ $(NIXUSER)@$(NIXADDR):~/.ssh
+	rsync -av --copy-links -e 'ssh $(ssh_options)' \
+		$(HOME)/.aws/ $(NIXUSER)@$(NIXADDR):~/.aws
 
 copy-configuration-to-vm:
-	rsync -av -e 'ssh $(ssh_options) -p$(NIXPORT)' \
+	rsync -av --copy-links -e 'ssh $(ssh_options) -p$(NIXPORT)' \
 		--exclude='vendor/' \
 		--exclude='.git/' \
 		--exclude='.git-crypt/' \

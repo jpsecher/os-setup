@@ -1,9 +1,8 @@
-{ isWSL, inputs, ... }:
+{ inputs, ... }:
 
 { config, lib, pkgs, ... }:
 
 let
-  sources = import ../../nix/sources.nix;
   isDarwin = pkgs.stdenv.isDarwin;
   isLinux = pkgs.stdenv.isLinux;
 
@@ -15,8 +14,6 @@ let
     cat "$1" | col -bx | bat --language man --style plain
   ''));
 in {
-  # Home-manager 22.11 requires this be set. We never set it so we have
-  # to use the old state version.
   home.stateVersion = "22.11";
 
   # xdg.enable = true;
@@ -28,27 +25,35 @@ in {
   # Packages I always want installed. Most packages I install using
   # per-project flakes sourced with direnv and nix-shell, so this is
   # not a huge list.
-  home.packages = [
-    # pkgs.asciinema
-    pkgs.bat
-    # pkgs.fd
-    pkgs.fzf
-    # pkgs.gh
-    # pkgs.htop
-    pkgs.jq
-    # pkgs.ripgrep
-    pkgs.tree
-    # pkgs.watch
-    pkgs.xmonad-with-packages
-    # pkgs.gopls
-    pkgs.zigpkgs.master
-
-  ] ++ (lib.optionals (isLinux && !isWSL) [
-    # pkgs.chromium
-    pkgs.firefox
-    # pkgs.rofi
-    # pkgs.zathura
-    pkgs.xfce.xfce4-terminal
+  home.packages = with pkgs; [
+    zsh
+    fzf
+    gh
+    fd
+    ripgrep
+    neofetch
+    curl
+    zig
+    awscli2
+  ] ++ (lib.optionals (isLinux) [
+    # pkgs.firefox
+    # xmonad-with-packages
+    # pkgs.xfce.xfce4-terminal
+    # dmenu
+    # lightdm
+    # alacritty
+    # rxvt_unicode
+    # xclip
+    # discord
+    # slack
+    # zoom-us
+    # thunderbird
+    # brave
+    # wmctrl
+    # nix-tree
+    # nix-du
+    # usbutils
+    # keepassxc
   ]);
 
   #---------------------------------------------------------------------
@@ -64,27 +69,27 @@ in {
     MANPAGER = "${manpager}/bin/manpager";
   };
 
-  home.file.".gdbinit".source = ./gdbinit;
+  # home.file.".gdbinit".source = ./gdbinit;
   home.file.".inputrc".source = ./inputrc;
 
-  xdg.configFile = {
-    # "i3/config".text = builtins.readFile ./i3;
-    # "rofi/config.rasi".text = builtins.readFile ./rofi;
+  # xdg.configFile = {
+  #   # "i3/config".text = builtins.readFile ./i3;
+  #   # "rofi/config.rasi".text = builtins.readFile ./rofi;
 
-    # tree-sitter parsers
-    # "nvim/parser/proto.so".source = "${pkgs.tree-sitter-proto}/parser";
-    # "nvim/queries/proto/folds.scm".source =
-    #   "${sources.tree-sitter-proto}/queries/folds.scm";
-    # "nvim/queries/proto/highlights.scm".source =
-    #   "${sources.tree-sitter-proto}/queries/highlights.scm";
-    # "nvim/queries/proto/textobjects.scm".source =
-    #   ./textobjects.scm;
-  } // (if isDarwin then {
-    # Rectangle.app. This has to be imported manually using the app.
-    "rectangle/RectangleConfig.json".text = builtins.readFile ./RectangleConfig.json;
-  } else {}) // (if isLinux then {
-    # "ghostty/config".text = builtins.readFile ./ghostty.linux;
-  } else {});
+  #   # tree-sitter parsers
+  #   # "nvim/parser/proto.so".source = "${pkgs.tree-sitter-proto}/parser";
+  #   # "nvim/queries/proto/folds.scm".source =
+  #   #   "${sources.tree-sitter-proto}/queries/folds.scm";
+  #   # "nvim/queries/proto/highlights.scm".source =
+  #   #   "${sources.tree-sitter-proto}/queries/highlights.scm";
+  #   # "nvim/queries/proto/textobjects.scm".source =
+  #   #   ./textobjects.scm;
+  # } // (if isDarwin then {
+  #   # Rectangle.app. This has to be imported manually using the app.
+  #   # "rectangle/RectangleConfig.json".text = builtins.readFile ./RectangleConfig.json;
+  # } else {}) // (if isLinux then {
+  #   # "ghostty/config".text = builtins.readFile ./ghostty.linux;
+  # } else {});
 
   #---------------------------------------------------------------------
   # Programs
@@ -94,6 +99,11 @@ in {
 
   programs.zsh = {
     enable = true;  
+    oh-my-zsh = {
+      enable = true;
+      plugins = [];
+      theme = "robbyrussell";
+    };
   };
   
   # programs.bash = {
@@ -101,7 +111,6 @@ in {
   #   shellOptions = [];
   #   historyControl = [ "ignoredups" "ignorespace" ];
   #   initExtra = builtins.readFile ./bashrc;
-
   #   shellAliases = {
   #     ga = "git add";
   #     gc = "git commit";
@@ -117,14 +126,12 @@ in {
 
   # programs.direnv= {
   #   enable = true;
-
   #   config = {
   #     whitelist = {
   #       prefix= [
   #         "$HOME/code/go/src/github.com/hashicorp"
   #         "$HOME/code/go/src/github.com/mitchellh"
   #       ];
-
   #       exact = ["$HOME/.envrc"];
   #     };
   #   };
@@ -134,7 +141,7 @@ in {
     enable = true;
     userName = "Jens Peter Secher";
     aliases = {
-      cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 -r git branch -d";
+      get = "pull --ff-only";
       prettylog = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(r) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
       root = "rev-parse --show-toplevel";
     };
@@ -149,17 +156,16 @@ in {
     };
   };
 
-  programs.alacritty = {
-    enable = !isWSL;
-
-    settings = {
-      env.TERM = "xterm-256color";
-      font = {
-        size = 10.0;
-      };
-      dynamic_title = true;
-    };
-  };
+  # programs.alacritty = {
+  #   enable = true;
+  #   settings = {
+  #     env.TERM = "xterm-256color";
+  #     font = {
+  #       size = 10.0;
+  #     };
+  #     dynamic_title = true;
+  #   };
+  # };
 
   services.gpg-agent = {
     enable = isLinux;
@@ -169,13 +175,13 @@ in {
     maxCacheTtl = 31536000;
   };
 
-  xresources.extraConfig = builtins.readFile ./Xresources;
+  # xresources.extraConfig = builtins.readFile ./Xresources;
 
   # Make cursor not tiny on HiDPI screens
-  home.pointerCursor = lib.mkIf (isLinux && !isWSL) {
-    name = "Vanilla-DMZ";
-    package = pkgs.vanilla-dmz;
-    size = 128;
-    x11.enable = true;
-  };
+  # home.pointerCursor = lib.mkIf (isLinux) {
+  #   name = "Vanilla-DMZ";
+  #   package = pkgs.vanilla-dmz;
+  #   size = 128;
+  #   x11.enable = true;
+  # };
 }

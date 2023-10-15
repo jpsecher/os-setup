@@ -4,11 +4,13 @@
   # Add ~/.local/bin to PATH
   environment.localBinInPath = true;
 
+  programs.zsh.enable = true;
+
   users.users.jps = {
     isNormalUser = true;
+    shell = pkgs.zsh;
     home = "/home/jps";
     extraGroups = [ "docker" "wheel" ];
-    # shell = pkgs.zsh;
     # Made with mkpasswd
     hashedPassword = "$y$j9T$Fomy8cZc7dFXS0g8MlIvx1$dqf7kCeK6JOi5T1r97j/zwE8voLEQlcJ5HNmUxgK9IB";
     openssh.authorizedKeys.keys = [

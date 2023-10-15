@@ -1,6 +1,5 @@
 {
-  description = "NixOS systems and tools for jpsecher";
-
+  description = "NixOS home-managed system for jpsecher";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
@@ -12,16 +11,12 @@
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    zig.url = "github:mitchellh/zig-overlay";
   };
 
   outputs = { self, nixpkgs, home-manager, darwin, ... }@inputs: let
-    overlays = [
-      inputs.zig.overlays.default
-    ];
-
+    overlays = [];
     mkSystem = import ./lib/mksystem.nix {
-      inherit overlays nixpkgs inputs;
+      inherit nixpkgs overlays inputs;
     };
   in {
     nixosConfigurations.vm-intel = mkSystem "vm-intel" {
