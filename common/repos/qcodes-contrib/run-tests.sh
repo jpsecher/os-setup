@@ -3,7 +3,7 @@
 scriptdir=$(realpath `dirname $0`)
 basedir=$(realpath $scriptdir/..)
 
-options="-p no:warnings"
+options="-p no:warnings --lf -x --no-header -q"
 if [ -n "$1" ]; then
 	options="$options -v -m $1"
 fi
