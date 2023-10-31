@@ -4,8 +4,10 @@
     ./hardware-configuration.nix
     <home-manager/nixos>
   ];
+  boot.kernelParams = ["nomodeset"];
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.postBootCommands = "mount -o remount,ro,bind,noatime,discard /nix/store";
   networking.hostName = "fowler";
   networking.networkmanager.enable = true;
   time.timeZone = "Europe/Copenhagen";
@@ -37,26 +39,25 @@
   };
   console = {
     useXkbConfig = true;
-    #font = "ter-i32b";
-    packages = with pkgs; [ terminus_font ];
+    font = "ter-powerline-v32b";
+    packages = with pkgs; [ terminus_font powerline-fonts ];
     earlySetup = true;
   };
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     helix
-    git
     fzf
     bat
     tree
     direnv
     wget
     zsh
-    oh-my-zsh
   ];
   programs.zsh = {
     enable = true;
     ohMyZsh.enable = true;
   };
+  environment.shells = [ pkgs.zsh ];
   system.stateVersion = "23.05"; # Do not change
   security.sudo.wheelNeedsPassword = false;
   users.users.jps = {
@@ -67,15 +68,5 @@
   };
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
-  home-manager.users.jps = { pkgs, ... }: {
-    home = {
-      packages = with pkgs; [
-        neofetch
-        awscli2
-        glances
-      ];
-      stateVersion = "23.05";
-      #home-manager.enable = true;
-    };
-  };
+  home-manager.users.jps = import ./home-jps.nix;
 }
