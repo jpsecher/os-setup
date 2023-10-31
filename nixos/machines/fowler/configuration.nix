@@ -4,11 +4,10 @@
     ./hardware-configuration.nix
     <home-manager/nixos>
   ];
-  boot.kernelParams = ["nomodeset"];
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.postBootCommands = "mount -o remount,ro,bind,noatime,discard /nix/store";
-  networking.hostName = "fowler";
+  networking.hostName = "fowler"; # Define your hostname.
   networking.networkmanager.enable = true;
   time.timeZone = "Europe/Copenhagen";
   i18n.defaultLocale = "en_DK.UTF-8";
@@ -32,6 +31,9 @@
       experimental-features = nix-command flakes
     '';
   };
+  services.xserver.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
   services.xserver = {
     layout = "us";
     xkbVariant = "mac";
@@ -43,22 +45,44 @@
     packages = with pkgs; [ terminus_font powerline-fonts ];
     earlySetup = true;
   };
-  nixpkgs.config.allowUnfree = true;
+  services.printing.enable = true;
+  sound.enable = true;
+  hardware.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # If you want to use JACK applications, uncomment this
+    #jack.enable = true;
+
+    # use the example session manager (no others are packaged yet so this is enabled by default,
+    # no need to redefine it in your config for now)
+    #media-session.enable = true;
+  };
+
+  # Enable touchpad support (enabled default in most desktopManager).
+  # services.xserver.libinput.enable = true;
+
+  nixpkgs.config = {
+    allowUnfree = true;
+    permittedInsecurePackages = ["electron-24.8.6"];
+  };
+  # $ nix search wget
   environment.systemPackages = with pkgs; [
     helix
-    fzf
     bat
-    tree
-    direnv
     wget
+    tree
+    fzf
     zsh
   ];
-  programs.zsh = {
-    enable = true;
-    ohMyZsh.enable = true;
-  };
+  programs.zsh.enable = true;
   environment.shells = [ pkgs.zsh ];
-  system.stateVersion = "23.05"; # Do not change
+  # services.openssh.enable = true;
+  # networking.firewall.enable = false;
+  system.stateVersion = "23.05"; # Don't change
   security.sudo.wheelNeedsPassword = false;
   users.users.jps = {
     isNormalUser = true;

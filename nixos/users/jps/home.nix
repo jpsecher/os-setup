@@ -3,7 +3,11 @@
 {
   imports = [
     ./zsh.nix
+    ./helix.nix
   ];
+  # dconf.settings = {
+  #   "org.gnome.desktop.input-sources" = xkb-options;
+  # };
   home = {
     stateVersion = "23.05";
     username = "jps";
@@ -21,20 +25,16 @@
       neofetch
       awscli2
       glances
-      # xorg.xorgserver
-      # xorg.xf86inputedev
-      # xorg.xf86inputsynaptics
-      # xorg.xf86inputlibinput
-      # xorg.xf86videointel
-      # xinit
-      # succless-tools
-      # x11-apps
-      # x11-xserver-utils
-      # x11-xkb-utils
-      #xmonad
+      xmonad-with-packages
       dmenu
       alacritty
+      keepassxc
       brave
+      firefox
+      thunderbird
+      obsidian
+      slack
+      zoom
     ];
   };
 }
