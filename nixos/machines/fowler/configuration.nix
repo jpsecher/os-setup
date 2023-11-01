@@ -7,7 +7,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.postBootCommands = "mount -o remount,ro,bind,noatime,discard /nix/store";
-  networking.hostName = "fowler"; # Define your hostname.
+  networking.hostName = "fowler";
   networking.networkmanager.enable = true;
   time.timeZone = "Europe/Copenhagen";
   i18n.defaultLocale = "en_DK.UTF-8";
@@ -31,10 +31,11 @@
       experimental-features = nix-command flakes
     '';
   };
-  services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  virtualisation.docker.enable = true;
   services.xserver = {
+    enable = true;
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
     layout = "us";
     xkbVariant = "mac";
     xkbOptions = "ctrl:nocaps";
@@ -54,22 +55,13 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
   };
-
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-
   nixpkgs.config = {
     allowUnfree = true;
     permittedInsecurePackages = ["electron-24.8.6"];
   };
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
     helix
     bat
@@ -87,7 +79,7 @@
   users.users.jps = {
     isNormalUser = true;
     description = "Jens Peter Secher";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker"];
     shell = pkgs.zsh;
   };
   home-manager.useGlobalPkgs = true;

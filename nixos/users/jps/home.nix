@@ -8,6 +8,19 @@
   # dconf.settings = {
   #   "org.gnome.desktop.input-sources" = xkb-options;
   # };
+  # home.file.".xprofile".text = ''
+  #   google-drive-ocamlfuse -label personal ~/gdrive &
+  # '';
+  xdg.configFile."autostart/gdrive.desktop".text = ''
+    [Desktop Entry]
+    Type=Application
+    Encoding=UTF-8
+    Version=1.0
+    Name=Personal Google Drive
+    Exec=google-drive-ocamlfuse -label personal ~/gdrive
+    X-GNOME-Autostart-enabled=true
+    X-KDE-autostart-after=panel
+  '';
   home = {
     stateVersion = "23.05";
     username = "jps";
@@ -16,12 +29,18 @@
       EDITOR = "hx";
     };
     packages = with pkgs; [
+      #utm
       alacritty
       ansible
       awscli2
       bat
       brave
+      clang
+      clang-analyzer
+      clang-tools
+      clangStdenv
       direnv
+      discord
       dmenu
       doas
       docker
@@ -33,19 +52,28 @@
       helix
       keepassxc
       kicad
+      lldb
+      marksman
       neofetch
+      nil
+      nodePackages_latest.typescript-language-server
       obsidian
       oh-my-zsh
+      python310
+      python310Packages.python-lsp-server
+      rust-analyzer
       slack
       sqlite
       terraform
       tetex
+      texlab
       thunderbird
       tree
-      #utm
       virtualbox
       wget
       xmonad-with-packages
+      zig
+      zls
       zoom
       zsh
     ];
