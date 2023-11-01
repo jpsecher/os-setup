@@ -1,2 +1,3 @@
+result/
 common/secrets/*
 !common/secrets/.place-holder

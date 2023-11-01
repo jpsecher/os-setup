@@ -2,13 +2,12 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    #enableAutoSuggestions = true;
     enableSyntaxHighlighting = true;
     oh-my-zsh = {
       enable = true;
       plugins = [];
-      #theme = "robbyrussell";
-      theme = "agnoster";
+      theme = "robbyrussell";
+      #theme = "agnoster";
     };
     initExtra = "";
   };
