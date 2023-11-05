@@ -33,8 +33,15 @@
       alacritty
       ansible
       awscli2
+      bash
       bat
-      brave
+      (brave.override {
+        # https://peter.sh/experiments/chromium-command-line-switches/
+        commandLineArgs = ''
+        --load-media-router-component-extension=1
+        --enable-smooth-scrolling
+        '';
+      })
       clang
       clang-analyzer
       clang-tools
@@ -77,12 +84,5 @@
       zoom
       zsh
     ];
-  };
-  programs.chromium = {
-    enable = true;
-    package = pkgs.brave;
-    commandLineArgs = [];
-    # dictionaries = [];
-    extensions = [];
   };
 }

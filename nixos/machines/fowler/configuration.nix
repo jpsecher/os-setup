@@ -25,13 +25,9 @@
   powerManagement = {
     cpuFreqGovernor = "conservative";
   };
-  nix = {
-    package = pkgs.nixFlakes;
-    extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
-  };
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   virtualisation.docker.enable = true;
+  services.avahi.enable = true;
   services.xserver = {
     enable = true;
     displayManager.gdm.enable = true;
@@ -73,8 +69,12 @@
   programs.zsh.enable = true;
   environment.shells = [ pkgs.zsh ];
   # services.openssh.enable = true;
-  # networking.firewall.enable = false;
-  system.stateVersion = "23.05"; # Don't change
+  # networking.firewall.logRefusedConnections
+  networking.firewall = {
+    allowedUDPPorts = [ 5353 ]; # For device discovery
+    allowedUDPPortRanges = [{ from = 32768; to = 61000; }];   # For Streaming
+    allowedTCPPorts = [ 8010 ];  # For gnomecast server
+  };
   security.sudo.wheelNeedsPassword = false;
   users.users.jps = {
     isNormalUser = true;
@@ -85,4 +85,5 @@
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
   home-manager.users.jps = import ./home-jps.nix;
+  system.stateVersion = "23.05"; # Don't change
 }
