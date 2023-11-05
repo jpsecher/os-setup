@@ -15,9 +15,9 @@ Create a virtual machine (eg. in UTM)
 In the VM do:
 ```
 sudo -i
-passwd # Set to root
+passwd # Set to "root"
 lsblk # Check that /dev/sda is there
-ip a # Take note of the IP address
+ip a # Take note of the IP address eg. 192.168.64.2
 ```
 
 On the host do:
@@ -33,10 +33,11 @@ Start the VM again and run this on the host to finalize the VM:
 make bootstrap-vm-step-2
 ```
 
-
-
+Thereafter use
 ```
-nix-env -f '<nixpkgs>' -iA helix
+export NIXADDR=192.168.64.2
+make copy-configuration-to-vm
+make nix-rebuild-and-switch
 ```
-
+on the host repeatedly to change configuration.
 
