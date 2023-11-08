@@ -1,0 +1,4 @@
+-- 
+Jens Peter Secher,
+DevOps, CI/CD & Backend gardener,
+Kaleidoscope Software ApS

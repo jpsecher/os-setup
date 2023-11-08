@@ -1,0 +1,5 @@
+Host 127.*
+  StrictHostKeyChecking no
+  LogLevel ERROR
+  UserKnownHostsFile /dev/null
+ForwardX11 yes
