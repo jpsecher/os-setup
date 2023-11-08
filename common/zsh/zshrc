@@ -15,7 +15,7 @@ ZSH_THEME="random"
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 #ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-ZSH_THEME_RANDOM_IGNORED=("xiong-chiamiov" "zhann")
+ZSH_THEME_RANDOM_IGNORED=("macovsky" "kiwi" "cypher" "dstufft" "xiong-chiamiov-plus" "xiong-chiamiov" "zhann" "nicoulaj simonoff rkj-repos funky")
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
