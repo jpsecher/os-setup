@@ -5,19 +5,22 @@
     ./zsh.nix
     ./helix.nix
   ];
+  # dconf.settings = {
+  #   "org.gnome.desktop.input-sources" = xkb-options;
+  # };
   # home.file.".xprofile".text = ''
   #   google-drive-ocamlfuse -label personal ~/gdrive &
   # '';
-  # xdg.configFile."autostart/gdrive.desktop".text = ''
-  #   [Desktop Entry]
-  #   Type=Application
-  #   Encoding=UTF-8
-  #   Version=1.0
-  #   Name=Personal Google Drive
-  #   Exec=google-drive-ocamlfuse -label personal ~/gdrive
-  #   X-GNOME-Autostart-enabled=true
-  #   X-KDE-autostart-after=panel
-  # '';
+  xdg.configFile."autostart/gdrive.desktop".text = ''
+    [Desktop Entry]
+    Type=Application
+    Encoding=UTF-8
+    Version=1.0
+    Name=Personal Google Drive
+    Exec=google-drive-ocamlfuse -label personal ~/gdrive
+    X-GNOME-Autostart-enabled=true
+    X-KDE-autostart-after=panel
+  '';
   home = {
     stateVersion = "23.05";
     username = "jps";
@@ -43,12 +46,12 @@
       clang-analyzer
       clang-tools
       clangStdenv
-      dig
       direnv
       discord
       dmenu
       doas
       docker
+      firefox
       fzf
       git
       glances
