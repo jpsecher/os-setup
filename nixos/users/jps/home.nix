@@ -2,8 +2,9 @@
 
 {
   imports = [
-    ./zsh.nix
+    ./alacritty.nix
     ./helix.nix
+    ./zsh.nix
   ];
   # home.file.".xprofile".text = ''
   #   google-drive-ocamlfuse -label personal ~/gdrive &
@@ -18,6 +19,7 @@
   #   X-GNOME-Autostart-enabled=true
   #   X-KDE-autostart-after=panel
   # '';
+  fonts.fontconfig.enable = true;
   home = {
     stateVersion = "23.05";
     username = "jps";
@@ -80,6 +82,17 @@
       zls
       zoom
       zsh
+      # Fonts
+      nerdfonts
+      noto-fonts
+      # noto-fonts-cjk
+      noto-fonts-emoji
+      # liberation_ttf
+      fira-code
+      fira-code-symbols
+      # mplus-outline-fonts.githubRelease
+      # dina-font
+      # proggyfonts
     ];
   };
 }

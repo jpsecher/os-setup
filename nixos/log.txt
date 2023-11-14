@@ -2,6 +2,12 @@
 sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz home-manager
 sudo nix-channel --update
 
+export HOST=knuth
+export USER=jps
+export REPO=~/repos/personal/os-setup
+sudo cp $REPO/nixos/machine/$HOST/configuration /etc/nixos/configuration/nix
+sudo ln -s $REPO/users/$USER/home.nix /etc/nixos/home-$USER.nix
+
 # To make Gnome respect xkbOptions:
 gsettings reset org.gnome.desktop.input-sources xkb-options
 gsettings reset org.gnome.desktop.input-sources sources

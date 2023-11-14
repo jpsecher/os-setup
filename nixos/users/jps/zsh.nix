@@ -5,8 +5,10 @@
     enableSyntaxHighlighting = true;
     oh-my-zsh = {
       enable = true;
-      plugins = [];
-      theme = "robbyrussell";
+      plugins = ["git" "docker" "git-extras"];
+      # plugins = [git docker git-extras ansible pip python ssh-agent];
+      theme = "fino-time";
+      #theme = "robbyrussell";
       #theme = "agnoster";
     };
     initExtra = "";

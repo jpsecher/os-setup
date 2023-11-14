@@ -1,5 +1,14 @@
 font:
   size: 10.0
+  normal:
+    family: 'Ubuntu Mono Nerd Font'
+    style: Regular
+  bold:
+    family: 'Ubuntu Mono Nerd Font'
+    style: Bold
+  italic:
+    family: 'Ubuntu Mono Nerd Font'
+    style: Italic
 
 dynamic_title: true
 
