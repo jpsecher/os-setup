@@ -1,12 +1,17 @@
 # To use home-manager:
 sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz home-manager
 sudo nix-channel --update
-
 export HOST=knuth
 export USER=jps
 export REPO=~/repos/personal/os-setup
 sudo cp $REPO/nixos/machine/$HOST/configuration /etc/nixos/configuration/nix
 sudo ln -s $REPO/users/$USER/home.nix /etc/nixos/home-$USER.nix
+
+# Google drive
+google-drive-ocamlfuse  # If not working, add -debug and dig out the URL
+mkdir ~/gdrive-personal
+google-drive-ocamlfuse -label personal ~/gdrive-personal
+ln -sf ~/repos/personal/os-setup/common/zsh/zlogin ~/.zlogin
 
 # To make Gnome respect xkbOptions:
 gsettings reset org.gnome.desktop.input-sources xkb-options

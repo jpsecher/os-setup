@@ -1,0 +1,2 @@
+## Mount google drive
+google-drive-ocamlfuse -label personal ~/gdrive-personal
