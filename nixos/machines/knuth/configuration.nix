@@ -57,8 +57,7 @@ in {
     permittedInsecurePackages = ["electron-24.8.6"];
   };
   environment.systemPackages = [
-    # unstable.helix
-    pkgs.nano
+    unstable.helix
     pkgs.zsh
   ];
   programs.zsh.enable = true;
