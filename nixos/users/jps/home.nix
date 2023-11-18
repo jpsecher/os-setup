@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-
+{ config, pkgs, unstable, ... }:
 {
   imports = [
     ./alacritty.nix
@@ -27,69 +26,70 @@
     sessionVariables = {
       EDITOR = "hx";
     };
-    packages = with pkgs; [
+    packages = [
       #utm
-      alacritty
-      ansible
-      awscli2
-      bash
-      bat
-      (brave.override {
+      pkgs.alacritty
+      pkgs.ansible
+      pkgs.awscli2
+      pkgs.bash
+      pkgs.bat
+      (pkgs.brave.override {
         # https://peter.sh/experiments/chromium-command-line-switches/
         commandLineArgs = ''
         --load-media-router-component-extension=1
         --enable-smooth-scrolling
         '';
       })
-      clang
-      clang-analyzer
-      clang-tools
-      clangStdenv
-      dig
-      direnv
-      discord
-      dmenu
-      doas
-      docker
-      fzf
-      git
-      glances
-      google-drive-ocamlfuse
-      helix
-      keepassxc
-      kicad
-      lldb
-      marksman
-      neofetch
-      nil
-      nodePackages_latest.typescript-language-server
-      obsidian
-      oh-my-zsh
-      python310
-      python310Packages.python-lsp-server
-      rust-analyzer
-      slack
-      sqlite
-      terraform
-      tetex
-      texlab
-      thunderbird
-      tree
-      virtualbox
-      wget
-      xmonad-with-packages
-      zig
-      zls
-      zoom
-      zsh
+      pkgs.clang
+      pkgs.clang-analyzer
+      pkgs.clang-tools
+      pkgs.clangStdenv
+      pkgs.dig
+      pkgs.direnv
+      pkgs.discord
+      pkgs.dmenu
+      pkgs.doas
+      pkgs.docker
+      pkgs.fzf
+      pkgs.git
+      pkgs.glances
+      pkgs.google-drive-ocamlfuse
+      # unstable.helix
+      pkgs.keepassxc
+      pkgs.kicad
+      pkgs.lldb
+      pkgs.marksman
+      pkgs.neofetch
+      pkgs.nil
+      pkgs.nodePackages_latest.typescript-language-server
+      pkgs.obsidian
+      pkgs.oh-my-zsh
+      pkgs.python310
+      pkgs.python310Packages.python-lsp-server
+      pkgs.rust-analyzer
+      pkgs.slack
+      pkgs.sqlite
+      pkgs.terraform
+      pkgs.tetex
+      pkgs.texlab
+      pkgs.thunderbird
+      pkgs.tree
+      pkgs.virtualbox
+      pkgs.wget
+      pkgs.xmobar
+      pkgs.xmonad-with-packages
+      pkgs.zig
+      pkgs.zls
+      pkgs.zoom
+      pkgs.zsh
       # Fonts
-      nerdfonts
-      noto-fonts
+      pkgs.nerdfonts
+      pkgs.noto-fonts
       # noto-fonts-cjk
-      noto-fonts-emoji
+      pkgs.noto-fonts-emoji
       # liberation_ttf
-      fira-code
-      fira-code-symbols
+      pkgs.fira-code
+      pkgs.fira-code-symbols
       # mplus-outline-fonts.githubRelease
       # dina-font
       # proggyfonts

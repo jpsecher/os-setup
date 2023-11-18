@@ -1,5 +1,7 @@
-{ config, pkgs, ... }:
-{
+{ pkgs, ...}:
+let
+  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+in {
   imports = [
     ./hardware-configuration.nix
     <home-manager/nixos>
@@ -37,7 +39,6 @@
   };
   console = {
     useXkbConfig = true;
-    # font = "ter-powerline-v32b";
     packages = with pkgs; [ terminus_font powerline-fonts ];
     earlySetup = true;
   };
@@ -51,15 +52,14 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
   nixpkgs.config = {
     allowUnfree = true;
     permittedInsecurePackages = ["electron-24.8.6"];
   };
-  environment.systemPackages = with pkgs; [
-    helix
-    zsh
+  environment.systemPackages = [
+    # unstable.helix
+    pkgs.nano
+    pkgs.zsh
   ];
   programs.zsh.enable = true;
   environment.shells = [ pkgs.zsh ];
@@ -75,8 +75,11 @@
     extraGroups = [ "networkmanager" "wheel" "docker"];
     shell = pkgs.zsh;
   };
-  home-manager.useGlobalPkgs = true;
-  home-manager.useUserPackages = true;
-  home-manager.users.jps = import ./home-jps.nix;
+  home-manager = {
+    extraSpecialArgs = { inherit unstable; };
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.jps = import ./home-jps.nix;
+  };
   system.stateVersion = "23.05"; # Don't change
 }
