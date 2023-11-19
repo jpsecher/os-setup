@@ -3,6 +3,7 @@
   imports = [
     ./alacritty.nix
     ./helix.nix
+    ./xmonad.nix
     ./zsh.nix
   ];
   # If useGlobalPkgs = true:
@@ -20,6 +21,7 @@
       EDITOR = "hx";
     };
     packages = with pkgs; [
+      # Checkout if builtins.currentSystem == "x86_64-linux" then ...
       #utm
       alacritty
       ansible
@@ -43,7 +45,6 @@
       dmenu
       doas
       docker
-      fzf
       git
       glances
       google-drive-ocamlfuse
@@ -69,22 +70,15 @@
       virtualbox
       wget
       xmobar
-      xmonad-with-packages
       zig
       zls
       zoom
-      zsh
       # Fonts
       nerdfonts
       noto-fonts
-      # noto-fonts-cjk
       noto-fonts-emoji
-      # liberation_ttf
       fira-code
       fira-code-symbols
-      # mplus-outline-fonts.githubRelease
-      # dina-font
-      # proggyfonts
     ];
   };
 }
