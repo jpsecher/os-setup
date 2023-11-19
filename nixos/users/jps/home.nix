@@ -5,6 +5,7 @@
     ./helix.nix
     ./zsh.nix
   ];
+  # If useGlobalPkgs = true:
   # nixpkgs.config = {
   #   allowunfree = true;
   #   allowUnfreePredicate = (_: true);
