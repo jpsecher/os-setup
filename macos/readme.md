@@ -41,6 +41,15 @@
     maccy
     utm
 
+### Fonts
+
+    brew tap homebrew/cask-fonts
+    brew install font-ubuntu-mono-nerd-font
+
+## Downloads
+
+    https://alt-tab-macos.netlify.app/
+
 ## Config files
 
     export CONFIG=~/repos/personal/os-setup
