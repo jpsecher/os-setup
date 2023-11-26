@@ -36,6 +36,7 @@ in {
     layout = "us";
     xkbVariant = "";
     xkbOptions = "ctrl:nocaps";
+    # Does not work: libinput.naturalScrolling = true;
   };
   console = {
     useXkbConfig = true;
@@ -45,7 +46,14 @@ in {
   services.printing.enable = true;
   sound.enable = true;
   hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
+  security = {
+    rtkit.enable = true;
+    doas = {
+      enable = true;
+      wheelNeedsPassword = false;
+    };
+    sudo.wheelNeedsPassword = false;
+  };
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -59,6 +67,7 @@ in {
   environment.systemPackages = [
     unstable.helix
     pkgs.zsh
+    pkgs.doas
   ];
   programs.zsh.enable = true;
   environment.shells = [ pkgs.zsh ];
@@ -67,7 +76,6 @@ in {
     allowedUDPPortRanges = [{ from = 32768; to = 61000; }];  # For Streaming
     allowedTCPPorts = [ 8010 ];  # For gnomecast server
   };
-  security.sudo.wheelNeedsPassword = false;
   users.users.jps = {
     isNormalUser = true;
     description = "Jens Peter Secher";

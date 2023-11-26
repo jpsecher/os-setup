@@ -23,6 +23,7 @@
     packages = with pkgs; [
       # Checkout if builtins.currentSystem == "x86_64-linux" then ...
       #utm
+      afpfs-ng
       alacritty
       ansible
       awscli2
@@ -37,16 +38,20 @@
       })
       clang
       clang-analyzer
-      clang-tools
       clangStdenv
+      clang-tools
       dig
       direnv
       discord
       dmenu
       doas
       docker
+      element-desktop
+      fd
+      feh
       git
       glances
+      gnome.gnome-calculator
       google-drive-ocamlfuse
       keepassxc
       kicad
@@ -59,6 +64,7 @@
       oh-my-zsh
       python310
       python310Packages.python-lsp-server
+      ripgrep
       rust-analyzer
       slack
       sqlite
@@ -74,11 +80,8 @@
       zls
       zoom
       # Fonts
+      victor-mono
       nerdfonts
-      noto-fonts
-      noto-fonts-emoji
-      fira-code
-      fira-code-symbols
     ];
   };
 }
