@@ -9,8 +9,18 @@ bufferline = "multiple"
 insert = "bar"
 select = "underline"
 
+[editor.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+"'" = "'"
+
 [editor.soft-wrap]
 enable = true
+
+# [editor.lsp]
+# display-messages = true
 
 [keys.normal]
 esc = ["collapse_selection", "keep_primary_selection"]
