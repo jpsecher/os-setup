@@ -75,7 +75,7 @@
       tree
       virtualbox
       wget
-      xmobar
+      # xmobar
       zig
       zls
       zoom
