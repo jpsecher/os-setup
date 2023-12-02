@@ -1,7 +1,7 @@
 [user]
 	name = Jens Peter Secher
 [core]
-	excludesfile = ~/.gitignore-global
+	#excludesfile = ~/.gitignore-global
 	#editor = subl -w
 [diff]
 	algorithm = patience

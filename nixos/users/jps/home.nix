@@ -3,6 +3,7 @@
   imports = [
     ./alacritty.nix
     ./brave.nix
+    ./git.nix
     ./helix.nix
     ./xmonad.nix
     ./zsh.nix
@@ -37,7 +38,6 @@
       element-desktop
       fd
       feh
-      git
       glances
       gnome.gnome-calculator
       google-drive-ocamlfuse
