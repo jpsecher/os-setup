@@ -2,16 +2,11 @@
 {
   imports = [
     ./alacritty.nix
+    ./brave.nix
     ./helix.nix
     ./xmonad.nix
     ./zsh.nix
   ];
-  # If useGlobalPkgs = true:
-  # nixpkgs.config = {
-  #   allowunfree = true;
-  #   allowUnfreePredicate = (_: true);
-  #   permittedInsecurePackages = ["electron-24.8.6"];
-  # };
   fonts.fontconfig.enable = true;
   home = {
     stateVersion = "23.05";
@@ -29,13 +24,6 @@
       awscli2
       bash
       bat
-      (brave.override {
-        # https://peter.sh/experiments/chromium-command-line-switches/
-        commandLineArgs = ''
-        --load-media-router-component-extension=1
-        --enable-smooth-scrolling
-        '';
-      })
       clang
       clang-analyzer
       clangStdenv
@@ -75,7 +63,6 @@
       tree
       virtualbox
       wget
-      # xmobar
       zig
       zls
       zoom
