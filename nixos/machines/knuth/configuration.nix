@@ -30,13 +30,16 @@ in {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   virtualisation.docker.enable = true;
   services.avahi.enable = true;
+  systemd.services.systemd-logind.enable = true;
+  systemd.services.systemd-logind.restartIfChanged = false;
   services.xserver = {
     enable = true;
     displayManager.startx.enable = true;
     layout = "us";
     xkbVariant = "";
     xkbOptions = "ctrl:nocaps";
-    # Does not work: libinput.naturalScrolling = true;
+    # Does not work: 
+    libinput.touchpad.naturalScrolling = true;
   };
   console = {
     useXkbConfig = true;

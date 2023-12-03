@@ -1,3 +1,6 @@
 #!/bin/sh
+# See https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/x11/display-managers/default.nix
+systemctl --user import-environment DISPLAY XAUTHORITY
+systemctl --user start graphical-session.target
 alacritty &
 exec xmonad

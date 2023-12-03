@@ -9,6 +9,11 @@
     ./zsh.nix
   ];
   fonts.fontconfig.enable = true;
+  services.screen-locker = {
+    enable = true;
+    inactiveInterval = 10;
+    lockCmd = "${pkgs.i3lock}/bin/i3lock -n -c 000000";
+  };
   home = {
     stateVersion = "23.05";
     username = "jps";
@@ -41,6 +46,7 @@
       glances
       gnome.gnome-calculator
       google-drive-ocamlfuse
+      i3lock
       keepassxc
       kicad
       lldb
@@ -63,6 +69,8 @@
       tree
       virtualbox
       wget
+      xautolock
+      xss-lock
       zig
       zls
       zoom
