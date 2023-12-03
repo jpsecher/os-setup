@@ -36,9 +36,8 @@ in {
     enable = true;
     displayManager.startx.enable = true;
     layout = "us";
-    xkbVariant = "";
+    xkbVariant = "mac";
     xkbOptions = "ctrl:nocaps";
-    # Does not work: 
     libinput.touchpad.naturalScrolling = true;
   };
   console = {
