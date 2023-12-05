@@ -43,6 +43,7 @@
       element-desktop
       fd
       feh
+      firefox
       glances
       gnome.gnome-calculator
       google-drive-ocamlfuse
@@ -73,7 +74,7 @@
       xss-lock
       zig
       zls
-      zoom
+      zoom-us
       # Fonts
       victor-mono
       nerdfonts

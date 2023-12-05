@@ -12,6 +12,9 @@
       #theme = "agnoster";
     };
     initExtra = "";
+    loginExtra = ''
+      google-drive-ocamlfuse -label personal ~/gdrive-personal
+    '';
   };
   programs.fzf = {
     enable = true;
