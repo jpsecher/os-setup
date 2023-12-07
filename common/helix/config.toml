@@ -16,9 +16,6 @@ select = "underline"
 '"' = '"'
 "'" = "'"
 
-# [editor.soft-wrap]
-# enable = true
-
 [editor.lsp]
 auto-signature-help = false
 display-messages = true

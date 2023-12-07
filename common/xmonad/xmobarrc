@@ -8,7 +8,7 @@ Config
     , Run Swap ["-t" ,"<usedratio>%", "-L", "10", "-H", "50", "--low", "green", "--high", "red"] 100
     , Run Cpu ["-t", "<total>%", "-L", "3", "-H", "50", "--low", "green", "--high", "red"] 100
     , Run CoreTemp ["-t", "<core0>°", "-L", "45", "-H", "60", "--low", "green", "--high", "red"] 100
-    , Run Battery ["-t", "<timeleft>💡<left>%", "-L", "20", "-H", "40", "--low", "red", "--high", "green"] 200
+    , Run Battery ["-t", "<timeleft>♡<left>%", "-L", "20", "-H", "40", "--low", "red", "--high", "green"] 200
     -- , Run Battery ["-W", "0", "-f", "\xf244\xf243\xf243\xf243\xf242\xf242\xf242\xf241\xf241\xf240"] 100
     , Run Date "%b %e %a %R" "date" 200
     ]
