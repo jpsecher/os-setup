@@ -4,16 +4,6 @@
     enable = true;
     enableCompletion = true;
     enableSyntaxHighlighting = true;
-    # oh-my-zsh = {
-      # enable = true;
-      # plugins = ["git" "docker" "git-extras" "aws"];
-      # plugins = [git docker git-extras ansible pip python ssh-agent];
-      # custom = "$HOME/repos/personal/os-setup/common/zsh";
-      # theme = "jpsecher";
-      # theme = "fino-time";
-      #theme = "robbyrussell";
-      #theme = "agnoster";
-    # };
     plugins = [ {
         name = "powerlevel10k";
         src = pkgs.zsh-powerlevel10k;
@@ -24,6 +14,11 @@
         file = "p10k.zsh";
       }
     ];
+    # if zmodload zsh/terminfo && (( terminfo[colors] >= 256 )); then
+    #   [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+    # else
+    #   [[ ! -f ~/.p10k-portable.zsh ]] || source ~/.p10k-portable.zsh
+    # fi
     initExtra = "";
     loginExtra = ''
       google-drive-ocamlfuse -label personal ~/gdrive-personal
