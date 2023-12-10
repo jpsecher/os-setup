@@ -3,14 +3,14 @@ Config
   { commands = 
     [ Run StdinReader
     , Run Wireless "wlp3s0" [ "-t", "<essid>" ] 500
-    , Run DynNetwork ["-t", "↑<tx>↓<rx>", "--Low", "1000", "--High", "99999", "--low", "green", "--high", "red"] 100
+    , Run DynNetwork ["-t", "<tx>↑↓<rx>", "--Low", "1000", "--High", "99999", "--low", "green", "--high", "red"] 100
     , Run Memory ["-t" ,"<usedratio>%", "-L", "30", "-H", "80", "--low", "green", "--high", "red"] 100
     , Run Swap ["-t" ,"<usedratio>%", "-L", "10", "-H", "50", "--low", "green", "--high", "red"] 100
     , Run Cpu ["-t", "<total>%", "-L", "3", "-H", "50", "--low", "green", "--high", "red"] 100
-    , Run CoreTemp ["-t", "<core0>°", "-L", "45", "-H", "60", "--low", "green", "--high", "red"] 100
+    , Run CoreTemp ["-t", "<core0>", "-L", "45", "-H", "60", "--low", "green", "--high", "red"] 100
     , Run Battery ["-t", "<timeleft>♡<left>%", "-L", "20", "-H", "40", "--low", "red", "--high", "green"] 200
-    -- , Run Battery ["-W", "0", "-f", "\xf244\xf243\xf243\xf243\xf242\xf242\xf242\xf241\xf241\xf240"] 100
+    -- , Run Battery ["-W", "0", "-f", "\xf244\xf243\xf243\xf243\xf242\xf242\xf242\xf241\xf241\xf240"] 100 ⏼ ⏻
     , Run Date "%b %e %a %R" "date" 200
     ]
-  , template = "  %StdinReader%}%date%{%wlp3s0wi%%dynnetwork% · %memory%🐏%swap% · %coretemp%🌡%cpu% · %battery%  "
+  , template = "  %StdinReader%}%date%{%wlp3s0wi% %dynnetwork% · %memory%🐏%swap% · %coretemp%℃%cpu% · %battery%  "
   }
