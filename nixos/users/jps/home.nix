@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   imports = [
     ./alacritty.nix
@@ -6,14 +6,11 @@
     ./git.nix
     ./helix.nix
     ./xmonad.nix
+    ./lock-screen.nix
     ./zsh.nix
   ];
+  xdg.enable = true;
   fonts.fontconfig.enable = true;
-  services.screen-locker = {
-    enable = true;
-    inactiveInterval = 10;
-    lockCmd = "${pkgs.i3lock}/bin/i3lock -n -t -i ~/backgrounds/the-matrix.png";
-  };
   home = {
     stateVersion = "23.05";
     username = "jps";
@@ -25,7 +22,6 @@
       # Checkout if builtins.currentSystem == "x86_64-linux" then ...
       #utm
       afpfs-ng
-      alacritty
       ansible
       awscli2
       bash
@@ -47,7 +43,6 @@
       glances
       gnome.gnome-calculator
       google-drive-ocamlfuse
-      i3lock
       keepassxc
       kicad
       lldb
@@ -56,7 +51,6 @@
       nil
       nodePackages_latest.typescript-language-server
       obsidian
-      oh-my-zsh
       python310
       python310Packages.python-lsp-server
       ripgrep
