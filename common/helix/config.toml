@@ -21,10 +21,12 @@ auto-signature-help = false
 display-messages = true
 
 [editor.statusline]
-left = ["mode", "spinner", "version-control", "file-name"]
+right = ["position", "diagnostics", "file-encoding", "version-control", "register", "selections"]
 
 [keys.normal]
 esc = ["collapse_selection", "keep_primary_selection"]
+"C-n" = "extend_search_next"
+"C-p" = "extend_search_prev"
 "C-j" = ["insert_mode", "insert_newline", "normal_mode"]
 
 [keys.normal.space.t]
