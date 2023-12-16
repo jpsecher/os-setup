@@ -1,8 +1,9 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 {
   imports = [
     ./alacritty.nix
     ./brave.nix
+    ./dunst.nix
     ./git.nix
     ./helix.nix
     ./xmonad.nix
@@ -45,6 +46,7 @@
       google-drive-ocamlfuse
       keepassxc
       kicad
+      libnotify
       lldb
       marksman
       neofetch
