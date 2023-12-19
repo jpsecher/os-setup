@@ -41,6 +41,7 @@
       fd
       feh
       firefox
+      freecad
       glances
       gnome.gnome-calculator
       google-drive-ocamlfuse
@@ -53,6 +54,7 @@
       nil
       nodePackages_latest.typescript-language-server
       obsidian
+      openscad
       python310
       python310Packages.python-lsp-server
       ripgrep
