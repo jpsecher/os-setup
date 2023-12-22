@@ -40,6 +40,7 @@
       element-desktop
       fd
       feh
+      file
       firefox
       freecad
       glances
@@ -48,6 +49,7 @@
       keepassxc
       kicad
       libnotify
+      libreoffice
       lldb
       marksman
       neofetch
