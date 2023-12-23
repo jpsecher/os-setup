@@ -6,9 +6,11 @@ in {
     ./hardware-configuration.nix
     <home-manager/nixos>
   ];
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.postBootCommands = "mount -o remount,ro,bind,noatime,discard /nix/store";
+  boot = {
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+    postBootCommands = "mount -o remount,ro,bind,noatime,discard /nix/store";
+  };
   networking.hostName = "knuth";
   networking.networkmanager.enable = true;
   time.timeZone = "Europe/Copenhagen";
@@ -35,9 +37,11 @@ in {
   services.xserver = {
     enable = true;
     displayManager.startx.enable = true;
-    layout = "us";
-    xkbVariant = "mac";
-    xkbOptions = "ctrl:nocaps";
+    xkb = {
+      layout = "us";
+      variant = "mac";
+      options = "ctrl:nocaps";
+    };
     libinput.touchpad.naturalScrolling = true;
   };
   console = {
@@ -64,12 +68,11 @@ in {
   };
   nixpkgs.config = {
     allowUnfree = true;
-    permittedInsecurePackages = ["electron-24.8.6"];
+    permittedInsecurePackages = ["electron-25.9.0"];
   };
   environment.systemPackages = [
     unstable.helix
     pkgs.zsh
-    pkgs.doas
   ];
   programs.zsh.enable = true;
   environment.shells = [ pkgs.zsh ];

@@ -7,17 +7,12 @@ in
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    enableSyntaxHighlighting = true;
+    syntaxHighlighting.enable = true;
     plugins = [ {
         name = "powerlevel10k";
         src = pkgs.zsh-powerlevel10k;
         file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
       }
-      # {
-      #   name = "powerlevel10k-config";
-      #   src = ../../../common/zsh;
-      #   file = "p10k.zsh";
-      # }
     ];
     initExtra = ''
       # See https://github.com/NixOS/nixpkgs/issues/154696#issuecomment-1238433989
