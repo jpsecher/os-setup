@@ -54,11 +54,10 @@ in {
   hardware.pulseaudio.enable = false;
   security = {
     rtkit.enable = true;
-    doas = {
+    sudo-rs = {
       enable = true;
       wheelNeedsPassword = false;
     };
-    sudo.wheelNeedsPassword = false;
   };
   services.pipewire = {
     enable = true;
