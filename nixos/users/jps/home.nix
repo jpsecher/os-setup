@@ -35,7 +35,6 @@
       direnv
       discord
       dmenu
-      doas
       docker
       element-desktop
       fd
@@ -48,6 +47,7 @@
       google-drive-ocamlfuse
       keepassxc
       kicad
+      lazydocker
       libnotify
       libreoffice
       lldb
@@ -61,6 +61,7 @@
       python310Packages.python-lsp-server
       ripgrep
       rust-analyzer
+      scrot
       slack
       sqlite
       terraform
@@ -68,6 +69,7 @@
       texlab
       thunderbird
       tree
+      virt-manager
       virtualbox
       wget
       xautolock
