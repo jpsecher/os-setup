@@ -31,9 +31,12 @@ in {
   };
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   virtualisation.docker.enable = true;
-  services.avahi.enable = true;
+  virtualisation.libvirtd.enable = true;
   systemd.services.systemd-logind.enable = true;
   systemd.services.systemd-logind.restartIfChanged = false;
+  services.avahi.enable = true;
+  services.locate.enable = true;
+  services.printing.enable = true;
   services.xserver = {
     enable = true;
     displayManager.startx.enable = true;
@@ -49,7 +52,6 @@ in {
     packages = with pkgs; [ terminus_font powerline-fonts ];
     earlySetup = true;
   };
-  services.printing.enable = true;
   sound.enable = true;
   hardware.pulseaudio.enable = false;
   security = {
@@ -75,6 +77,10 @@ in {
   ];
   programs.zsh.enable = true;
   environment.shells = [ pkgs.zsh ];
+  programs.fuse = {
+    userAllowOther = true;
+    mountMax = 128;
+  };
   networking.firewall = {
     allowedUDPPorts = [ 5353 ];  # For device discovery
     allowedUDPPortRanges = [{ from = 32768; to = 61000; }];  # For Streaming

@@ -69,6 +69,7 @@
       texlab
       thunderbird
       tree
+      usbutils
       virt-manager
       virtualbox
       wget
