@@ -1,5 +1,5 @@
 [keys.normal.space.t]
-T = [":write-all", ":hsplit-new", ":insert-output (.helix/run-tests.sh wip || true)"]
+T = [":write-all", ":hsplit-new", ":insert-output (.helix/run-tests.sh || true)"]
 t = ":sh (.helix/run-tests.sh wip || true)"
 m = ":sh .helix/run-typecheck.sh"
 
