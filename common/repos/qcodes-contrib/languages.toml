@@ -1,0 +1,5 @@
+[[language]]
+name = "python"
+roots = [".git"]
+workspace-lsp-roots = ["tests/QDevil"]
+auto-format = false
