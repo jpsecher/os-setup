@@ -2,6 +2,7 @@
 name = "markdown"
 soft-wrap.enable = true
 soft-wrap.wrap-indicator = ""
+# wrap-at-text-width = true
 
 [[language]]
 name = "python"

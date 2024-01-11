@@ -30,7 +30,11 @@ esc = ["collapse_selection", "keep_primary_selection"]
 "C-p" = "extend_search_prev"
 "C-j" = ["insert_mode", "insert_newline", "normal_mode"]
 
-[keys.normal.space.t]
-c = [":write-all", ":config-reload"]
-w = ":sh pwd"
+[keys.normal.space.space]
+c = ":open ~/.config/helix/config.toml ~/.config/helix/languages.toml"
+r = [":write-all", ":config-reload"]
+w = ":toggle-option soft-wrap.enable"
 h = [":vsplit-new", ":pipe (curl --silent https://raw.githubusercontent.com/helix-editor/helix/master/helix-term/src/commands.rs | grep -e '^fn [^(]*([a-z]*: &mut Context)' | sed -E 's%^fn ([^(]*).*%\\1%') | sort"]
+
+# [soft-wrap]
+# wrap-at-text-width = true
