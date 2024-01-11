@@ -3,6 +3,7 @@
   imports = [
     ./alacritty.nix
     ./brave.nix
+    ./chromium.nix
     ./dunst.nix
     ./git.nix
     ./helix.nix
@@ -51,6 +52,7 @@
       libnotify
       libreoffice
       lldb
+      mame
       marksman
       neofetch
       nil
@@ -69,6 +71,7 @@
       texlab
       thunderbird
       tree
+      unzip
       usbutils
       virt-manager
       virtualbox
