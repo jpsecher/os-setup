@@ -2,8 +2,6 @@
 {
   imports = [
     ./alacritty.nix
-    ./brave.nix
-    ./chromium.nix
     ./dunst.nix
     ./git.nix
     ./helix.nix
@@ -28,12 +26,13 @@
       awscli2
       bash
       bat
+      chromium
       clang
       clang-analyzer
       clangStdenv
       clang-tools
-      dig
       cutecom
+      dig
       direnv
       discord
       dmenu
