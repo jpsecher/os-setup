@@ -33,6 +33,7 @@
       clangStdenv
       clang-tools
       dig
+      cutecom
       direnv
       discord
       dmenu

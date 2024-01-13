@@ -89,7 +89,7 @@ in {
   users.users.jps = {
     isNormalUser = true;
     description = "Jens Peter Secher";
-    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd"];
+    extraGroups = [ "networkmanager" "wheel" "dialout" "docker" "libvirtd"];
     shell = pkgs.zsh;
   };
   home-manager = {
