@@ -8,6 +8,9 @@ in
     enable = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true;
+    shellAliases = {
+      glances = "glances --disable-bg";
+    };
     plugins = [ {
         name = "powerlevel10k";
         src = pkgs.zsh-powerlevel10k;

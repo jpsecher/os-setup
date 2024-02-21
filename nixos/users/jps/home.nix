@@ -23,9 +23,11 @@
       #utm
       afpfs-ng
       ansible
+      avrdude
       awscli2
       bash
       bat
+      cargo
       chromium
       clang
       clang-analyzer
@@ -44,8 +46,10 @@
       firefox
       freecad
       glances
+      glow
       gnome.gnome-calculator
       google-drive-ocamlfuse
+      jq
       keepassxc
       kicad
       lazydocker
@@ -61,8 +65,11 @@
       openscad
       python310
       python310Packages.python-lsp-server
+      remmina
       ripgrep
+      rsync
       rust-analyzer
+      rustc
       scrot
       slack
       sqlite
@@ -76,6 +83,7 @@
       virt-manager
       virtualbox
       wget
+      wireshark
       xautolock
       xss-lock
       zig

@@ -73,10 +73,12 @@ in {
   };
   environment.systemPackages = [
     unstable.helix
+    pkgs.mg
     pkgs.zsh
   ];
   programs.zsh.enable = true;
   environment.shells = [ pkgs.zsh ];
+  programs.wireshark.enable = true;
   programs.fuse = {
     userAllowOther = true;
     mountMax = 128;
@@ -89,7 +91,7 @@ in {
   users.users.jps = {
     isNormalUser = true;
     description = "Jens Peter Secher";
-    extraGroups = [ "networkmanager" "wheel" "dialout" "docker" "libvirtd"];
+    extraGroups = [ "networkmanager" "wheel" "dialout" "docker" "libvirtd" "wireshark"];
     shell = pkgs.zsh;
   };
   home-manager = {
