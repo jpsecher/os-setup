@@ -1,0 +1,4 @@
+- Install Google Drive
+- Install Chocolately
+- `choco install keepassxc`
+- 
