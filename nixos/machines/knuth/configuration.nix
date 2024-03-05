@@ -9,10 +9,14 @@ in {
   boot = {
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
+    initrd.luks.devices."luks-c8c8e176-441d-4f64-bdbd-9633baa3f758".device = "/dev/disk/by-uuid/c8c8e176-441d-4f64-bdbd-9633baa3f758";
     postBootCommands = "mount -o remount,ro,bind,noatime,discard /nix/store";
   };
-  networking.hostName = "knuth";
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "knuth";
+    networkmanager.enable = true;
+    # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  };
   time.timeZone = "Europe/Copenhagen";
   i18n.defaultLocale = "en_DK.UTF-8";
   i18n.extraLocaleSettings = {
@@ -30,13 +34,19 @@ in {
     cpuFreqGovernor = "conservative";
   };
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  virtualisation.docker.enable = true;
-  virtualisation.libvirtd.enable = true;
-  systemd.services.systemd-logind.enable = true;
-  systemd.services.systemd-logind.restartIfChanged = false;
+  virtualisation = {
+    docker.enable = true;
+    libvirtd.enable = true;
+  };
+  systemd.services.systemd-logind = {
+    enable = true;
+    restartIfChanged = false;
+  };
   services.avahi.enable = true;
   services.locate.enable = true;
   services.printing.enable = true;
+  sound.enable = true;
+  hardware.pulseaudio.enable = false;
   services.xserver = {
     enable = true;
     displayManager.startx.enable = true;
@@ -52,8 +62,6 @@ in {
     packages = with pkgs; [ terminus_font powerline-fonts ];
     earlySetup = true;
   };
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
   security = {
     rtkit.enable = true;
     sudo-rs = {
@@ -71,10 +79,12 @@ in {
     allowUnfree = true;
     permittedInsecurePackages = ["electron-25.9.0"];
   };
-  environment.systemPackages = [
-    unstable.helix
-    pkgs.mg
-    pkgs.zsh
+  environment.systemPackages = with pkgs; [
+    helix
+    mg
+    zsh
+    git
+    curl
   ];
   programs.zsh.enable = true;
   environment.shells = [ pkgs.zsh ];
@@ -100,5 +110,13 @@ in {
     useUserPackages = true;
     users.jps = import ./home-jps.nix;
   };
-  system.stateVersion = "23.05"; # Don't change
+  services.getty.autologinUser = "jps";
+  system.stateVersion = "23.11"; # Don't change
+# NEW
+  # Configure keymap in X11
+  # services.xserver = {
+  #   layout = "us";
+  #   xkbVariant = "mac";
+  #     options = "ctrl:nocaps";
+  # };
 }

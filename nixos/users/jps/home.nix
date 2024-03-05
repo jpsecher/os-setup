@@ -11,8 +11,18 @@
   ];
   xdg.enable = true;
   fonts.fontconfig.enable = true;
+  wayland.windowManager.sway = {
+    enable = true;
+    config = rec {
+      modifier = "Mod4";
+      terminal = "alacritty";
+      startup = [
+        {command = "chromium";}
+      ];
+    };
+  };
   home = {
-    stateVersion = "23.05";
+    stateVersion = "23.11";
     username = "jps";
     homeDirectory = "/home/jps";
     sessionVariables = {
