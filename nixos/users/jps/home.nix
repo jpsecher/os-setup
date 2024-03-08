@@ -19,6 +19,7 @@
           xkb_layout = "us";
           xkb_variant = "mac";
           xkb_options = "ctrl:nocaps";
+          natural_scroll = "enable";
         };
       };
       startup = [
