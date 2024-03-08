@@ -47,9 +47,9 @@ in {
   services.printing.enable = true;
   sound.enable = true;
   hardware.pulseaudio.enable = false;
+  hardware.opengl.enable = true;
   services.xserver = {
-    enable = true;
-    displayManager.startx.enable = true;
+    enable = false;
     xkb = {
       layout = "us";
       variant = "mac";
@@ -64,6 +64,7 @@ in {
   };
   security = {
     rtkit.enable = true;
+    polkit.enable = true;
     sudo-rs = {
       enable = true;
       wheelNeedsPassword = false;

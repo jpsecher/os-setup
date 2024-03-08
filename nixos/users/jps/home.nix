@@ -5,22 +5,28 @@
     ./dunst.nix
     ./git.nix
     ./helix.nix
-    ./xmonad.nix
-    ./lock-screen.nix
     ./zsh.nix
   ];
   xdg.enable = true;
   fonts.fontconfig.enable = true;
   wayland.windowManager.sway = {
     enable = true;
-    config = rec {
+    config = {
       modifier = "Mod4";
       terminal = "alacritty";
+      input = {
+        "*" = {
+          xkb_layout = "us";
+          xkb_variant = "mac";
+          xkb_options = "ctrl:nocaps";
+        };
+      };
       startup = [
-        {command = "chromium";}
+        # {command = "chromium";}
       ];
     };
   };
+  programs.swaylock.enable = true;
   home = {
     stateVersion = "23.11";
     username = "jps";
@@ -47,7 +53,7 @@
       dig
       direnv
       discord
-      dmenu
+      # dmenu
       docker
       element-desktop
       fd
@@ -83,6 +89,7 @@
       scrot
       slack
       sqlite
+      swaylock 
       terraform
       tetex
       texlab
@@ -94,8 +101,8 @@
       virtualbox
       wget
       wireshark
-      xautolock
-      xss-lock
+      # xautolock
+      # xss-lock
       zig
       zls
       zoom-us
