@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   wayland.windowManager.sway = {
     enable = true;
@@ -27,5 +28,12 @@
   programs.swaylock = {
     enable = true;
     # settings = {};
+  };
+  services.swayidle = {
+    enable = true;
+    events = [
+      { event = "before-sleep"; command = "${pkgs.swaylock}/bin/swaylock"; }
+      { event = "lock"; command = "lock"; }
+    ];
   };
 }

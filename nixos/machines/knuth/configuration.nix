@@ -15,7 +15,6 @@ in {
   networking = {
     hostName = "knuth";
     networkmanager.enable = true;
-    # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   };
   time.timeZone = "Europe/Copenhagen";
   i18n.defaultLocale = "en_DK.UTF-8";
@@ -65,6 +64,7 @@ in {
   security = {
     rtkit.enable = true;
     polkit.enable = true;
+    pam.services.swaylock = {};
     sudo-rs = {
       enable = true;
       wheelNeedsPassword = false;
@@ -92,7 +92,7 @@ in {
   programs.wireshark.enable = true;
   programs.fuse = {
     userAllowOther = true;
-    mountMax = 128;
+    mountMax = 32;
   };
   networking.firewall = {
     allowedUDPPorts = [ 5353 ];  # For device discovery
@@ -113,11 +113,4 @@ in {
   };
   services.getty.autologinUser = "jps";
   system.stateVersion = "23.11"; # Don't change
-# NEW
-  # Configure keymap in X11
-  # services.xserver = {
-  #   layout = "us";
-  #   xkbVariant = "mac";
-  #     options = "ctrl:nocaps";
-  # };
 }
