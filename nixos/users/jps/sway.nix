@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   wayland.windowManager.sway = {
     enable = true;
@@ -24,10 +24,12 @@
       ];
     };
   };
-  # xdg.configFile."sway/config".source = lib.mkForce ../../../common/sway/config;
+  xdg.dataFile."lockscreen-background".source = ../../../common/backgrounds/the-matrix.png;
   programs.swaylock = {
     enable = true;
-    # settings = {};
+    settings = {
+      image = "${config.xdg.dataHome}/lockscreen-background";
+    };
   };
   services.swayidle = {
     enable = true;
