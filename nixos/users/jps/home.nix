@@ -2,6 +2,7 @@
 {
   imports = [
     ./alacritty.nix
+    ./chromium.nix
     ./dunst.nix
     ./git.nix
     ./helix.nix
@@ -27,7 +28,6 @@
       bash
       bat
       cargo
-      chromium
       clang
       clang-analyzer
       clangStdenv
