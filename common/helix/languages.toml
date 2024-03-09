@@ -17,3 +17,7 @@ pyflakes = {enabled = false}
 pylint = {enabled = false}
 yapf = {enabled = false}
 ruff = { enabled = false}
+
+[[language]]
+name = "nix"
+indent = { tab-width = 2, unit = " " }

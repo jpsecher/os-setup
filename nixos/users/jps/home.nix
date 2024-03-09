@@ -5,29 +5,11 @@
     ./dunst.nix
     ./git.nix
     ./helix.nix
+    ./sway.nix
     ./zsh.nix
   ];
   xdg.enable = true;
   fonts.fontconfig.enable = true;
-  wayland.windowManager.sway = {
-    enable = true;
-    config = {
-      modifier = "Mod4";
-      terminal = "alacritty";
-      input = {
-        "*" = {
-          xkb_layout = "us";
-          xkb_variant = "mac";
-          xkb_options = "ctrl:nocaps";
-          natural_scroll = "enable";
-        };
-      };
-      startup = [
-        # {command = "chromium";}
-      ];
-    };
-  };
-  programs.swaylock.enable = true;
   home = {
     stateVersion = "23.11";
     username = "jps";
@@ -66,6 +48,7 @@
       glow
       gnome.gnome-calculator
       google-drive-ocamlfuse
+      just
       jq
       keepassxc
       kicad
@@ -90,7 +73,6 @@
       scrot
       slack
       sqlite
-      swaylock 
       terraform
       tetex
       texlab
