@@ -36,7 +36,6 @@
       dig
       direnv
       discord
-      # dmenu
       docker
       element-desktop
       fd
@@ -48,8 +47,8 @@
       glow
       gnome.gnome-calculator
       google-drive-ocamlfuse
-      just
       jq
+      just
       keepassxc
       kicad
       lazydocker
@@ -84,8 +83,6 @@
       virtualbox
       wget
       wireshark
-      # xautolock
-      # xss-lock
       zig
       zls
       zoom-us
