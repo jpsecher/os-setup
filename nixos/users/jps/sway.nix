@@ -24,12 +24,10 @@
       ];
       bars = [{
         statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs";
-        # lockCmd = "${pkgs.i3lock}/bin/i3lock -n -t -i ${config.xdg.dataHome}/lockscreen-background";
       }];
     };
   };
   xdg.dataFile."lockscreen-background".source = ../../../common/backgrounds/the-matrix.png;
-  xdg.configFile."i3status-rust/config.toml".source = ../../../common/i3status-rust/config.toml;
   programs.swaylock = {
     enable = true;
     settings = {
@@ -43,6 +41,7 @@
       { event = "lock"; command = "lock"; }
     ];
   };
+  xdg.configFile."i3status-rust/config.toml".source = ../../../common/i3status-rust/config.toml;
   programs.i3status-rust = {
     enable = true;
   };

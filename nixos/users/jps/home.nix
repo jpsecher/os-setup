@@ -59,6 +59,7 @@
       marksman
       neofetch
       nil
+      nix-index
       nodePackages_latest.typescript-language-server
       obsidian
       openscad
