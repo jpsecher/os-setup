@@ -27,6 +27,7 @@ in
     '';
     loginExtra = ''
       google-drive-ocamlfuse -label personal ~/gdrive-personal
+      sway
     '';
   };
   programs.fzf = {

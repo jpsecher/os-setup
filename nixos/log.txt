@@ -17,3 +17,6 @@ ln -sf ~/repos/personal/os-setup/common/zsh/zlogin ~/.zlogin
 # To make Gnome respect xkbOptions:
 gsettings reset org.gnome.desktop.input-sources xkb-options
 gsettings reset org.gnome.desktop.input-sources sources
+
+# To use devenv:
+nix-channel --add https://github.com/cachix/devenv/latest devenv
