@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, config, hostname, ... }:
 {
   wayland.windowManager.sway = {
     enable = true;
@@ -41,8 +41,6 @@
       { event = "lock"; command = "lock"; }
     ];
   };
-  xdg.configFile."i3status-rust/config.toml".source = ../../../common/i3status-rust/config.toml;
-  programs.i3status-rust = {
-    enable = true;
-  };
+  xdg.configFile."i3status-rust/config.toml".source = ../../../common/i3status-rust/${hostname}-config.toml;
+  programs.i3status-rust.enable = true;
 }

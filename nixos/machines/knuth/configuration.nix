@@ -1,5 +1,6 @@
 { pkgs, ...}:
 let
+  hostname = "knuth";
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
 in {
   imports = [
@@ -13,7 +14,7 @@ in {
     postBootCommands = "mount -o remount,ro,bind,noatime,discard /nix/store";
   };
   networking = {
-    hostName = "knuth";
+    hostName = hostname;
     networkmanager.enable = true;
   };
   time.timeZone = "Europe/Copenhagen";
@@ -32,7 +33,10 @@ in {
   powerManagement = {
     cpuFreqGovernor = "conservative";
   };
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings = {
+    experimental-features = [ "nix-command" "flakes" ];
+    trusted-users = [ "root" "jps" ];
+  };
   virtualisation = {
     docker.enable = true;
     libvirtd.enable = true;
@@ -82,7 +86,6 @@ in {
   };
   environment.systemPackages = with pkgs; [
     helix
-    mg
     zsh
     git
     curl
