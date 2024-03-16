@@ -26,6 +26,12 @@ block = "sound"
 [[block]]
 block = "battery"
 format = " $icon  $time"
+device = "BAT0"
+
+[[block]]
+block = "battery"
+format = " $icon  $time"
+device = "BAT1"
 
 [[block]]
 block = "notify"
