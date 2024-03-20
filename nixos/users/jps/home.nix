@@ -28,7 +28,6 @@
       awscli2
       bash
       bat
-      cargo
       clang
       clang-analyzer
       clangStdenv
@@ -69,8 +68,7 @@
       remmina
       ripgrep
       rsync
-      rust-analyzer
-      rustc
+      rustup
       scrot
       slack
       sqlite

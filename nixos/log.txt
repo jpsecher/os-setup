@@ -20,3 +20,7 @@ gsettings reset org.gnome.desktop.input-sources sources
 
 # To use devenv:
 nix-channel --add https://github.com/cachix/devenv/latest devenv
+
+# To use rustup (add rustup to packages, and then):
+rustup default stable
+rustup component add rust-analyzer

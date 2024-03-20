@@ -109,7 +109,7 @@ in {
     shell = pkgs.zsh;
   };
   home-manager = {
-    extraSpecialArgs = { inherit unstable; };
+    extraSpecialArgs = { inherit unstable; inherit hostname; };
     useGlobalPkgs = true;
     useUserPackages = true;
     users.jps = import ./home-jps.nix;
