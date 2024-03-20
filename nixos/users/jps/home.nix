@@ -72,6 +72,7 @@
       scrot
       slack
       sqlite
+      taplo
       terraform
       tetex
       texlab
