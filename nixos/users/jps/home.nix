@@ -47,6 +47,7 @@
       glow
       gnome.gnome-calculator
       google-drive-ocamlfuse
+      helvum  # pipewire sound patchbay
       jq
       just
       keepassxc
@@ -63,10 +64,12 @@
       nodePackages_latest.typescript-language-server
       obsidian
       openscad
+      pavucontrol
       python310
       python310Packages.python-lsp-server
       remmina
       ripgrep
+      roon-bridge
       rsync
       rustup
       scrot
