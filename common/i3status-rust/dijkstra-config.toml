@@ -24,6 +24,10 @@ interval = 5
 block = "sound"
 
 [[block]]
+block = "sound"
+device = "hw:2"
+
+[[block]]
 block = "notify"
 
 [[block]]

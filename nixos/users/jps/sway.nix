@@ -2,6 +2,7 @@
 {
   wayland.windowManager.sway = {
     enable = true;
+    # TODO: Mod4 + L to `systemctl suspend`
     config = {
       modifier = "Mod4";
       terminal = "alacritty";
