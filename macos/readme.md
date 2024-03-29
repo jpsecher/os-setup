@@ -10,45 +10,51 @@
 
     scutil --set HostName fowler
 
-## Packages
+## Packages/Casks
 
     $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    $ eval "$(/opt/homebrew/bin/brew shellenv)"
 
-    python3
     bat
     helix 
-    coreutilsi 
-    wget
+    // coreutils
+    // wget
     tree
     fzf
-    ansible
-
-### Casks
-
+    // ansible
     google-drive
-    brave-browser 
+    chromium
     obsidian
     signal
     thunderbird
-    docker
+    --cask docker
     slack
-    ltspice
+    // ltspice
     roon
-    skitch
+    // skitch
     viscosity 
-    scroll-reverser
+    // scroll-reverser
     maccy
+    alt-tab
     utm
+    vlc
+    glances
 
 ### Fonts
 
     brew tap homebrew/cask-fonts
-    brew install font-ubuntu-mono-nerd-font
+    // brew install font-ubuntu-mono-nerd-font
+    // brew install font-meslo-for-powerlevel10k
+    brew install --cask font-hack-nerd-font
 
 ## Downloads
 
-    https://alt-tab-macos.netlify.app/
+## Zsh
+
+    export REPO=~/repos/others
+    mkdir $REPO
+    cd $REPO
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git
+    echo "source $REPO/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
 
 ## Config files
 
@@ -66,3 +72,8 @@
 ## Services
 
     sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
+
+## DevEnv
+
+    sh <(curl -L https://nixos.org/nix/install)
+    (see devenv.sh)
