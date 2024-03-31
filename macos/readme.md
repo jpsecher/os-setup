@@ -38,6 +38,9 @@
     utm
     vlc
     glances
+    taplo
+    just
+    watch
 
 ### Fonts
 
@@ -45,6 +48,16 @@
     // brew install font-ubuntu-mono-nerd-font
     // brew install font-meslo-for-powerlevel10k
     brew install --cask font-hack-nerd-font
+
+### QMK
+
+    brew tap qmk/qmk
+    brew install qmk
+
+### Rust
+
+    brew install rust-up rust-analyzer
+    rustup-init
 
 ## Downloads
 
