@@ -2,13 +2,14 @@
 
 ## System Preferences:
 
-    * Track Pad: Tap to click, etc.
-    * Accessibility: Three finger drag
-    * Keyboard: Use function keys, Modifier keys, etc.
-    * Sharing: computer name
-    * Desktop: Hot corners.
+- Track Pad: Tap to click, etc.
+- Accessibility: Three finger drag
+- Keyboard: Use function keys, Modifier keys, etc.
+- Sharing: computer name
+- Desktop: Hot corners.
 
-    scutil --set HostName fowler
+    scutil --set HostName myhostname
+    defaults write com.apple.screencapture disable-shadow true
 
 ## Packages/Casks
 
