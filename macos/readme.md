@@ -46,9 +46,12 @@
 ### Fonts
 
     brew tap homebrew/cask-fonts
+    brew install font-meslo-for-powerlevel10k
     // brew install font-ubuntu-mono-nerd-font
-    // brew install font-meslo-for-powerlevel10k
-    brew install --cask font-hack-nerd-font
+    // brew install --cask font-hack-nerd-font
+    // brew install homebrew/cask-fonts/font-victor-mono-nerd-font
+
+Then switch to using "MesloLGS NF Regular" as the terminal font.
 
 ### QMK
 
