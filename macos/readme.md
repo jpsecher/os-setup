@@ -81,6 +81,9 @@ Then switch to using "MesloLGS NF Regular" as the terminal font.
     ln -sf $CONFIG/common/ssh/ssh-config ~/.ssh/config_file
     mkdir -p $(bat --config-dir)
     ln -sf $CONFIG/common/bat/config $(bat --config-dir)/config
+    mkdir -p ~/.config/helix
+    ln -sf $CONFIG/common/helix/config.toml ~/.config/helix
+    ln -sf $CONFIG/common/helix/languages.toml ~/.config/helix
 
 ## Python
 
