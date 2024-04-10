@@ -15,32 +15,35 @@
 
     $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-    bat
-    helix 
-    // coreutils
-    // wget
-    tree
-    fzf
-    // ansible
-    google-drive
-    chromium
-    obsidian
-    signal
-    thunderbird
     --cask docker
-    slack
+    // ansible
+    // coreutils
     // ltspice
-    roon
-    // skitch
-    viscosity 
     // scroll-reverser
-    maccy
+    // skitch
+    // wget
+    alacritty
     alt-tab
-    utm
-    vlc
+    bat
+    // chromium
+    duckduckgo
+    fzf
     glances
-    taplo
+    google-drive
+    helix 
     just
+    maccy
+    obsidian
+    roon
+    signal
+    slack
+    taplo
+    thunderbird
+    tmux
+    tree
+    utm
+    viscosity 
+    vlc
     watch
 
 ### Fonts
@@ -51,7 +54,7 @@
     // brew install --cask font-hack-nerd-font
     // brew install homebrew/cask-fonts/font-victor-mono-nerd-font
 
-Then switch to using "MesloLGS NF Regular" as the terminal font.
+Then switch to using "MesloLGS NF Regular" as the Terminal font.
 
 ### QMK
 
@@ -84,6 +87,8 @@ Then switch to using "MesloLGS NF Regular" as the terminal font.
     mkdir -p ~/.config/helix
     ln -sf $CONFIG/common/helix/config.toml ~/.config/helix
     ln -sf $CONFIG/common/helix/languages.toml ~/.config/helix
+    mkdir -p ~/.config/alacritty
+    ln -sf $CONFIG/common/alacritty/alacritty.toml ~/.config/alacritty
 
 ## Python
 
