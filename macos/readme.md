@@ -16,26 +16,27 @@
     $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
     --cask docker
-    // ansible
-    // coreutils
-    // ltspice
-    // scroll-reverser
-    // skitch
-    // wget
     alacritty
     alt-tab
+    awscli
     bat
-    // chromium
     duckduckgo
     fzf
     glances
     google-drive
     helix 
     just
+    keepassxc
+    kicad
+    ltspice
     maccy
+    marksman
+    neofetch
     obsidian
+    openscad
     roon
     signal
+    skitch
     slack
     taplo
     thunderbird
@@ -43,6 +44,7 @@
     tree
     utm
     viscosity 
+    terraform-lsp
     vlc
     watch
 
@@ -50,9 +52,6 @@
 
     brew tap homebrew/cask-fonts
     brew install font-meslo-for-powerlevel10k
-    // brew install font-ubuntu-mono-nerd-font
-    // brew install --cask font-hack-nerd-font
-    // brew install homebrew/cask-fonts/font-victor-mono-nerd-font
 
 Then switch to using "MesloLGS NF Regular" as the Terminal font.
 
@@ -92,7 +91,7 @@ Then switch to using "MesloLGS NF Regular" as the Terminal font.
 
 ## Python
 
-    pip3 install --upgrade pip
+    // pip3 install --upgrade pip
 
 ## Services
 
