@@ -1,4 +1,4 @@
 {
   programs.alacritty.enable = true;
-  xdg.configFile."alacritty/alacritty.yml".source = ../../../common/alacritty/alacritty.yml;
+  xdg.configFile."alacritty/alacritty.toml".source = ../../../common/alacritty/alacritty.toml;
 }
