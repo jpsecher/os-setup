@@ -37,6 +37,8 @@
       direnv
       discord
       docker
+      dogdns
+      duf
       element-desktop
       fd
       feh
@@ -49,6 +51,7 @@
       google-drive-ocamlfuse
       helvum  # pipewire sound patchbay
       jq
+      jqp
       just
       keepassxc
       kicad
@@ -58,6 +61,7 @@
       lldb
       mame
       marksman
+      ncdu
       neofetch
       nil
       nix-index
@@ -73,6 +77,7 @@
       rsync
       rustup
       scrot
+      sd
       slack
       sqlite
       taplo
@@ -87,6 +92,7 @@
       virtualbox
       wget
       wireshark
+      xh
       zig
       zls
       zoom-us
