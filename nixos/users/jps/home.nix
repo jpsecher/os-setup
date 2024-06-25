@@ -93,6 +93,7 @@
       wget
       wireshark
       xh
+      yazi
       zig
       zls
       zoom-us
