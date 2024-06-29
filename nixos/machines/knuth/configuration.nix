@@ -58,8 +58,8 @@ in {
       variant = "mac";
       options = "ctrl:nocaps";
     };
-    libinput.touchpad.naturalScrolling = true;
   };
+  services.libinput.touchpad.naturalScrolling = true;
   console = {
     useXkbConfig = true;
     packages = with pkgs; [ terminus_font powerline-fonts ];

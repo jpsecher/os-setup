@@ -99,8 +99,9 @@
       zls
       zoom-us
       # Fonts
-      victor-mono
-      nerdfonts
+      meslo-lgs-nf
+      # victor-mono
+      # nerdfonts
     ];
   };
 }
