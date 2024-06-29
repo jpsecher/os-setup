@@ -78,6 +78,7 @@
       rustup
       scrot
       sd
+      signal-desktop
       slack
       sqlite
       taplo
