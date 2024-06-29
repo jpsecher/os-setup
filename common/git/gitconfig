@@ -12,3 +12,4 @@
 	default = simple
 [alias]
 	get = pull --ff-only
+	sum = log --all --stat --graph --decorate
