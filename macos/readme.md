@@ -13,14 +13,16 @@
 
 ## Packages/Casks
 
-    $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
     --cask docker
     alacritty
     alt-tab
     awscli
+    bash-language-server
     bat
     duckduckgo
+    eza
     fzf
     glances
     google-drive
@@ -34,6 +36,7 @@
     neofetch
     obsidian
     openscad
+    rectangle
     roon
     signal
     skitch
@@ -47,13 +50,22 @@
     terraform-lsp
     vlc
     watch
+    zoxide
 
 ### Fonts
 
-    brew tap homebrew/cask-fonts
     brew install font-meslo-for-powerlevel10k
 
 Then switch to using "MesloLGS NF Regular" as the Terminal font.
+
+## Zsh
+
+    export REPO=~/repos/others
+    mkdir $REPO
+    cd $REPO
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git
+    ln -s ~/repos/personal/os-setup/macos/p10k.zsh ~/.p10k.zsh
+    ln -s ~/repos/personal/os-setup/macos/zshrc ~/.zshrc
 
 ### QMK
 
@@ -62,18 +74,11 @@ Then switch to using "MesloLGS NF Regular" as the Terminal font.
 
 ### Rust
 
-    brew install rust-up rust-analyzer
+    brew install rustup-init rust-analyzer
     rustup-init
 
 ## Downloads
 
-## Zsh
-
-    export REPO=~/repos/others
-    mkdir $REPO
-    cd $REPO
-    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git
-    echo "source $REPO/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
 
 ## Config files
 
