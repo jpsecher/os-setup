@@ -6,7 +6,7 @@ export HOST=knuth
 export USER=jps
 export REPO=~/repos/personal/os-setup
 sudo cp $REPO/nixos/machine/$HOST/configuration /etc/nixos/configuration/nix
-sudo ln -s $REPO/users/$USER/home.nix /etc/nixos/home-$USER.nix
+sudo ln -s $REPO/nixos/users/$USER/home.nix /etc/nixos/home-$USER.nix
 
 # Google drive
 google-drive-ocamlfuse  # If not working, add -debug and dig out the URL
