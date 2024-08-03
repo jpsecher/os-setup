@@ -1,5 +1,9 @@
+[env]
+TERM = "xterm-256color"
+
 [window]
 dynamic_title = true
+option_as_alt = "Left"
 
 [font]
 size = 16.0
