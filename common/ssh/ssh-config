@@ -1,3 +1,8 @@
+Host i-*
+  ProxyCommand sh -c "aws ssm start-session --target %h"
+  # ProxyCommand sh -c "aws ssm start-session --target %h --parameters 'portNumber=%p'"
+  # ProxyCommand sh -c "aws ssm start-session --target %h --document-name start-ssh-session-with-dynamic-key --parameters 'portNumber=%p'"
+  User ubuntu
 Host 127.*
   StrictHostKeyChecking no
   LogLevel ERROR
