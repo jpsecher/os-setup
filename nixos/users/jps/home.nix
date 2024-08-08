@@ -65,6 +65,7 @@
       neofetch
       nil
       nix-index
+      nnn
       nodePackages_latest.typescript-language-server
       obsidian
       openscad
@@ -81,6 +82,7 @@
       signal-desktop
       slack
       sqlite
+      ssm-session-manager-plugin
       taplo
       terraform
       tetex
