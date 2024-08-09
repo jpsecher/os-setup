@@ -47,6 +47,7 @@
     tree
     utm
     viscosity 
+    terraform-ls
     terraform-lsp
     vlc
     watch
