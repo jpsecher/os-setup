@@ -28,6 +28,7 @@
       awscli2
       bash
       bat
+      bruno
       clang
       clang-analyzer
       clangStdenv
@@ -37,25 +38,25 @@
       direnv
       discord
       docker
-      dogdns
-      duf
-      element-desktop
-      fd
-      feh
+      dogdns  # dig alternative
+      duf  # du alternative
+      element-desktop  # matrix chat room
+      fd  # find alternative
+      feh  # image viewer
       file
       firefox
       freecad
       glances
-      glow
+      glow  # markdown render
       gnome.gnome-calculator
       google-drive-ocamlfuse
       helvum  # pipewire sound patchbay
       jq
-      jqp
+      jqp  # TUI for interactive jq
       just
       keepassxc
       kicad
-      lazydocker
+      lazydocker  # TUI for docker management
       libnotify
       libreoffice
       lldb
