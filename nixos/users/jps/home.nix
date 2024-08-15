@@ -22,18 +22,18 @@
     packages = with pkgs; [
       # Checkout if builtins.currentSystem == "x86_64-linux" then ...
       #utm
-      afpfs-ng
+      afpfs-ng  # Apple FS
       ansible
       avrdude
       awscli2
       bash
       bat
-      bruno
+      bruno  # API testing client
       clang
       clang-analyzer
       clangStdenv
       clang-tools
-      cutecom
+      cutecom  # Serial terminal
       dig
       direnv
       discord
@@ -53,7 +53,7 @@
       helvum  # pipewire sound patchbay
       jq
       jqp  # TUI for interactive jq
-      just
+      just  # Make alternative
       keepassxc
       kicad
       lazydocker  # TUI for docker management
@@ -61,31 +61,32 @@
       libreoffice
       lldb
       mame
-      marksman
-      ncdu
+      marksman  # Markdown LS
+      ncdu  # TUI alternative for du
       neofetch
-      nil
+      nil  # Nix LS
       nix-index
-      nnn
+      nnn  # TUI file manager
       nodePackages_latest.typescript-language-server
       obsidian
       openscad
-      pavucontrol
+      pavucontrol  # Sound control
       python310
       python310Packages.python-lsp-server
-      remmina
-      ripgrep
+      remmina  # Windows remote server client
+      ripgrep  # Recursive grep (rg)
       roon-bridge
       rsync
       rustup
-      scrot
-      sd
+      scrot  # Screen capture CLI
+      sd  # String replacement
       signal-desktop
       slack
       sqlite
-      ssm-session-manager-plugin
-      taplo
+      ssm-session-manager-plugin  # AWS SSM CLI
+      taplo  # TOML LS
       terraform
+      terraform-ls
       tetex
       texlab
       thunderbird
@@ -96,10 +97,10 @@
       virtualbox
       wget
       wireshark
-      xh
-      yazi
+      xh  # curl alternative
+      yazi  # TUI file manager
       zig
-      zls
+      zls  # Zig LS
       zoom-us
       # Fonts
       meslo-lgs-nf
