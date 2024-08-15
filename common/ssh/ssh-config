@@ -1,7 +1,7 @@
 Host i-*
-  ProxyCommand sh -c "aws ssm start-session --target %h"
-  # ProxyCommand sh -c "aws ssm start-session --target %h --parameters 'portNumber=%p'"
-  # ProxyCommand sh -c "aws ssm start-session --target %h --document-name start-ssh-session-with-dynamic-key --parameters 'portNumber=%p'"
+  ProxyCommand sh -c "aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters 'portNumber=%p'"
+  IdentityFile ~/.ssh/dnp-devops-production-ed25519
+  IdentityFile ~/.ssh/dnp-devops-staging-ed25519
   User ubuntu
 Host 127.*
   StrictHostKeyChecking no
