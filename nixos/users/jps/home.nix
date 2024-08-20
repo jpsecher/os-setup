@@ -38,7 +38,7 @@
       direnv
       discord
       docker
-      dogdns  # dig alternative
+      doggo  # dig alternative
       duf  # du alternative
       element-desktop  # matrix chat room
       fd  # find alternative
@@ -60,7 +60,7 @@
       libnotify
       libreoffice
       lldb
-      mame
+      #mame
       marksman  # Markdown LS
       ncdu  # TUI alternative for du
       neofetch
@@ -81,7 +81,7 @@
       scrot  # Screen capture CLI
       sd  # String replacement
       signal-desktop
-      slack
+      #slack
       sqlite
       ssm-session-manager-plugin  # AWS SSM CLI
       taplo  # TOML LS
