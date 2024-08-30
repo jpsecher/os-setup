@@ -39,7 +39,6 @@
     rectangle
     roon
     signal
-    skitch
     slack
     taplo
     thunderbird
@@ -72,6 +71,7 @@ Then switch to using "MesloLGS NF Regular" as the Terminal font.
 
     brew tap qmk/qmk
     brew install qmk
+    qmk setup -H ~/repos/personal/qmk jpsecher/qmk_firmware
 
 ### Rust
 
@@ -86,14 +86,14 @@ Then switch to using "MesloLGS NF Regular" as the Terminal font.
     export CONFIG=~/repos/personal/os-setup
     ln -sf $CONFIG/common/git/gitconfig ~/.gitconfig
     ln -sf $CONFIG/common/git/gitignore-global ~/.gitignore-global
-    ln -sf $CONFIG/common/ssh/ssh-config ~/.ssh/config_file
+    ln -sf $CONFIG/common/ssh/ssh-config ~/.ssh/config
     mkdir -p $(bat --config-dir)
     ln -sf $CONFIG/common/bat/config $(bat --config-dir)/config
     mkdir -p ~/.config/helix
     ln -sf $CONFIG/common/helix/config.toml ~/.config/helix
     ln -sf $CONFIG/common/helix/languages.toml ~/.config/helix
     mkdir -p ~/.config/alacritty
-    ln -sf $CONFIG/common/alacritty/alacritty.toml ~/.config/alacritty
+    ln -sf $CONFIG/common/alacritty/alacritty-medium.toml ~/.config/alacritty/alacritty.toml
 
 ## Python
 

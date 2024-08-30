@@ -10,12 +10,21 @@ source ~/repos/others/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+## cd alternative
 if command -v zoxide &> /dev/null; then
   eval "$(zoxide init zsh)"
 fi
 
+## ls alternative
 if command -v eza &> /dev/null; then
   alias ls="eza"
 fi
 
-export EDITOR=hx
+## Enable autocomplete
+autoload -U compinit
+compinit
+
+## Helix default editor
+if command -v hx &> /dev/null; then
+  export EDITOR=hx
+fi
