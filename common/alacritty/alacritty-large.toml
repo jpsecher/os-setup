@@ -4,6 +4,7 @@ TERM = "xterm-256color"
 [window]
 dynamic_title = true
 option_as_alt = "OnlyLeft"
+padding = { x = 5, y = 5 }
 
 [font]
 size = 16.0
