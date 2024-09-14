@@ -1,34 +1,36 @@
 alacritty
-    alt-tab
-    awscli
-    bash-language-server
-    bat
-    duckduckgo
-    eza
-    fzf
-    glances
-    google-drive
-    helix 
-    just
-    keepassxc
-    kicad
-    ltspice
-    maccy
-    marksman
-    neofetch
-    obsidian
-    openscad
-    python-lsp-server
-    rectangle
-    roon
-    signal
-    taplo
-    thunderbird
-    tmux
-    tree
-    viscosity 
-    terraform-ls
-    terraform-lsp
-    vlc
-    watch
-    zoxide
+alt-tab
+awscli
+bash-language-server
+bat
+duckduckgo
+eza
+fzf
+glances
+google-drive
+helix 
+just
+keepassxc
+kicad
+ltspice
+maccy
+marksman
+neofetch
+obsidian
+openscad
+python-lsp-server
+rectangle
+roon
+signal
+taplo
+terraform-ls
+terraform-lsp
+thunderbird
+tmux
+tree
+typescript-language-server
+viscosity 
+vlc
+vscode-langservers-extracted
+watch
+zoxide
