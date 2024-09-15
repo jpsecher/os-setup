@@ -7,16 +7,15 @@ soft-wrap.wrap-indicator = ""
 [[language]]
 name = "python"
 language-servers = ["pylsp"]
+auto-format = true
 
 [language-server.pylsp.config.pylsp.plugins]
-flake8 = {enabled = true, ignore = ["E501"]}
-autopep8 = {enabled = false}
-mccabe = {enabled = false}
-pycodestyle = {enabled = false}
-pyflakes = {enabled = false}
-pylint = {enabled = false}
-yapf = {enabled = false}
-ruff = { enabled = false}
+black = { enabled = true }  # Code formatter
+flake8 = {enabled = true}  # Style Guide
+rope = { enabled = true }  # Refactoring
+jedi_completion = {enabled = true}  # Autocompletion, static analysis and refactoring
+ruff = {enabled = true}  # Linter
+pydocstyle = {enabled = false}  # DocString conformance (PEP 257)
 
 [[language]]
 name = "nix"
