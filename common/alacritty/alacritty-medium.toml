@@ -1,3 +1,6 @@
+[mouse]
+hide_when_typing = true
+
 [window]
 option_as_alt = "OnlyLeft"
 padding = { x = 5, y = 5 }
