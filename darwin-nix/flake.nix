@@ -43,6 +43,18 @@
       nix.extraOptions = ''
         extra-platforms = x86_64-darwin aarch64-darwin
       '';
+
+      fonts = {
+        packages = with pkgs; [
+          meslo-lgs-nf
+          # (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+          # font-awesome
+          # material-design-icons
+          # nur.repos.devins2518.iosevka-serif
+          # tenderness
+          # spleen
+        ];
+      };
     };
   in
   {
