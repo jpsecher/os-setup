@@ -1,11 +1,15 @@
 { pkgs, ... }: {
   imports = [
     ./alacritty.nix
+    ./git.nix
     ./helix.nix
     ./zsh.nix
   ];
   home.stateVersion = "24.05";
   programs.home-manager.enable = true;
+  home.sessionVariables = {
+    EDITOR = "hx";
+  };
   home.packages = with pkgs; [
     # ansible
     # avrdude
