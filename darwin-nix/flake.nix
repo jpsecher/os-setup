@@ -26,7 +26,10 @@
         };
         taps = [];
         brews = [];
-        casks = [ "google-drive" ];
+        casks = [
+          "alt-tab"
+          "google-drive"
+        ];
       };
       environment.etc."sudoers.d/jps".text = ''
         jps ALL=(ALL) NOPASSWD:ALL
