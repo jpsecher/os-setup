@@ -69,7 +69,7 @@
     # scrot  # Screen capture CLI
     # sd  # String replacement
     # signal-desktop
-    # #slack
+    slack
     # sqlite
     # ssm-session-manager-plugin  # AWS SSM CLI
     # taplo  # TOML LS
