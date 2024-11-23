@@ -59,6 +59,7 @@
     # pavucontrol  # Sound control
     # python310
     # python310Packages.python-lsp-server
+    rectangle
     # remmina  # Windows remote server client
     # ripgrep  # Recursive grep (rg)
     # roon-bridge
