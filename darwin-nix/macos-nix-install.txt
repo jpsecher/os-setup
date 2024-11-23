@@ -1,3 +1,6 @@
+See first: https://github.com/dustinlyons/nixos-config
+
+
 scutil --set HostName shamir
 (In Sharing, change hostname to shamir)
 

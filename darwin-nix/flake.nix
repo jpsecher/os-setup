@@ -24,8 +24,11 @@
           brewfile = true;
           lockfiles = true;
         };
+        taps = [];
+        brews = [];
+        casks = [ "google-drive" ];
       };
-      environment.etc."sudoers.d/homebrew".text = ''
+      environment.etc."sudoers.d/jps".text = ''
         jps ALL=(ALL) NOPASSWD:ALL
       '';
       environment.systemPackages =

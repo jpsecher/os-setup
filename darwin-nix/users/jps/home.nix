@@ -41,7 +41,7 @@
     # jq
     # jqp  # TUI for interactive jq
     just  # Make alternative
-    # keepassxc
+    keepassxc
     # kicad
     # lazydocker  # TUI for docker management
     # libnotify
