@@ -54,7 +54,7 @@
     # nix-index
     # nnn  # TUI file manager
     # nodePackages_latest.typescript-language-server
-    # obsidian
+    obsidian
     # openscad
     # pavucontrol  # Sound control
     # python310
@@ -76,7 +76,7 @@
     # terraform-ls
     # tetex
     # texlab
-    # thunderbird
+    # intel.thunderbird-128
     tree
     # unzip
     # usbutils

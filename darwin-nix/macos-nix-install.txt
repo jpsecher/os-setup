@@ -58,3 +58,7 @@ https://github.com/andreivolt/nixos-config/blob/master/darwin-configuration.nix
 
     nix flake update
     darwin-rebuild switch --flake .#shamir
+
+## Trouble shooting
+
+Keyboard disconnected after sleep: https://tosbourn.com/usb-disconnects-macos/
