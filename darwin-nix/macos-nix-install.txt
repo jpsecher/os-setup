@@ -58,6 +58,9 @@ https://github.com/andreivolt/nixos-config/blob/master/darwin-configuration.nix
 
     nix flake update
     darwin-rebuild switch --flake .#shamir
+## Specific versions of packages
+
+https://www.nixhub.io
 
 ## Trouble shooting
 

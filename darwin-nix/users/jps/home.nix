@@ -3,6 +3,7 @@
     ./alacritty.nix
     ./git.nix
     ./helix.nix
+    # ./terraform.nix
     ./zsh.nix
   ];
   home.stateVersion = "24.05";
