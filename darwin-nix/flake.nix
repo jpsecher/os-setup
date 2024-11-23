@@ -30,6 +30,7 @@
         casks = [
           "alt-tab"
           "google-drive"
+          "roon"
         ];
       };
       environment.etc."sudoers.d/jps".text = ''
