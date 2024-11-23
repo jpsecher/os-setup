@@ -6,12 +6,13 @@
     # nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-    home-manager.url = "github:nix-community/home-manager/master";
+    home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager }:
   let
+    # intel = import <nixpkgs> { system = "x86_64-darwin"; };
     configuration = { pkgs, config, ... }: {
       homebrew = {
         enable = true;
@@ -115,12 +116,6 @@
       fonts = {
         packages = with pkgs; [
           meslo-lgs-nf
-          # (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
-          # font-awesome
-          # material-design-icons
-          # nur.repos.devins2518.iosevka-serif
-          # tenderness
-          # spleen
         ];
       };
     };

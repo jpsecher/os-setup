@@ -47,6 +47,7 @@
     # libnotify
     # libreoffice
     # lldb
+    maccy
     # marksman  # Markdown LS
     # ncdu  # TUI alternative for du
     neofetch
