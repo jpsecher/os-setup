@@ -11,15 +11,30 @@
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager }:
   let
-    configuration = { pkgs, ... }: {
+    configuration = { pkgs, config, ... }: {
+      homebrew = {
+        enable = true;
+        onActivation = {
+          autoUpdate = false;
+          # Remove all unmanaged packages
+          cleanup = "zap";
+        };
+        global = {
+          brewfile = true;
+          lockfiles = true;
+        };
+      };
+      environment.etc."sudoers.d/homebrew".text = ''
+        jps ALL=(ALL) NOPASSWD:ALL
+      '';
       environment.systemPackages =
         [ pkgs.helix
         ];
 
       nix.settings.experimental-features = "nix-command flakes";
+      nix.configureBuildUsers = true;
 
       security.pam.enableSudoTouchIdAuth = true;
-
       # Set Git commit hash for darwin-version.
       system.configurationRevision = self.rev or self.dirtyRev or null;
 
@@ -34,12 +49,45 @@
         dock.autohide = true;
         dock.mru-spaces = false;
         finder.AppleShowAllExtensions = true;
-        finder.FXPreferredViewStyle = "clmv";
-        # loginwindow.LoginwindowText = "nixcademy.com";
+        # Options are: Nlsv (list), clmv (column), Flwv (cover flow)
+        finder.FXPreferredViewStyle = "flmv";
+        loginwindow.LoginwindowText = "Shamir";
         screencapture.location = "~/Downloads";
         screensaver.askForPasswordDelay = 10;
+        LaunchServices.LSQuarantine = false;
+        # CustomUserPreferences."com.apple.Spotlight"."orderedItems" = [
+        #   { enabled = 1; name = "APPLICATIONS"; }
+        #   { enabled = 1; name = "MENU_EXPRESSION"; }
+        #   { enabled = 0; name = "CONTACT"; }
+        #   { enabled = 1; name = "MENU_CONVERSION"; }
+        #   { enabled = 0; name = "MENU_DEFINITION"; }
+        #   { enabled = 0; name = "SOURCE"; }
+        #   { enabled = 0; name = "DOCUMENTS"; }
+        #   { enabled = 0; name = "EVENT_TODO"; }
+        #   { enabled = 0; name = "DIRECTORIES"; }
+        #   { enabled = 0; name = "FONTS"; }
+        #   { enabled = 0; name = "IMAGES"; }
+        #   { enabled = 0; name = "MESSAGES"; }
+        #   { enabled = 0; name = "MOVIES"; }
+        #   { enabled = 0; name = "MUSIC"; }
+        #   { enabled = 0; name = "MENU_OTHER"; }
+        #   { enabled = 0; name = "PDF"; }
+        #   { enabled = 0; name = "PRESENTATIONS"; }
+        #   { enabled = 0; name = "MENU_SPOTLIGHT_SUGGESTIONS"; }
+        #   { enabled = 0; name = "SPREADSHEETS"; }
+        #   { enabled = 1; name = "SYSTEM_PREFS"; }
+        #   { enabled = 0; name = "TIPS"; }
+        #   { enabled = 0; name = "BOOKMARKS"; }
+        # ];
       };
-      
+      # system.activationScripts.applications.text = ''
+      #   echo "setting up ~/Applications/Nix..."
+      #   rm -rf ~/Applications/Nix
+      #   mkdir -p ~/Applications/Nix
+      #   chown jps: ~/Applications/Nix
+      #   find ${config.system.build.applications}/Applications -maxdepth 1 -type l -exec ln -sf {} ~/Applications/Nix \;
+      # '';
+
       nix.extraOptions = ''
         extra-platforms = x86_64-darwin aarch64-darwin
       '';

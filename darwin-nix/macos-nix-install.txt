@@ -44,3 +44,14 @@ nix flake update --commit-lock-file
 ## On next new system
 
 Run nix run nix-darwin -- --flake github:my-user/my-repo#my-config
+
+## MacOS defaults
+
+https://github.com/LnL7/nix-darwin/tree/master/modules/system/defaults
+
+https://github.com/andreivolt/nixos-config/blob/master/darwin-configuration.nix
+
+## Update the system
+
+    nix flake update
+    darwin-rebuild switch --flake .#shamir
