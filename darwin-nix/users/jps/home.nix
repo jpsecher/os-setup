@@ -16,20 +16,20 @@
     # avrdude
     # awscli2
     bat
-    # bruno  # API testing client
+    bruno  # API testing client
     # clang
     # clang-analyzer
     # clangStdenv
     # clang-tools
     # cutecom  # Serial terminal
-    # dig
+    dig
     # direnv
     # discord
     # docker
-    # doggo  # dig alternative
-    # duf  # du alternative
+    doggo  # dig alternative
+    duf  # du alternative
     # element-desktop  # matrix chat room
-    # fd  # find alternative
+    fd  # find alternative
     # feh  # image viewer
     # file
     # firefox
@@ -39,8 +39,8 @@
     # gnome.gnome-calculator
     # google-drive-ocamlfuse
     # helvum  # pipewire sound patchbay
-    # jq
-    # jqp  # TUI for interactive jq
+    jq
+    jqp  # TUI for interactive jq
     just  # Make alternative
     keepassxc
     # kicad
@@ -54,7 +54,7 @@
     neofetch
     # nil  # Nix LS
     # nix-index
-    # nnn  # TUI file manager
+    nnn  # TUI file manager
     # nodePackages_latest.typescript-language-server
     obsidian
     # openscad
