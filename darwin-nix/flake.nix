@@ -107,13 +107,15 @@
           { enabled = 0; name = "BOOKMARKS"; }
         ];
       };
-      # system.activationScripts.applications.text = ''
-      #   echo "setting up ~/Applications/Nix..."
-      #   rm -rf ~/Applications/Nix
-      #   mkdir -p ~/Applications/Nix
-      #   chown jps: ~/Applications/Nix
-      #   find ${config.system.build.applications}/Applications -maxdepth 1 -type l -exec ln -sf {} ~/Applications/Nix \;
-      # '';
+      # https://github.com/LnL7/nix-darwin/issues/214
+      system.activationScripts.postUserActivation.text = ''
+        apps_source="${config.system.build.applications}/Applications"
+        moniker="Nix Trampolines"
+        app_target_base="$HOME/Applications"
+        app_target="$app_target_base/$moniker"
+        mkdir -p "$app_target"
+        ${pkgs.rsync}/bin/rsync --archive --checksum --chmod=-w --copy-unsafe-links --delete "$apps_source/" "$app_target"
+      '';
 
       nix.extraOptions = ''
         extra-platforms = x86_64-darwin aarch64-darwin
