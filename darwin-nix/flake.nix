@@ -35,6 +35,7 @@
           "alt-tab"
           "google-drive"
           "roon"
+          "docker"
         ];
       };
       environment.etc."sudoers.d/jps".text = ''

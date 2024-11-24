@@ -13,8 +13,15 @@
   };
   home.packages = with pkgs; [
     # ansible
-    # avrdude
+    avrdude
     awscli2
+    vscode-langservers-extracted
+    nodePackages.bash-language-server
+    dockerfile-language-server-nodejs
+    ansible-language-server
+    nodePackages.typescript-language-server
+    yaml-language-server
+    terraform-ls
     bat
     bruno  # API testing client
     # clang
@@ -43,16 +50,17 @@
     jqp  # TUI for interactive jq
     just  # Make alternative
     keepassxc
-    # kicad
-    # lazydocker  # TUI for docker management
+    # kicad  # broken
+    lazydocker  # TUI for docker management
+    lazygit
     # libnotify
     # libreoffice
-    # lldb
+    lldb
     maccy
-    # marksman  # Markdown LS
+    marksman  # Markdown LS
     # ncdu  # TUI alternative for du
     neofetch
-    # nil  # Nix LS
+    nil  # Nix LS
     # nix-index
     nnn  # TUI file manager
     # nodePackages_latest.typescript-language-server
@@ -67,6 +75,7 @@
     # ripgrep  # Recursive grep (rg)
     # roon-bridge
     # rsync
+    rust-analyzer
     # rustup
     # scrot  # Screen capture CLI
     # sd  # String replacement
