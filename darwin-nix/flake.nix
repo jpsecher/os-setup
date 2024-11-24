@@ -8,9 +8,13 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    ## https://github.com/NixOS/nixpkgs/issues/355377
+    ghostscript-fix = {
+      url = "github:carlocab/nixpkgs/fix-ghostscript";
+    };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, ghostscript-fix }:
   let
     # intel = import <nixpkgs> { system = "x86_64-darwin"; };
     configuration = { pkgs, config, ... }: {
@@ -129,6 +133,11 @@
         configuration 
         home-manager.darwinModules.home-manager
         {
+          nixpkgs.overlays = [
+            (final: prev: {
+              ghostscript = ghostscript-fix.legacyPackages.${prev.system}.ghostscript;
+            })
+          ];
           users.users.jps.home = "/Users/jps";
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;

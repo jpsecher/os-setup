@@ -59,8 +59,9 @@
     obsidian
     # openscad
     # pavucontrol  # Sound control
-    # python310
-    # python310Packages.python-lsp-server
+    (python3.withPackages (ps: with ps; [ python-lsp-server ] ++ python-lsp-server.optional-dependencies.all))
+    # python311
+    # python311Packages.python-lsp-server
     rectangle
     # remmina  # Windows remote server client
     # ripgrep  # Recursive grep (rg)
