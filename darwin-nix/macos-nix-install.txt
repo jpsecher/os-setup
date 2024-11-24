@@ -58,6 +58,11 @@ https://github.com/andreivolt/nixos-config/blob/master/darwin-configuration.nix
 
     nix flake update
     darwin-rebuild switch --flake .#shamir
+
+## Cleanup
+
+	nix-collect-garbage -d
+
 ## Specific versions of packages
 
 https://lazamar.co.uk/nix-versions/

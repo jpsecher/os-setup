@@ -14,7 +14,7 @@
   home.packages = with pkgs; [
     # ansible
     # avrdude
-    # awscli2
+    awscli2
     bat
     bruno  # API testing client
     # clang

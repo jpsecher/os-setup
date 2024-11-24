@@ -133,6 +133,7 @@
         configuration 
         home-manager.darwinModules.home-manager
         {
+          # Temporary fix ghostscript build problem
           nixpkgs.overlays = [
             (final: prev: {
               ghostscript = ghostscript-fix.legacyPackages.${prev.system}.ghostscript;
