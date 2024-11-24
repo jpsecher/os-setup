@@ -3,20 +3,16 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
-    # nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     ## https://github.com/NixOS/nixpkgs/issues/355377
-    ghostscript-fix = {
-      url = "github:carlocab/nixpkgs/fix-ghostscript";
-    };
+    ghostscript-fix.url = "github:carlocab/nixpkgs/fix-ghostscript";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, ghostscript-fix }:
+  outputs = { self, nix-darwin, nixpkgs, home-manager, ghostscript-fix }:
   let
-    # intel = import <nixpkgs> { system = "x86_64-darwin"; };
     configuration = { pkgs, config, ... }: {
       homebrew = {
         enable = true;
@@ -68,10 +64,10 @@
         dock.mru-spaces = false;
         finder.AppleShowAllExtensions = true;
         # Options are: Nlsv (list), clmv (column), Flwv (cover flow)
-        finder.FXPreferredViewStyle = "flmv";
+        finder.FXPreferredViewStyle = "Nlsv";
         loginwindow.LoginwindowText = "Shamir";
         screencapture.location = "~/Downloads";
-        screensaver.askForPasswordDelay = 10;
+        screensaver.askForPasswordDelay = 30;
         LaunchServices.LSQuarantine = false;
         NSGlobalDomain = {
           NSAutomaticSpellingCorrectionEnabled = false;
