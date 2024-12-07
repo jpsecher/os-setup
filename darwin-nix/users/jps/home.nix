@@ -25,12 +25,14 @@
     bat
     bruno  # API testing client
     # cutecom  # Serial terminal (broken gui)
+    dfu-util
     dig
     discord
     doggo  # dig alternative
     duf  # du alternative
     # element-desktop  # matrix chat room
     fd  # find alternative
+    gcc-arm-embedded
     glances
     jq
     jqp  # TUI for interactive jq
@@ -47,10 +49,11 @@
     # nix-index
     nnn  # TUI file manager
     obsidian
-    # openscad
+    openscad
     (python3.withPackages (ps: with ps; [ python-lsp-server ] ++ python-lsp-server.optional-dependencies.all))
     # python311
     # python311Packages.python-lsp-server
+    qmk
     rectangle
     # ripgrep  # Recursive grep (rg)
     # rsync
@@ -67,5 +70,6 @@
     texlab
     # intel.thunderbird-128
     tree
+    watch
   ];
 }
