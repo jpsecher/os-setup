@@ -105,7 +105,7 @@
       };
       # https://github.com/LnL7/nix-darwin/issues/214
       system.activationScripts.postUserActivation.text = ''
-        apps_source="${config.system.build.applications}/Applications"
+        apps_source="$HOME/Applications/Home Manager Apps"
         moniker="Nix Trampolines"
         app_target_base="$HOME/Applications"
         app_target="$app_target_base/$moniker"
