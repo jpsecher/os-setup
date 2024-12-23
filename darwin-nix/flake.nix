@@ -2,16 +2,14 @@
   description = "JP's nix-darwin system flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-    home-manager.url = "github:nix-community/home-manager/release-24.05";
+    home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    ## https://github.com/NixOS/nixpkgs/issues/355377
-    ghostscript-fix.url = "github:carlocab/nixpkgs/fix-ghostscript";
   };
 
-  outputs = { self, nix-darwin, nixpkgs, home-manager, ghostscript-fix }:
+  outputs = { self, nix-darwin, nixpkgs, home-manager }:
   let
     configuration = { pkgs, config, ... }: {
       homebrew = {
@@ -39,7 +37,6 @@
       '';
       nixpkgs.config = {
         allowUnfree = true;
-        # permittedInsecurePackages = ["electron-25.9.0"];
       };
       environment.systemPackages =
         [ pkgs.helix
@@ -103,20 +100,9 @@
           { enabled = 0; name = "BOOKMARKS"; }
         ];
       };
-      # https://github.com/LnL7/nix-darwin/issues/214
-      system.activationScripts.postUserActivation.text = ''
-        apps_source="$HOME/Applications/Home Manager Apps"
-        moniker="Nix Trampolines"
-        app_target_base="$HOME/Applications"
-        app_target="$app_target_base/$moniker"
-        mkdir -p "$app_target"
-        ${pkgs.rsync}/bin/rsync --archive --checksum --chmod=-w --copy-unsafe-links --delete "$apps_source/" "$app_target"
-      '';
-
       nix.extraOptions = ''
         extra-platforms = x86_64-darwin aarch64-darwin
       '';
-
       fonts = {
         packages = with pkgs; [
           meslo-lgs-nf
@@ -132,12 +118,6 @@
         configuration 
         home-manager.darwinModules.home-manager
         {
-          # Temporary fix ghostscript build problem
-          nixpkgs.overlays = [
-            (final: prev: {
-              ghostscript = ghostscript-fix.legacyPackages.${prev.system}.ghostscript;
-            })
-          ];
           users.users.jps.home = "/Users/jps";
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
