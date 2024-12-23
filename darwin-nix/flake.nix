@@ -8,10 +8,10 @@
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     ## https://github.com/NixOS/nixpkgs/issues/355377
-    ghostscript-fix.url = "github:carlocab/nixpkgs/fix-ghostscript";
+    # ghostscript-fix.url = "github:carlocab/nixpkgs/fix-ghostscript";
   };
 
-  outputs = { self, nix-darwin, nixpkgs, home-manager, ghostscript-fix }:
+  outputs = { self, nix-darwin, nixpkgs, home-manager }:
   let
     configuration = { pkgs, config, ... }: {
       homebrew = {
@@ -132,12 +132,6 @@
         configuration 
         home-manager.darwinModules.home-manager
         {
-          # Temporary fix ghostscript build problem
-          nixpkgs.overlays = [
-            (final: prev: {
-              ghostscript = ghostscript-fix.legacyPackages.${prev.system}.ghostscript;
-            })
-          ];
           users.users.jps.home = "/Users/jps";
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
