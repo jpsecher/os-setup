@@ -30,6 +30,9 @@
           "google-drive"
           "roon"
           "docker"
+          "thunderbird"
+          "signal"
+          "microsoft-teams"
         ];
       };
       environment.etc."sudoers.d/jps".text = ''
@@ -77,8 +80,7 @@
           { enabled = 1; name = "APPLICATIONS"; }
           { enabled = 1; name = "MENU_EXPRESSION"; }
           # { enabled = 0; name = "CALCULATOR"; }  # breaks the window
-          # { enabled = 0; name = "CONTACT"; }  # breaks the window
-          # { enabled = 1; name = "MENU_CALCULATOR"; }  # breaks the window
+          # { enabled = 0; name = "MENU_CALCULATOR"; }  # breaks the window
           { enabled = 0; name = "MENU_CONVERSION"; }
           { enabled = 0; name = "MENU_DEFINITION"; }
           { enabled = 0; name = "SOURCE"; }
