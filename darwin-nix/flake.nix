@@ -33,6 +33,7 @@
           "thunderbird"
           "signal"
           "microsoft-teams"
+          "kicad"
         ];
       };
       environment.etc."sudoers.d/jps".text = ''
