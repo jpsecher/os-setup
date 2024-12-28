@@ -12,7 +12,7 @@
     EDITOR = "hx";
   };
   home.packages = with pkgs; [
-    # ansible   # broken
+    ansible
     avrdude
     awscli2
     vscode-langservers-extracted
