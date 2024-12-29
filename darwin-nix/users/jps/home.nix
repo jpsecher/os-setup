@@ -3,6 +3,7 @@
     ./alacritty.nix
     ./git.nix
     ./helix.nix
+    ./ssh.nix
     # ./terraform.nix
     ./zsh.nix
   ];
