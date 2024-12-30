@@ -10,13 +10,19 @@ language-servers = ["pylsp"]
 auto-format = true
 
 [language-server.pylsp.config.pylsp.plugins]
-black = { enabled = true }  # Code formatter
+black = {enabled = true}  # Code formatter
 flake8 = {enabled = true}  # Style Guide
-rope = { enabled = true }  # Refactoring
+rope = {enabled = true}  # Completion & renaming
 jedi_completion = {enabled = true}  # Autocompletion, static analysis and refactoring
 ruff = {enabled = true}  # Linter
+pyflakes = {enabled = false}
+mccabe = {enabled = false}
+pycodestyle = {enabled = false}
 pydocstyle = {enabled = false}  # DocString conformance (PEP 257)
+autopep8 = {enabled = false}
+yapf = {enabled = false}
+pylint = {enabled = false}
 
 [[language]]
 name = "nix"
-indent = { tab-width = 2, unit = " " }
+indent = {tab-width = 2, unit = " "}

@@ -51,7 +51,7 @@
     nnn  # TUI file manager
     obsidian
     openscad
-    (python3.withPackages (ps: with ps; [ python-lsp-server ] ++ python-lsp-server.optional-dependencies.all))
+    (python3.withPackages (ps: with ps; [ python-lsp-server python-lsp-black pylsp-rope ] ++ python-lsp-server.optional-dependencies.all))
     # python311
     # python311Packages.python-lsp-server
     qmk
