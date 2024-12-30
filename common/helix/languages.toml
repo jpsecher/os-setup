@@ -10,11 +10,11 @@ language-servers = ["pylsp"]
 auto-format = true
 
 [language-server.pylsp.config.pylsp.plugins]
-black = {enabled = true}  # Code formatter
-flake8 = {enabled = true}  # Style Guide
 rope = {enabled = true}  # Completion & renaming
 jedi_completion = {enabled = true}  # Autocompletion, static analysis and refactoring
-ruff = {enabled = true}  # Linter
+ruff = {enabled = true}  # Linter & code formatter
+black = {enabled = false}  # Code formatter
+flake8 = {enabled = false}  # Style Guide
 pyflakes = {enabled = false}
 mccabe = {enabled = false}
 pycodestyle = {enabled = false}
