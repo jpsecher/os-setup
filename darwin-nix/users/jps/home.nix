@@ -13,25 +13,20 @@
     EDITOR = "hx";
   };
   home.packages = with pkgs; [
+    (python3.withPackages (ps: with ps; [ python-lsp-server python-lsp-ruff pylsp-rope ] ++ python-lsp-server.optional-dependencies.all))
     ansible
+    ansible-language-server
     avrdude
     awscli2
-    vscode-langservers-extracted
-    nodePackages.bash-language-server
-    dockerfile-language-server-nodejs
-    ansible-language-server
-    nodePackages.typescript-language-server
-    yaml-language-server
-    terraform-ls
     bat
     bruno  # API testing client
-    # cutecom  # Serial terminal (broken gui)
+    cutecom
     dfu-util
     dig
     discord
+    dockerfile-language-server-nodejs
     doggo  # dig alternative
     duf  # du alternative
-    # element-desktop  # matrix chat room
     fd  # find alternative
     gcc-arm-embedded
     glances
@@ -39,7 +34,6 @@
     jqp  # TUI for interactive jq
     just  # Make alternative
     keepassxc
-    # kicad  # broken
     lazydocker  # TUI for docker management
     lazygit
     lldb
@@ -47,31 +41,39 @@
     marksman  # Markdown LS
     neofetch
     nil  # Nix LS
-    # nix-index
     nnn  # TUI file manager
+    nodePackages.bash-language-server
+    nodePackages.typescript-language-server
     obsidian
     openscad
-    (python3.withPackages (ps: with ps; [ python-lsp-server python-lsp-ruff pylsp-rope ] ++ python-lsp-server.optional-dependencies.all))
-    # python311
-    # python311Packages.python-lsp-server
     qmk
     rectangle
-    # ripgrep  # Recursive grep (rg)
-    # rsync
     rust-analyzer
-    # rustup
-    # sd  # String replacement
-    # signal-desktop
     slack
     sqlite
     ssm-session-manager-plugin  # AWS SSM CLI
     taplo  # TOML LS
-    # terraform
+    terraform-ls
     tetex
     texlab
-    # intel.thunderbird-128
     tree
+    vscode-langservers-extracted
     watch
+    yaml-language-server
+
+    # Not installed
+    # -------------
+    # element-desktop  # matrix chat room
+    # nix-index
+    # ripgrep  # Recursive grep (rg)
+    # rsync
+    # rustup
+    # sd  # String replacement
+
+    # Broken packages
+    # ---------------
+    # signal-desktop
+    # kicad
   ];
   # Has to be uncommented because Signal gives problems:
   # https://github.com/LnL7/nix-darwin/issues/214

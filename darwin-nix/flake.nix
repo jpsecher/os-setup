@@ -27,13 +27,13 @@
         brews = [];
         casks = [
           "alt-tab"
-          "google-drive"
-          "roon"
           "docker"
-          "thunderbird"
-          "signal"
-          "microsoft-teams"
+          "google-drive"
           "kicad"
+          "microsoft-teams"
+          "roon"
+          "signal"
+          "thunderbird"
         ];
       };
       environment.etc."sudoers.d/jps".text = ''
