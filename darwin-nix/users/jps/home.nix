@@ -15,7 +15,6 @@
   home.packages = with pkgs; [
     (python3.withPackages (ps: with ps; [ python-lsp-server python-lsp-ruff pylsp-rope ] ++ python-lsp-server.optional-dependencies.all))
     ansible
-    ansible-language-server
     avrdude
     awscli2
     bat
@@ -27,6 +26,7 @@
     dockerfile-language-server-nodejs
     doggo  # dig alternative
     duf  # du alternative
+    element-desktop  # matrix chat room
     fd  # find alternative
     gcc-arm-embedded
     glances
@@ -63,7 +63,6 @@
 
     # Not installed
     # -------------
-    # element-desktop  # matrix chat room
     # nix-index
     # ripgrep  # Recursive grep (rg)
     # rsync
@@ -72,6 +71,7 @@
 
     # Broken packages
     # ---------------
+    # ansible-language-server
     # signal-desktop
     # kicad
   ];
