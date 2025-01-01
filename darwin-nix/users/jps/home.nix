@@ -57,6 +57,7 @@
     tetex
     texlab
     tree
+    utm
     vscode-langservers-extracted
     watch
     yaml-language-server
@@ -75,7 +76,6 @@
     # signal-desktop
     # kicad
   ];
-  # Has to be uncommented because Signal gives problems:
   # https://github.com/LnL7/nix-darwin/issues/214
   home.activation = {
     rsync-home-manager-applications = lib.hm.dag.entryAfter [ "writeBoundary" ] ''

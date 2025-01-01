@@ -39,15 +39,9 @@
       environment.etc."sudoers.d/jps".text = ''
         jps ALL=(ALL) NOPASSWD:ALL
       '';
-      nixpkgs.config = {
-        allowUnfree = true;
-      };
-      environment.systemPackages =
-        [ pkgs.helix
-        ];
-
-      nix.settings.experimental-features = "nix-command flakes";
-      nix.configureBuildUsers = true;
+      environment.systemPackages = [
+        pkgs.helix
+      ];
 
       security.pam.enableSudoTouchIdAuth = true;
       # Set Git commit hash for darwin-version.
@@ -59,6 +53,7 @@
 
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
+      nixpkgs.config = { allowUnfree = true; };
 
       system.defaults = {
         dock.autohide = true;
@@ -80,14 +75,13 @@
         CustomUserPreferences."com.apple.Spotlight"."orderedItems" = [
           { enabled = 1; name = "APPLICATIONS"; }
           { enabled = 1; name = "MENU_EXPRESSION"; }
-          # { enabled = 0; name = "CALCULATOR"; }  # breaks the window
-          # { enabled = 0; name = "MENU_CALCULATOR"; }  # breaks the window
+          { enabled = 1; name = "DIRECTORIES"; }
+          { enabled = 1; name = "SYSTEM_PREFS"; }
           { enabled = 0; name = "MENU_CONVERSION"; }
           { enabled = 0; name = "MENU_DEFINITION"; }
           { enabled = 0; name = "SOURCE"; }
           { enabled = 0; name = "DOCUMENTS"; }
           { enabled = 0; name = "EVENT_TODO"; }
-          { enabled = 1; name = "DIRECTORIES"; }
           { enabled = 0; name = "FONTS"; }
           { enabled = 0; name = "IMAGES"; }
           { enabled = 0; name = "MESSAGES"; }
@@ -98,14 +92,19 @@
           { enabled = 0; name = "PRESENTATIONS"; }
           { enabled = 0; name = "MENU_SPOTLIGHT_SUGGESTIONS"; }
           { enabled = 0; name = "SPREADSHEETS"; }
-          { enabled = 1; name = "SYSTEM_PREFS"; }
           { enabled = 0; name = "TIPS"; }
           { enabled = 0; name = "BOOKMARKS"; }
+          # { enabled = 0; name = "CALCULATOR"; }  # breaks the window
+          # { enabled = 0; name = "MENU_CALCULATOR"; }  # breaks the window
         ];
       };
+
+      nix.settings.experimental-features = "nix-command flakes";
+      nix.configureBuildUsers = true;
       nix.extraOptions = ''
         extra-platforms = x86_64-darwin aarch64-darwin
       '';
+
       fonts = {
         packages = with pkgs; [
           meslo-lgs-nf
