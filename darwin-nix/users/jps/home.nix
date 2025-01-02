@@ -25,6 +25,7 @@
     discord
     dockerfile-language-server-nodejs
     doggo  # dig alternative
+    duckdb
     duf  # du alternative
     element-desktop  # matrix chat room
     fd  # find alternative
