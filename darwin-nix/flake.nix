@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    # nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager/release-24.11";
@@ -15,6 +16,8 @@
       homebrew = {
         enable = true;
         onActivation = {
+          # Set temporarily to true to get new casks
+          # After which you need to `sudo rm -rf ~/Applications/Nix\ Trampolines`
           autoUpdate = false;
           # Remove all unmanaged packages
           cleanup = "zap";
@@ -26,6 +29,7 @@
         taps = [];
         brews = [];
         casks = [
+          "ghostty"
           "alt-tab"
           "docker"
           "google-drive"
