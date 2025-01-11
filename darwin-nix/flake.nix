@@ -29,9 +29,10 @@
         taps = [];
         brews = [];
         casks = [
-          "ghostty"
           "alt-tab"
           "docker"
+          "firefox@developer-edition"
+          "ghostty"
           "google-drive"
           "kicad"
           "microsoft-teams"
