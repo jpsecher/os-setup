@@ -6,7 +6,6 @@ bufferline = "multiple"
 mouse = false
 cursorline = true
 color-modes = true
-# idle-timeout = 0
 
 [editor.cursor-shape]
 insert = "bar"
@@ -17,7 +16,6 @@ select = "underline"
 '{' = '}'
 '[' = ']'
 '"' = '"'
-"'" = "'"
 "`" = "`"
 
 [editor.lsp]
@@ -27,6 +25,9 @@ display-messages = true
 [editor.statusline]
 left = ["mode", "separator", "version-control", "file-name", "read-only-indicator", "file-modification-indicator"]
 right = ["position", "diagnostics", "file-encoding", "register", "spinner", "selections"]
+
+[editor.inline-diagnostics]
+cursor-line = "error"
 
 [keys.normal]
 esc = ["collapse_selection", "keep_primary_selection"]
