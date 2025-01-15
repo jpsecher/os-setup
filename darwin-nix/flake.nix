@@ -37,6 +37,7 @@
           "kicad"
           "microsoft-teams"
           "roon"
+          "sequel-ace"
           "signal"
           "thunderbird"
         ];
