@@ -16,7 +16,6 @@ select = "underline"
 '{' = '}'
 '[' = ']'
 '"' = '"'
-"`" = "`"
 
 [editor.lsp]
 auto-signature-help = false

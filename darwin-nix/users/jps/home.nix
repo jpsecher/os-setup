@@ -48,6 +48,7 @@
     nodePackages.typescript-language-server
     obsidian
     openscad
+    postgresql
     qmk
     rectangle
     rust-analyzer
@@ -62,6 +63,8 @@
     utm
     vscode-langservers-extracted
     watch
+    zig
+    zls
     yaml-language-server
 
     # Not installed
