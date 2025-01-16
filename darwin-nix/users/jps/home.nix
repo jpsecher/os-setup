@@ -48,6 +48,7 @@
     nodePackages.typescript-language-server
     obsidian
     openscad
+    pkgsCross.avr.buildPackages.gcc
     postgresql
     qmk
     rectangle
