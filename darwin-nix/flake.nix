@@ -39,7 +39,6 @@
           "roon"
           "beekeeper-studio"
           "sequel-ace"
-          "signal"
           "steam"
           "thunderbird"
         ];

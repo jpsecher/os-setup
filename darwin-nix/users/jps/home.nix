@@ -53,6 +53,7 @@
     qmk
     rectangle
     rust-analyzer
+    signal-desktop
     slack
     sqlite
     ssm-session-manager-plugin  # AWS SSM CLI
