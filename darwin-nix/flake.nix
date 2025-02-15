@@ -106,8 +106,9 @@
         ];
       };
 
+      nix.enable = false;
       nix.settings.experimental-features = "nix-command flakes";
-      nix.configureBuildUsers = true;
+      # nix.configureBuildUsers = true;
       nix.extraOptions = ''
         extra-platforms = x86_64-darwin aarch64-darwin
       '';

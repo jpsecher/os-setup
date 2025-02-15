@@ -47,7 +47,7 @@
     nodePackages.bash-language-server
     nodePackages.typescript-language-server
     obsidian
-    openscad
+    # openscad
     pkgsCross.avr.buildPackages.gcc
     postgresql
     qmk
