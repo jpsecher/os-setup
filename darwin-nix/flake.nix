@@ -18,6 +18,7 @@
           # Set temporarily to true to get new casks
           # After which you need to `sudo rm -rf ~/Applications/Nix\ Trampolines`
           autoUpdate = false;
+          upgrade = false;
           # Remove all unmanaged packages
           cleanup = "zap";
         };
@@ -28,7 +29,7 @@
         taps = [];
         brews = [];
         casks = [
-          "azure-data-studio"
+          # "azure-data-studio"
           "alt-tab"
           "docker"
           "firefox@developer-edition"
@@ -36,10 +37,11 @@
           "google-drive"
           "kicad"
           "microsoft-teams"
+          "openscad"
           "roon"
-          "beekeeper-studio"
+          # "beekeeper-studio"
           "sequel-ace"
-          "steam"
+          # "steam"
           "thunderbird"
         ];
       };
