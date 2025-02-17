@@ -103,6 +103,7 @@
           { enabled = 0; name = "SPREADSHEETS"; }
           { enabled = 0; name = "TIPS"; }
           { enabled = 0; name = "BOOKMARKS"; }
+          # { enabled = 0; name = "CONTACTS"; }  # breaks the window
           # { enabled = 0; name = "CALCULATOR"; }  # breaks the window
           # { enabled = 0; name = "MENU_CALCULATOR"; }  # breaks the window
         ];
