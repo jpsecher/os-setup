@@ -32,19 +32,17 @@
         taps = [];
         brews = [];
         casks = [
-          # "azure-data-studio"
           "alt-tab"
+          # "azure-data-studio"
+          # "beekeeper-studio"
           "docker"
           "firefox@developer-edition"
           "ghostty"
           "google-drive"
           "kicad"
           "microsoft-teams"
-          "openscad"
           "roon"
-          # "beekeeper-studio"
           "sequel-ace"
-          # "steam"
           "thunderbird"
         ];
       };
