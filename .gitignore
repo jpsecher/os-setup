@@ -1,3 +1,5 @@
 result/
+*-files.lst
+*-files.txt
 common/secrets/*
 !common/secrets/.place-holder
