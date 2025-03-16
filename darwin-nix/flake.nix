@@ -33,8 +33,6 @@
         brews = [];
         casks = [
           "alt-tab"
-          # "azure-data-studio"
-          # "beekeeper-studio"
           "docker"
           "firefox@developer-edition"
           "ghostty"
@@ -44,6 +42,10 @@
           "roon"
           "sequel-ace"
           "thunderbird"
+          # Not installed
+          # -------------
+          # "azure-data-studio"
+          # "beekeeper-studio"
         ];
       };
       environment.etc."sudoers.d/jps".text = ''
@@ -69,8 +71,7 @@
         dock.autohide = true;
         dock.mru-spaces = false;
         finder.AppleShowAllExtensions = true;
-        # Options are: Nlsv (list), clmv (column), Flwv (cover flow)
-        finder.FXPreferredViewStyle = "Nlsv";
+        finder.FXPreferredViewStyle = "Nlsv";  # Nlsv (list), clmv (column), Flwv (cover flow)
         loginwindow.LoginwindowText = "Shamir";
         screencapture.location = "~/Downloads";
         screensaver.askForPasswordDelay = 30;

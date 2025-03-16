@@ -15,58 +15,58 @@
   };
   home.packages = with pkgs; [
     (python3.withPackages (ps: with ps; [ python-lsp-server python-lsp-ruff pylsp-rope ] ++ python-lsp-server.optional-dependencies.all))
-    ansible
-    avrdude
-    awscli2
-    bat
+    ansible  # Remote orchestration
+    avrdude  # Embedded
+    awscli2  # Amazon Web Services
+    bat  # File viewer
     bruno  # API testing client
-    cutecom
-    dfu-util
-    dig
-    discord
+    cutecom  # Serial comm
+    dfu-util  # Embedded
+    dig  # DNS query
+    discord  # Community
     dockerfile-language-server-nodejs
     doggo  # dig alternative
-    duckdb
+    duckdb  # Database & parquet
     duf  # du alternative
     element-desktop  # matrix chat room
     fd  # find alternative
     gcc-arm-embedded
-    glances
-    jq
+    glances  # top alternative
+    jq  # JSON viewer
     jqp  # TUI for interactive jq
     just  # Make alternative
-    keepassxc
+    keepassxc  # Password manager
     lazydocker  # TUI for docker management
-    lazygit
-    lldb
-    maccy
+    lazygit  # TUI for Git
+    lldb  # Debugger
+    maccy  # Clipboard
     marksman  # Markdown LS
-    neofetch
+    neofetch  # System info
     nil  # Nix LS
     nnn  # TUI file manager
     nodePackages.bash-language-server
     nodePackages.typescript-language-server
-    obsidian
-    openscad
-    pkgsCross.avr.buildPackages.gcc
-    postgresql
-    qmk
-    rectangle
+    obsidian  # Notes
+    openscad  # CAD
+    pkgsCross.avr.buildPackages.gcc  # Embedded
+    postgresql  # Database
+    qmk  # Keyboard firmware
+    rectangle  # Window manager
     rust-analyzer
-    signal-desktop
-    slack
-    sqlite
+    signal-desktop  # Messaging
+    slack  # Messaging
+    sqlite  # Database
     ssm-session-manager-plugin  # AWS SSM CLI
     taplo  # TOML LS
     terraform-ls
     tetex
     texlab
     tree
-    utm
+    utm  # Virtual Machine GUI
     vscode-langservers-extracted
-    watch
+    watch  # Continues monitoring
     zig
-    zls
+    zls  # Zig LS
     yaml-language-server
 
     # Not installed
@@ -80,8 +80,9 @@
     # Broken packages
     # ---------------
     # ansible-language-server
-    # signal-desktop
+    # ghostty
     # kicad
+    # signal-desktop
   ];
   # https://github.com/LnL7/nix-darwin/issues/214
   home.activation = {
