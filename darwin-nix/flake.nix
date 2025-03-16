@@ -54,7 +54,6 @@
       environment.systemPackages = [
         pkgs.helix
       ];
-
       security.pam.enableSudoTouchIdAuth = true;
       # Set Git commit hash for darwin-version.
       system.configurationRevision = self.rev or self.dirtyRev or null;
@@ -112,7 +111,8 @@
       };
 
       nix.enable = false;
-      nix.settings.experimental-features = "nix-command flakes";
+      nix.settings.experimental-features = "nix-command flakes repl-flake";
+      nix.settings.extra-nix-path = "nixpkgs=flake:nixpkgs";
       # nix.configureBuildUsers = true;
       nix.extraOptions = ''
         extra-platforms = x86_64-darwin aarch64-darwin
