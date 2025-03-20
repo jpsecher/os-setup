@@ -46,7 +46,24 @@ nix flake update --commit-lock-file
 
 ## On next new system
 
-Run nix run nix-darwin -- --flake github:my-user/my-repo#my-config
+    scutil --set HostName lamport
+    xcode-select --install
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+    mkdir -p ~/repos/personal
+    cd ~/repos/personal
+    git clone git@github.com:jpsecher/os-setup.git
+    cd os-setup/darwin-nix/host
+    mkdir lamport
+    cp shamir/flake.nix lamport/
+    cd lamport
+    uname -m
+    vi flake.nix
+
+Edit to use the right arch and host name.
+
+    nix run nix-darwin -- switch --flake .#hostname
+
 
 ## MacOS defaults
 
