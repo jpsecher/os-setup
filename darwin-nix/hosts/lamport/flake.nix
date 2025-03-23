@@ -42,92 +42,97 @@
           "roon"
           "sequel-ace"
           "thunderbird"
+          "vlc"
           # Not installed
           # -------------
           # "azure-data-studio"
           # "beekeeper-studio"
         ];
       };
-      environment.etc."sudoers.d/jps".text = ''
-        jps ALL=(ALL) NOPASSWD:ALL
-      '';
-      environment.systemPackages = [
-        pkgs.helix
-      ];
+      environment = {
+        etc."sudoers.d/jps".text = ''
+          jps ALL=(ALL) NOPASSWD:ALL
+        '';
+        systemPackages = [pkgs.helix];
+        # TODO: figure out how to use (user)LaunchAgents and (user)LaunchDaemons
+      };
       security.pam.enableSudoTouchIdAuth = true;
-      # Set Git commit hash for darwin-version.
-      system.configurationRevision = self.rev or self.dirtyRev or null;
 
-      # Used for backwards compatibility, please read the changelog before changing.
-      # $ darwin-rebuild changelog
-      system.stateVersion = 5;
-
-      # The platform the configuration will be used on.
-      nixpkgs.hostPlatform = "x86_64-darwin";
-      nixpkgs.config = { allowUnfree = true; };
-
-      system.keyboard = {
-        enableKeyMapping = true;
-        remapCapsLockToControl = true;
+      nixpkgs = {
+        hostPlatform = "x86_64-darwin";
+        config = { allowUnfree = true; };
       };
-      system.defaults = {
-        dock.autohide = true;
-        dock.mru-spaces = false;
-        finder.AppleShowAllExtensions = true;
-        finder.FXPreferredViewStyle = "Nlsv";  # Nlsv (list), clmv (column), Flwv (cover flow)
-        loginwindow.LoginwindowText = "Lamport";
-        screencapture.location = "~/Downloads";
-        screensaver.askForPasswordDelay = 30;
-        LaunchServices.LSQuarantine = false;
-        NSGlobalDomain = {
-          NSAutomaticSpellingCorrectionEnabled = false;
-          NSAutomaticCapitalizationEnabled = false;
-          NSAutomaticPeriodSubstitutionEnabled = false;
-          NSAutomaticQuoteSubstitutionEnabled = false;
-          NSAutomaticDashSubstitutionEnabled = false;
-          AppleEnableMouseSwipeNavigateWithScrolls = false;
-          AppleEnableSwipeNavigateWithScrolls = false;
-          AppleInterfaceStyle = "Dark";
-          AppleShowAllExtensions = true;
-          AppleScrollerPagingBehavior = true;
-          InitialKeyRepeat = 15;
-          KeyRepeat = 2;
-          "com.apple.keyboard.fnState" = true;
-          "com.apple.mouse.tapBehavior" = 1;
-          _HIHideMenuBar = true;
+
+      networking = {
+        computerName = "Lamport";
+        hostName = "lamport";
+      };
+
+      # programs.info.enable = false;
+      system = {
+        stateVersion = 5;
+        # Set Git commit hash for darwin-version.
+        configurationRevision = self.rev or self.dirtyRev or null;
+        keyboard = {
+          enableKeyMapping = true;
+          remapCapsLockToControl = true;
         };
-        CustomUserPreferences."com.apple.Spotlight"."orderedItems" = [
-          { enabled = 1; name = "APPLICATIONS"; }
-          { enabled = 1; name = "MENU_EXPRESSION"; }
-          { enabled = 1; name = "DIRECTORIES"; }
-          { enabled = 1; name = "SYSTEM_PREFS"; }
-          { enabled = 0; name = "MENU_CONVERSION"; }
-          { enabled = 0; name = "MENU_DEFINITION"; }
-          { enabled = 0; name = "SOURCE"; }
-          { enabled = 0; name = "DOCUMENTS"; }
-          { enabled = 0; name = "EVENT_TODO"; }
-          { enabled = 0; name = "FONTS"; }
-          { enabled = 0; name = "IMAGES"; }
-          { enabled = 0; name = "MESSAGES"; }
-          { enabled = 0; name = "MOVIES"; }
-          { enabled = 0; name = "MUSIC"; }
-          { enabled = 0; name = "MENU_OTHER"; }
-          { enabled = 0; name = "PDF"; }
-          { enabled = 0; name = "PRESENTATIONS"; }
-          { enabled = 0; name = "MENU_SPOTLIGHT_SUGGESTIONS"; }
-          { enabled = 0; name = "SPREADSHEETS"; }
-          { enabled = 0; name = "TIPS"; }
-          { enabled = 0; name = "BOOKMARKS"; }
-          # { enabled = 0; name = "CONTACTS"; }  # breaks the window
-          # { enabled = 0; name = "CALCULATOR"; }  # breaks the window
-          # { enabled = 0; name = "MENU_CALCULATOR"; }  # breaks the window
-        ];
+        defaults = {
+          dock.autohide = true;
+          dock.mru-spaces = false;
+          finder.AppleShowAllExtensions = true;
+          finder.FXPreferredViewStyle = "Nlsv";  # Nlsv (list), clmv (column), Flwv (cover flow)
+          loginwindow.LoginwindowText = "Lamport";
+          screencapture.location = "~/Downloads";
+          screensaver.askForPasswordDelay = 30;
+          LaunchServices.LSQuarantine = false;
+          NSGlobalDomain = {
+            NSAutomaticSpellingCorrectionEnabled = false;
+            NSAutomaticCapitalizationEnabled = false;
+            NSAutomaticPeriodSubstitutionEnabled = false;
+            NSAutomaticQuoteSubstitutionEnabled = false;
+            NSAutomaticDashSubstitutionEnabled = false;
+            AppleEnableMouseSwipeNavigateWithScrolls = false;
+            AppleEnableSwipeNavigateWithScrolls = false;
+            AppleInterfaceStyle = "Dark";
+            AppleShowAllExtensions = true;
+            AppleScrollerPagingBehavior = true;
+            InitialKeyRepeat = 15;
+            KeyRepeat = 2;
+            "com.apple.keyboard.fnState" = true;
+            "com.apple.mouse.tapBehavior" = 1;
+            _HIHideMenuBar = true;
+          };
+          CustomUserPreferences."com.apple.Spotlight"."orderedItems" = [
+            { enabled = 1; name = "APPLICATIONS"; }
+            { enabled = 1; name = "MENU_EXPRESSION"; }
+            { enabled = 1; name = "DIRECTORIES"; }
+            { enabled = 1; name = "SYSTEM_PREFS"; }
+            { enabled = 0; name = "MENU_CONVERSION"; }
+            { enabled = 0; name = "MENU_DEFINITION"; }
+            { enabled = 0; name = "SOURCE"; }
+            { enabled = 0; name = "DOCUMENTS"; }
+            { enabled = 0; name = "EVENT_TODO"; }
+            { enabled = 0; name = "FONTS"; }
+            { enabled = 0; name = "IMAGES"; }
+            { enabled = 0; name = "MESSAGES"; }
+            { enabled = 0; name = "MOVIES"; }
+            { enabled = 0; name = "MUSIC"; }
+            { enabled = 0; name = "MENU_OTHER"; }
+            { enabled = 0; name = "PDF"; }
+            { enabled = 0; name = "PRESENTATIONS"; }
+            { enabled = 0; name = "MENU_SPOTLIGHT_SUGGESTIONS"; }
+            { enabled = 0; name = "SPREADSHEETS"; }
+            { enabled = 0; name = "TIPS"; }
+            { enabled = 0; name = "BOOKMARKS"; }
+            # { enabled = 0; name = "CONTACTS"; }  # breaks the window
+            # { enabled = 0; name = "CALCULATOR"; }  # breaks the window
+            # { enabled = 0; name = "MENU_CALCULATOR"; }  # breaks the window
+          ];
+        };
       };
-
-      #nix.enable = false;
+      
       nix.settings.experimental-features = "nix-command flakes";
-      #nix.settings.extra-nix-path = "nixpkgs=flake:nixpkgs";
-      # nix.configureBuildUsers = true;
 
       fonts = {
         packages = with pkgs; [
