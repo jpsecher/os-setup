@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, osConfig, ... }: {
   imports = [
     ./alacritty.nix
     ./ghostty.nix

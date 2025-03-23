@@ -66,6 +66,10 @@
       nixpkgs.hostPlatform = "x86_64-darwin";
       nixpkgs.config = { allowUnfree = true; };
 
+      system.keyboard = {
+        enableKeyMapping = true;
+        remapCapsLockToControl = true;
+      };
       system.defaults = {
         dock.autohide = true;
         dock.mru-spaces = false;
@@ -81,6 +85,16 @@
           NSAutomaticPeriodSubstitutionEnabled = false;
           NSAutomaticQuoteSubstitutionEnabled = false;
           NSAutomaticDashSubstitutionEnabled = false;
+          AppleEnableMouseSwipeNavigateWithScrolls = false;
+          AppleEnableSwipeNavigateWithScrolls = false;
+          AppleInterfaceStyle = "Dark";
+          AppleShowAllExtensions = true;
+          AppleScrollerPagingBehavior = true;
+          InitialKeyRepeat = 15;
+          KeyRepeat = 2;
+          "com.apple.keyboard.fnState" = true;
+          "com.apple.mouse.tapBehavior" = 1;
+          _HIHideMenuBar = true;
         };
         CustomUserPreferences."com.apple.Spotlight"."orderedItems" = [
           { enabled = 1; name = "APPLICATIONS"; }
