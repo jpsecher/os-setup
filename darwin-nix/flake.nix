@@ -111,7 +111,7 @@
       };
 
       nix.enable = false;
-      nix.settings.experimental-features = "nix-command flakes repl-flake";
+      nix.settings.experimental-features = "nix-command flakes";
       nix.settings.extra-nix-path = "nixpkgs=flake:nixpkgs";
       # nix.configureBuildUsers = true;
       nix.extraOptions = ''
