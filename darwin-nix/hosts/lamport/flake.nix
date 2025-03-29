@@ -69,6 +69,7 @@
       };
 
       # programs.info.enable = false;
+      time.timeZone = "Europe/Copenhagen";
       system = {
         stateVersion = 5;
         # Set Git commit hash for darwin-version.
@@ -78,13 +79,40 @@
           remapCapsLockToControl = true;
         };
         defaults = {
-          dock.autohide = true;
-          dock.mru-spaces = false;
-          finder.AppleShowAllExtensions = true;
-          finder.FXPreferredViewStyle = "Nlsv";  # Nlsv (list), clmv (column), Flwv (cover flow)
+          dock = {
+            autohide = true;
+            mru-spaces = false;
+            persistent-apps = [
+              "/System/Applications/Launchpad.app"
+              "/Applications/Ghostty.app"
+              "/System/Applications/System Settings.app"
+            ];
+          };
+          finder = {
+            AppleShowAllExtensions = true;
+            CreateDesktop = false;
+            FXPreferredViewStyle = "Nlsv";  # Nlsv (list), clmv (column), Flwv (cover flow)
+            FXDefaultSearchScope = "SCcf";  # Search current folder
+            FXEnableExtensionChangeWarning = false;
+            NewWindowTarget = "Home";
+            ShowMountedServersOnDesktop = true;
+            ShowPathbar = true;
+          };
+          menuExtraClock = {
+            Show24Hour = true;
+            ShowDate = 0;  # When space allows
+            ShowDayOfWeek = true;
+          };
           loginwindow.LoginwindowText = "Lamport";
           screencapture.location = "~/Downloads";
           screensaver.askForPasswordDelay = 30;
+          trackpad = {
+            Clicking = true;
+            TrackpadThreeFingerTapGesture = 0;
+            TrackpadThreeFingerDrag = true;
+          };
+          # universalaccess.reduceMotion = true;
+          # universalaccess.reduceTransparency = true;
           LaunchServices.LSQuarantine = false;
           NSGlobalDomain = {
             NSAutomaticSpellingCorrectionEnabled = false;
