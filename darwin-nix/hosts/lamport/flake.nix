@@ -33,6 +33,7 @@
         brews = [];
         casks = [
           "alt-tab"
+          "claude"
           "docker"
           "firefox@developer-edition"
           "ghostty"
