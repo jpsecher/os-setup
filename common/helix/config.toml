@@ -6,6 +6,7 @@ bufferline = "multiple"
 mouse = false
 cursorline = true
 color-modes = true
+text-width = 88
 # end-of-line-diagnostics = "hint"
 
 [editor.inline-diagnostics]
