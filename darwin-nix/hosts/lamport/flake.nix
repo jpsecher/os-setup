@@ -19,9 +19,7 @@
       url = "https://github.com/NixOS/nixpkgs/";
       ref = "refs/heads/nixos-unstable";
       rev = "4ab8a3de296914f3b631121e9ce3884f1d34e1e5";
-    }) {
-      inherit (pkgs-unstable) system;
-    };
+    }) { inherit system; };
     configuration = { pkgs, config, ... }: {
       homebrew = {
         enable = true;
