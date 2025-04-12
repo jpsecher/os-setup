@@ -14,6 +14,14 @@
   let
     system = "x86_64-darwin";
     pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+    pkgs-terraform = import (builtins.fetchGit {
+      name = "terraform_1_5_7";
+      url = "https://github.com/NixOS/nixpkgs/";
+      ref = "refs/heads/nixos-unstable";
+      rev = "4ab8a3de296914f3b631121e9ce3884f1d34e1e5";
+    }) {
+      inherit (pkgs-unstable) system;
+    };
     configuration = { pkgs, config, ... }: {
       homebrew = {
         enable = true;
@@ -54,7 +62,10 @@
         etc."sudoers.d/jps".text = ''
           jps ALL=(ALL) NOPASSWD:ALL
         '';
-        systemPackages = [pkgs.helix];
+        systemPackages = [
+          pkgs.helix
+          pkgs-terraform.terraform
+        ];
         # TODO: figure out how to use (user)LaunchAgents and (user)LaunchDaemons
       };
       security.pam.enableSudoTouchIdAuth = true;

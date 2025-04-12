@@ -1,11 +1,9 @@
 { pkgs, lib, osConfig, ... }: {
   imports = [
-    ./alacritty.nix
     ./ghostty.nix
     ./git.nix
     ./helix.nix
     ./ssh.nix
-    # ./terraform.nix
     ./zsh.nix
   ];
   home.stateVersion = "24.05";  ## Do not change
@@ -14,7 +12,6 @@
     EDITOR = "hx";
   };
   home.packages = with pkgs; [
-    (python3.withPackages (ps: with ps; [ python-lsp-server python-lsp-ruff pylsp-rope ] ++ python-lsp-server.optional-dependencies.all))
     ansible  # Remote orchestration
     avrdude  # Embedded
     awscli2  # Amazon Web Services
@@ -68,7 +65,12 @@
     zig
     zls  # Zig LS
     yaml-language-server
-
+    (python3.withPackages (ps: with ps;
+      [
+        python-lsp-server
+        python-lsp-ruff
+        pylsp-rope
+      ] ++ python-lsp-server.optional-dependencies.all))
     # Not installed
     # -------------
     # nix-index
