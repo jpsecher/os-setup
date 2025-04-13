@@ -33,7 +33,7 @@
       modules = commonModules ++ [
         ./hosts/shamir.nix
         {
-          _module.args.pkgs-unstable = nixpkgs-unstable.legacyPackages."aarch64-darwin";
+          # _module.args.pkgs-unstable = nixpkgs-unstable.legacyPackages."aarch64-darwin";
           home-manager.users.jps._module.args.pkgs-unstable = nixpkgs-unstable.legacyPackages."aarch64-darwin";
           system.configurationRevision = self.rev or self.dirtyRev or null;
         }
@@ -43,7 +43,7 @@
       modules = commonModules ++ [
         ./hosts/lamport.nix
         {
-          _module.args.pkgs-unstable = nixpkgs-unstable.legacyPackages."x86_64-darwin";
+          # _module.args.pkgs-unstable = nixpkgs-unstable.legacyPackages."x86_64-darwin";
           home-manager.users.jps._module.args.pkgs-unstable = nixpkgs-unstable.legacyPackages."x86_64-darwin";
           system.configurationRevision = self.rev or self.dirtyRev or null;
         }
