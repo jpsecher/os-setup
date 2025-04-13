@@ -10,12 +10,12 @@
   };
   outputs = { self, nix-darwin, nixpkgs, nixpkgs-unstable, home-manager }:
   let
-    # currentSystem = "x86_64-darwin";
     commonModules = [
       ./modules/core.nix
       ./modules/homebrew.nix
       ./modules/system-defaults.nix
       ./modules/fonts.nix
+      ./modules/screen-config.nix
       ./modules/terraform.nix
       home-manager.darwinModules.home-manager
       {
@@ -24,7 +24,6 @@
         home-manager.useUserPackages = true;
         home-manager.users.jps = { ... }: {
           imports = [ ./users/jps/home.nix ];
-          # _module.args.pkgs-unstable = pkgs-unstable.legacyPackages."aarch64-darwin"; # Default arch
         };
       }
     ];
@@ -41,7 +40,6 @@
       ];
     };
     darwinConfigurations."lamport" = nix-darwin.lib.darwinSystem {
-      # system = currentSystem;
       modules = commonModules ++ [
         ./hosts/lamport.nix
         {
@@ -51,6 +49,5 @@
         }
       ];
     };
-    # darwinPackages = self.darwinConfigurations."shamir".pkgs;
   };
 }

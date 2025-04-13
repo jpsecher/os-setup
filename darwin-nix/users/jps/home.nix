@@ -6,6 +6,7 @@
     ./ssh.nix
     ./zsh.nix
   ];
+  _module.args.screenResolution = osConfig.local.screen.resolution;
   home.stateVersion = "24.05";  ## Do not change
   programs.home-manager.enable = true;
   home.sessionVariables = {
