@@ -16,6 +16,7 @@
       ./modules/homebrew.nix
       ./modules/system-defaults.nix
       ./modules/fonts.nix
+      ./modules/terraform.nix
       home-manager.darwinModules.home-manager
       {
         users.users.jps.home = "/Users/jps";
