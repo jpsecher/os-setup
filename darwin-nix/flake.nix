@@ -10,6 +10,7 @@
   };
   outputs = { self, nix-darwin, nixpkgs, nixpkgs-unstable, home-manager }:
   let
+    # currentSystem = "x86_64-darwin";
     commonModules = [
       ./modules/core.nix
       ./modules/homebrew.nix
@@ -39,6 +40,7 @@
       ];
     };
     darwinConfigurations."lamport" = nix-darwin.lib.darwinSystem {
+      # system = currentSystem;
       modules = commonModules ++ [
         ./hosts/lamport.nix
         {

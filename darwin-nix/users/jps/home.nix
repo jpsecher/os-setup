@@ -25,7 +25,7 @@
     doggo  # dig alternative
     duckdb  # Database & parquet
     duf  # du alternative
-    element-desktop  # matrix chat room
+    element-desktop  # matrix chat room, pull in all kinds of junk
     fd  # find alternative
     gcc-arm-embedded
     glances  # top alternative
