@@ -6,6 +6,7 @@
     ./ssh.nix
     ./zsh.nix
   ];
+  _module.args.screenResolution = osConfig.local.screen.resolution;
   home.stateVersion = "24.05";  ## Do not change
   programs.home-manager.enable = true;
   home.sessionVariables = {
@@ -25,7 +26,7 @@
     doggo  # dig alternative
     duckdb  # Database & parquet
     duf  # du alternative
-    element-desktop  # matrix chat room
+    element-desktop  # matrix chat room, pull in all kinds of junk
     fd  # find alternative
     gcc-arm-embedded
     glances  # top alternative
