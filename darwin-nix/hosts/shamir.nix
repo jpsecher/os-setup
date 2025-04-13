@@ -5,8 +5,7 @@
     computerName = "Shamir";
     hostName = "shamir";
   };
-  loginwindow.LoginwindowText = "Shamir";
+  system.defaults.loginwindow.LoginwindowText = "Shamir";
   local.homebrew.extraCasks = [];
-  environment.systemPackages = [
-  ];
+  environment.systemPackages = [];
 }

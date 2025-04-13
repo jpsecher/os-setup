@@ -24,6 +24,7 @@
       casks = [
         "alt-tab"
         "docker"
+        "claude"
         "firefox@developer-edition"
         "ghostty"
         "google-drive"
@@ -32,6 +33,7 @@
         "roon"
         "sequel-ace"
         "thunderbird"
+        "vlc"
         # Not installed
         # -------------
         # "azure-data-studio"
