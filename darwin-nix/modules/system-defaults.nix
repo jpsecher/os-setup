@@ -30,7 +30,6 @@
         ShowDate = 0;  # When space allows
         ShowDayOfWeek = true;
       };
-      loginwindow.LoginwindowText = "Lamport";
       screencapture.location = "~/Downloads";
       screensaver.askForPasswordDelay = 30;
       trackpad = {

@@ -2,7 +2,7 @@
 let configFile =
   if screenResolution == "medium" then ../../../common/ghostty/config-medium
   else if screenResolution == "large" then ../../../common/ghostty/config-large
-  else if screenResolution == "large" then ../../../common/ghostty/config-xlarge
+  else if screenResolution == "xlarge" then ../../../common/ghostty/config-xlarge
   else ../../../common/ghostty/config-small;
 in
 {
