@@ -7,6 +7,6 @@
     hostName = "lamport";
   };
   system.defaults.loginwindow.LoginwindowText = "Lamport";
-  local.homebrew.extraCasks = [];
+  local.homebrew.extraCasks = ["google-chrome"];
   environment.systemPackages = [];
 }

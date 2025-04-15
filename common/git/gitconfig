@@ -1,15 +1,29 @@
 [user]
 	name = Jens Peter Secher
+[init]
+	defaultBranch = main
 [core]
 	excludesfile = ~/.config/git/ignore
 	editor = hx
-[diff]
-	algorithm = patience
-[color "diff"]
-	#meta = yellow
-	#frag = magenta
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
 [push]
 	default = simple
+	autoSetupRemote = true
+	followTags = true
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
 [alias]
 	get = pull --ff-only
 	sum = log --all --stat --graph --decorate
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
+[column]
+	ui = auto
