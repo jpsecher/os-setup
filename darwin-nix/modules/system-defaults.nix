@@ -1,5 +1,12 @@
 { config, lib, pkgs, ... }:
 {
+  ## Generate script to show specific settings
+  environment.systemPackages = [
+    (pkgs.writeShellScriptBin "debug-settings" ''
+      echo "Screen resolution: ${config.local.screen.resolution}"
+      echo "Menu bar hidden: ${toString config.system.defaults.NSGlobalDomain._HIHideMenuBar}"
+    '')
+  ];
   system = {
     keyboard = {
       enableKeyMapping = true;
@@ -55,7 +62,8 @@
         KeyRepeat = 2;
         "com.apple.keyboard.fnState" = true;
         "com.apple.mouse.tapBehavior" = 1;
-        _HIHideMenuBar = true;
+      } // lib.optionalAttrs (config.local.screen.resolution != "xlarge") {
+        "_HIHideMenuBar" = true;
       };
       CustomUserPreferences."com.apple.Spotlight"."orderedItems" = [
         { enabled = 1; name = "APPLICATIONS"; }

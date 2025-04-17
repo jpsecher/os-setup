@@ -1,9 +1,11 @@
 { pkgs-unstable, screenResolution, ... }:
-let configFile =
-  if screenResolution == "medium" then ../../../common/ghostty/config-medium
-  else if screenResolution == "large" then ../../../common/ghostty/config-large
-  else if screenResolution == "xlarge" then ../../../common/ghostty/config-xlarge
-  else ../../../common/ghostty/config-small;
+let
+  configPath = ../../../common/ghostty;
+  configFile =
+    if screenResolution == "medium" then configPath + /config-medium
+    else if screenResolution == "large" then configPath + /config-large
+    else if screenResolution == "xlarge" then configPath + /config-xlarge
+    else configPath + /config-small;
 in
 {
   # programs.ghostty = {
