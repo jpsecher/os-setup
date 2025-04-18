@@ -7,6 +7,9 @@
     hostName = "shamir";
   };
   system.defaults.loginwindow.LoginwindowText = "Shamir";
-  local.homebrew.extraCasks = [];
+  local.homebrew.extraCasks = [
+    "google-chrome"
+    "mouseless"
+  ];
   environment.systemPackages = [];
 }
