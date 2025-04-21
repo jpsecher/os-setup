@@ -18,6 +18,7 @@
     awscli2  # Amazon Web Services
     bat  # File viewer
     bruno  # API testing client
+    cinny-desktop  # Matrix chat client
     cutecom  # Serial comm
     dfu-util  # Embedded
     dig  # DNS query
@@ -26,10 +27,10 @@
     doggo  # dig alternative
     duckdb  # Database & parquet
     duf  # du alternative
-    element-desktop  # matrix chat room, pull in all kinds of junk
     fd  # find alternative
     gcc-arm-embedded
     glances  # top alternative
+    inkscape  # SVG Graphics
     jq  # JSON viewer
     jqp  # TUI for interactive jq
     just  # Make alternative
@@ -79,6 +80,7 @@
     # rsync
     # rustup
     # sd  # String replacement
+    # element-desktop  # matrix chat room, pull in all kinds of junk
 
     # Broken packages
     # ---------------

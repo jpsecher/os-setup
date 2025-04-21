@@ -26,6 +26,7 @@
         "docker"
         "claude"
         "firefox@developer-edition"
+        "freecad"
         "ghostty"
         "google-drive"
         "kicad"
@@ -38,6 +39,7 @@
         # -------------
         # "azure-data-studio"
         # "beekeeper-studio"
+        # "the-unarchiver"
       ] ++ config.local.homebrew.extraCasks;
     };
   };
