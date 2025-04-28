@@ -28,6 +28,7 @@
     duckdb  # Database & parquet
     duf  # du alternative
     fd  # find alternative
+    flameshot  # Screenshot/annotation
     gcc-arm-embedded
     glances  # top alternative
     inkscape  # SVG Graphics
