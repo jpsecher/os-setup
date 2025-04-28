@@ -53,7 +53,6 @@
     rectangle  # Window manager
     rust-analyzer
     signal-desktop  # Messaging
-    slack  # Messaging
     sqlite  # Database
     ssm-session-manager-plugin  # AWS SSM CLI
     taplo  # TOML LS
@@ -76,6 +75,7 @@
     # Not installed
     # -------------
     # nix-index
+    # slack  # Messaging
     # ripgrep  # Recursive grep (rg)
     # rsync
     # rustup

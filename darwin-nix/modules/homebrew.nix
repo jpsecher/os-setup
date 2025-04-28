@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, ... }:
 {
   options = {
     local.homebrew.extraCasks = lib.mkOption {

@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 let
   oldpkgs = import (builtins.fetchGit {
     name = "terraform_1_5_7";

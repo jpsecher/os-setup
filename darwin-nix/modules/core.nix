@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ ... }:
 {
   environment.etc."sudoers.d/jps".text = ''
     jps ALL=(ALL) NOPASSWD:ALL
