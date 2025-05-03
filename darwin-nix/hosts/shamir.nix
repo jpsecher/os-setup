@@ -8,6 +8,7 @@
   };
   system.defaults.loginwindow.LoginwindowText = "Shamir";
   local.homebrew.extraCasks = [
+    "docker"
     "google-chrome"
     "microsoft-teams"
     "mouseless"

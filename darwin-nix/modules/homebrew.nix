@@ -25,7 +25,6 @@
       brews = [];
       casks = [
         "alt-tab"
-        "docker"
         "claude"
         "firefox@developer-edition"
         "freecad"

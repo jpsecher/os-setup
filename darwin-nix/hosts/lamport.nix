@@ -8,6 +8,7 @@
   };
   system.defaults.loginwindow.LoginwindowText = "Lamport";
   local.homebrew.extraCasks = [
+    "docker"
     "microsoft-teams"
   ];
   environment.systemPackages = [];
