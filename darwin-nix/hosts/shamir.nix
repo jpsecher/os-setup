@@ -9,7 +9,9 @@
   system.defaults.loginwindow.LoginwindowText = "Shamir";
   local.homebrew.extraCasks = [
     "google-chrome"
+    "microsoft-teams"
     "mouseless"
+    "sequel-ace"
   ];
   environment.systemPackages = [];
 }

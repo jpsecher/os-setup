@@ -3,12 +3,11 @@
   nixpkgs.hostPlatform = "x86_64-darwin";
   local.screen.resolution = "medium";
   networking = {
-    computerName = "Lamport";
-    hostName = "lamport";
+    computerName = "Brutalis";
+    hostName = "brutalis";
   };
-  system.defaults.loginwindow.LoginwindowText = "Lamport";
+  system.defaults.loginwindow.LoginwindowText = "Brutalis";
   local.homebrew.extraCasks = [
-    "microsoft-teams"
   ];
   environment.systemPackages = [];
 }

@@ -60,5 +60,14 @@
         }
       ];
     };
+    darwinConfigurations."brutalis" = nix-darwin.lib.darwinSystem {
+      modules = commonModules ++ [
+        ./hosts/brutalis.nix
+        {
+          home-manager.users.jps._module.args.pkgs-unstable = nixpkgs-unstable.legacyPackages."x86_64-darwin";
+          system.configurationRevision = self.rev or self.dirtyRev or null;
+        }
+      ];
+    };
   };
 }

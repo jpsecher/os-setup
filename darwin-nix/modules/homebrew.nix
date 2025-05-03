@@ -32,9 +32,7 @@
         "ghostty"
         "google-drive"
         "kicad"
-        "microsoft-teams"
         "roon"
-        "sequel-ace"
         "thunderbird"
         "vlc"
         # Not installed
