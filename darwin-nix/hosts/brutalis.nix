@@ -8,6 +8,7 @@
   };
   system.defaults.loginwindow.LoginwindowText = "Brutalis";
   local.homebrew.extraCasks = [
+    "docker"
   ];
   environment.systemPackages = [];
 }
