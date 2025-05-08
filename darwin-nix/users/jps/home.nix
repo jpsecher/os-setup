@@ -1,4 +1,4 @@
-{ pkgs, lib, osConfig, ... }: {
+{ pkgs, pkgs-unstable, lib, osConfig, ... }: {
   imports = [
     ./ghostty.nix
     ./git.nix
@@ -18,6 +18,7 @@
     awscli2  # Amazon Web Services
     bat  # File viewer
     bruno  # API testing client
+    pkgs-unstable.cargo  # Rust package system
     cinny-desktop  # Matrix chat client
     cutecom  # Serial comm
     dfu-util  # Embedded
@@ -52,6 +53,7 @@
     postgresql  # Database
     qmk  # Keyboard firmware
     rectangle  # Window manager
+    pkgs-unstable.rustc  # Rust compiler
     rust-analyzer
     signal-desktop  # Messaging
     sqlite  # Database
