@@ -62,10 +62,10 @@
         KeyRepeat = 2;
         "com.apple.keyboard.fnState" = true;
         "com.apple.mouse.tapBehavior" = 1;
-      } // lib.optionalAttrs (config.local.screen.resolution != "xlarge") {
+      } // lib.optionalAttrs (config.local.screen.resolution == "xsmall") {
         "_HIHideMenuBar" = true;
       };
-      CustomUserPreferences."com.apple.Spotlight"."orderedItems" = [
+      CustomSystemPreferences."com.apple.Spotlight"."orderedItems" = [
         { enabled = 1; name = "APPLICATIONS"; }
         { enabled = 1; name = "MENU_EXPRESSION"; }
         { enabled = 1; name = "DIRECTORIES"; }

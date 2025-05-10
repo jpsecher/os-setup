@@ -3,6 +3,7 @@
     ./ghostty.nix
     ./git.nix
     ./helix.nix
+    ./rust.nix
     ./ssh.nix
     ./zsh.nix
   ];
@@ -18,7 +19,6 @@
     awscli2  # Amazon Web Services
     bat  # File viewer
     bruno  # API testing client
-    pkgs-unstable.cargo  # Rust package system
     cinny-desktop  # Matrix chat client
     cutecom  # Serial comm
     dfu-util  # Embedded
@@ -53,8 +53,6 @@
     postgresql  # Database
     qmk  # Keyboard firmware
     rectangle  # Window manager
-    pkgs-unstable.rustc  # Rust compiler
-    rust-analyzer
     signal-desktop  # Messaging
     sqlite  # Database
     ssm-session-manager-plugin  # AWS SSM CLI
