@@ -51,6 +51,7 @@
     openscad  # CAD
     pkgsCross.avr.buildPackages.gcc  # Embedded
     postgresql  # Database
+    pstree  # Process tree
     qmk  # Keyboard firmware
     rectangle  # Window manager
     signal-desktop  # Messaging
