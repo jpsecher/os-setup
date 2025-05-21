@@ -8,6 +8,7 @@ in
     enable = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true;
+    history.ignoreAllDups = true;
     shellAliases = {
       glances = "glances --disable-bg";
       dockernodels = "docker node ls -q | xargs docker node inspect -f '\''{{ .Description.Hostname }} [{{ .ID }}]: {{ range $k, $v := .Spec.Labels }}{{ $k }}={{ $v }} {{end}}'\''";
