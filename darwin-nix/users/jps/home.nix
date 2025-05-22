@@ -20,6 +20,7 @@
     bat  # File viewer
     bruno  # API testing client
     cinny-desktop  # Matrix chat client
+    # codebook  # Spell checker LSP
     cutecom  # Serial comm
     dfu-util  # Embedded
     dig  # DNS query
