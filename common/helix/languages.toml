@@ -1,5 +1,10 @@
+# [language-server.codebook]
+# command = "codebook-lsp"
+# args = ["serve"]
+
 [[language]]
 name = "markdown"
+# language-servers = ["codebook"]
 soft-wrap.enable = true
 soft-wrap.wrap-at-text-width = true
 soft-wrap.wrap-indicator = ""
