@@ -18,10 +18,11 @@
     avrdude  # Embedded
     awscli2  # Amazon Web Services
     bat  # File viewer
-    bruno  # API testing client
+    bruno  # Web/API testing client
     cinny-desktop  # Matrix chat client
-    # codebook  # Spell checker LSP
+    pkgs-unstable.codebook  # Spell checker LSP
     cutecom  # Serial comm
+    delta  # Coloured diff/blame
     dfu-util  # Embedded
     dig  # DNS query
     discord  # Community
