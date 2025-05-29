@@ -56,7 +56,6 @@
     pstree  # Process tree
     qmk  # Keyboard firmware
     rectangle  # Window manager
-    signal-desktop  # Messaging
     sqlite  # Database
     ssm-session-manager-plugin  # AWS SSM CLI
     taplo  # TOML LS
@@ -84,14 +83,14 @@
     # rsync
     # rustup
     # sd  # String replacement
-    # element-desktop  # matrix chat room, pull in all kinds of junk
+    # element-desktop  # matrix chat room, pulls in all kinds of junk
 
     # Broken packages
     # ---------------
     # ansible-language-server
     # ghostty
     # kicad
-    # signal-desktop
+    # signal-desktop  # Messaging
   ];
   # https://github.com/LnL7/nix-darwin/issues/214
   home.activation = {

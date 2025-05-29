@@ -32,6 +32,7 @@
         "google-drive"
         "kicad"
         "roon"
+        "signal"
         "thunderbird"
         "vlc"
         # Not installed
