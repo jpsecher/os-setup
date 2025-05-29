@@ -30,8 +30,10 @@
         "freecad"
         "ghostty"
         "google-drive"
+        "inkscape"
         "kicad"
         "roon"
+        "signal"
         "thunderbird"
         "vlc"
         # Not installed

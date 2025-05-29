@@ -34,7 +34,6 @@
     flameshot  # Screenshot/annotation
     gcc-arm-embedded
     glances  # top alternative
-    inkscape  # SVG Graphics
     jq  # JSON viewer
     jqp  # TUI for interactive jq
     just  # Make alternative
@@ -56,7 +55,6 @@
     pstree  # Process tree
     qmk  # Keyboard firmware
     rectangle  # Window manager
-    signal-desktop  # Messaging
     sqlite  # Database
     ssm-session-manager-plugin  # AWS SSM CLI
     taplo  # TOML LS
@@ -84,24 +82,14 @@
     # rsync
     # rustup
     # sd  # String replacement
-    # element-desktop  # matrix chat room, pull in all kinds of junk
+    # element-desktop  # matrix chat room, pulls in all kinds of junk
 
     # Broken packages
     # ---------------
     # ansible-language-server
     # ghostty
+    # inkscape  # SVG Graphics
     # kicad
-    # signal-desktop
+    # signal-desktop  # Messaging
   ];
-  # https://github.com/LnL7/nix-darwin/issues/214
-  home.activation = {
-    rsync-home-manager-applications = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      apps_source="$genProfilePath/home-path/Applications"
-      moniker="Nix Trampolines"
-      app_target_base="$HOME/Applications"
-      app_target="$app_target_base/$moniker"
-      mkdir -p "$app_target"
-      ${pkgs.rsync}/bin/rsync --archive --checksum --chmod=-w --copy-unsafe-links --delete "$apps_source/" "$app_target"
-    '';
-  };
 }

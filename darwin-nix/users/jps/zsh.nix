@@ -22,7 +22,7 @@ in
         file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
       }
     ];
-    initExtra = ''
+    initContent = ''
       # See https://github.com/NixOS/nixpkgs/issues/154696#issuecomment-1238433989
       if zmodload zsh/terminfo && (( terminfo[colors] >= 256 )); then
         [[ ! -f ${configThemeNormal} ]] || source ${configThemeNormal}

@@ -10,6 +10,7 @@
   local.homebrew.extraCasks = [
     "docker"
     "microsoft-teams"
+    "sequel-ace"
   ];
   environment.systemPackages = [];
 }
