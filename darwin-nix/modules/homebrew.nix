@@ -30,6 +30,7 @@
         "freecad"
         "ghostty"
         "google-drive"
+        "inkscape"
         "kicad"
         "roon"
         "signal"
