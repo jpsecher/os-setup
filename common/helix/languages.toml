@@ -32,6 +32,15 @@ pylint = {enabled = false}
 name = "nix"
 indent = {tab-width = 2, unit = " "}
 
+[[language]]
+name = "hcl"
+
 [language-server.terraform-ls]
 command = "terraform-ls"
 args = ["serve", "-log-file", "/dev/null"]
+
+[[language]]
+name = "rust"
+
+[language.inline-diagnostics]
+cursor-line = "disable"
