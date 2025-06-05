@@ -41,6 +41,3 @@ args = ["serve", "-log-file", "/dev/null"]
 
 [[language]]
 name = "rust"
-
-[language.inline-diagnostics]
-cursor-line = "disable"
