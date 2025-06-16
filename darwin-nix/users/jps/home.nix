@@ -21,7 +21,6 @@
     bruno  # Web/API testing client
     cinny-desktop  # Matrix chat client
     pkgs-unstable.codebook  # Spell checker LSP
-    cutecom  # Serial comm
     delta  # Coloured diff/blame
     dfu-util  # Embedded
     dig  # DNS query
@@ -62,7 +61,6 @@
     tetex
     texlab
     tree
-    utm  # Virtual Machine GUI
     vscode-langservers-extracted
     watch  # Continues monitoring
     zig
@@ -87,9 +85,9 @@
     # Broken packages
     # ---------------
     # ansible-language-server
-    # ghostty
+    # ghostty  # Terminal
     # inkscape  # SVG Graphics
-    # kicad
+    # kicad  # Electronics
     # signal-desktop  # Messaging
   ];
   # https://github.com/LnL7/nix-darwin/issues/214
