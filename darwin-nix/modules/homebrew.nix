@@ -26,7 +26,6 @@
       casks = [
         "alt-tab"
         "claude"
-        "firefox@developer-edition"
         "freecad"
         "ghostty"
         "google-drive"

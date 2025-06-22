@@ -9,6 +9,7 @@
   system.defaults.loginwindow.LoginwindowText = "Shamir";
   local.homebrew.extraCasks = [
     "docker"
+    "firefox@developer-edition"
     "google-chrome"
     "microsoft-teams"
     "mouseless"
