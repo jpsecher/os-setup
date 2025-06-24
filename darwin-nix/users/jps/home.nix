@@ -61,6 +61,7 @@
     tetex
     texlab
     tree
+    viu  # Terminal image viewer
     vscode-langservers-extracted
     watch  # Continues monitoring
     zig
