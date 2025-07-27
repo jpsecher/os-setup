@@ -30,6 +30,7 @@
         "ghostty"
         "google-drive"
         "inkscape"
+        "homerow"
         "kicad"
         "roon"
         "signal"
