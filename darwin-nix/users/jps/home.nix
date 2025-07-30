@@ -33,6 +33,7 @@
     flameshot  # Screenshot/annotation
     gcc-arm-embedded
     glances  # top alternative
+    glow  # markdown render
     jq  # JSON viewer
     jqp  # TUI for interactive jq
     just  # Make alternative
@@ -75,6 +76,7 @@
       ] ++ python-lsp-server.optional-dependencies.all))
     # Not installed
     # -------------
+    # mermaid-cli  # Render graphs from inside markdown
     # nix-index
     # slack  # Messaging
     # ripgrep  # Recursive grep (rg)
