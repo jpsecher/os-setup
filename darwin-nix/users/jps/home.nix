@@ -91,6 +91,7 @@
     # ghostty  # Terminal
     # inkscape  # SVG Graphics
     # kicad  # Electronics
+    # prusa-slicer
     # signal-desktop  # Messaging
   ];
   # https://github.com/LnL7/nix-darwin/issues/214

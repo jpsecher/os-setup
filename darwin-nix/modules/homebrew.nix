@@ -33,6 +33,7 @@
         "homerow"
         "kicad"
         "roon"
+        "prusaslicer"
         "signal"
         "thunderbird"
         "vlc"
