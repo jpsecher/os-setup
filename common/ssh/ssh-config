@@ -2,6 +2,7 @@ Host i-*
   ProxyCommand sh -c "aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters 'portNumber=%p'"
   IdentityFile ~/.ssh/dnp-devops-production-ed25519
   IdentityFile ~/.ssh/dnp-devops-staging-ed25519
+  IdentityFile ~/.ssh/customerportal-devops-production-ed25519
   User ubuntu
 Host 127.*
   StrictHostKeyChecking no

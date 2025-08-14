@@ -8,6 +8,7 @@
         identityFile = [
           "~/.ssh/dnp-devops-production-ed25519"
           "~/.ssh/dnp-devops-staging-ed25519"
+          "~/.ssh/customerportal-devops-production-ed25519"
         ];
       };
     };
