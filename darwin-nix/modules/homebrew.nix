@@ -22,7 +22,9 @@
         lockfiles = true;
       };
       taps = [];
-      brews = [];
+      brews = [
+        "codecrafters-io/homebrew-tap/codecrafters"
+      ];
       casks = [
         "alt-tab"
         "claude"
