@@ -38,11 +38,13 @@
     jqp  # TUI for interactive jq
     just  # Make alternative
     keepassxc  # Password manager
+    kubectl  # Kubernetes
     lazydocker  # TUI for docker management
     lazygit  # TUI for Git
     lldb  # Debugger
     maccy  # Clipboard
     marksman  # Markdown LS
+    minikube  # Kubernetes
     neofetch  # System info
     nil  # Nix LS
     nnn  # TUI file manager
