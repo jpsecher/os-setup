@@ -61,6 +61,7 @@
     ssm-session-manager-plugin  # AWS SSM CLI
     taplo  # TOML LS
     terraform-ls
+    terragrunt  # Terraform
     tetex
     texlab
     tree
