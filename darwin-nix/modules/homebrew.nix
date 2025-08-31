@@ -24,6 +24,7 @@
       taps = [];
       brews = [
         "codecrafters-io/homebrew-tap/codecrafters"
+        "gurk"  # Signal TUI
       ];
       casks = [
         "alt-tab"

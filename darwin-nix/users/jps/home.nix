@@ -55,13 +55,12 @@
     pkgsCross.avr.buildPackages.gcc  # Embedded
     postgresql  # Database
     pstree  # Process tree
+    qemu  # VMs
     qmk  # Keyboard firmware
-    rectangle  # Window manager
     sqlite  # Database
     ssm-session-manager-plugin  # AWS SSM CLI
     taplo  # TOML LS
     terraform-ls
-    terragrunt  # Terraform
     tetex
     texlab
     tree
@@ -81,17 +80,19 @@
     # -------------
     # mermaid-cli  # Render graphs from inside markdown
     # nix-index
-    # slack  # Messaging
+    # qbittorrent
     # ripgrep  # Recursive grep (rg)
     # rsync
     # rustup
     # sd  # String replacement
+    # slack  # Messaging
     # element-desktop  # matrix chat room, pulls in all kinds of junk
 
     # Broken packages
     # ---------------
     # ansible-language-server
     # ghostty  # Terminal
+    # gurk-rs  # Signal TUI
     # inkscape  # SVG Graphics
     # kicad  # Electronics
     # prusa-slicer
