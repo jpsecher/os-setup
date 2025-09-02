@@ -8,11 +8,11 @@
   };
   system.defaults.loginwindow.LoginwindowText = "Lamport";
   local.homebrew.extraCasks = [
-    "0-ad"  # RTS game
     "docker"
     "firefox"
     "microsoft-teams"
     "sequel-ace"
+    # "0-ad"  # RTS game
   ];
   home-manager.users.jps.home.packages = with pkgs; [
     utm  # Virtual Machine GUI
