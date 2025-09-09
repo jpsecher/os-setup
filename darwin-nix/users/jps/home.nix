@@ -52,6 +52,7 @@
     nodePackages.typescript-language-server
     obsidian  # Notes
     openscad  # CAD
+    opentofu  # Terraform
     pkgsCross.avr.buildPackages.gcc  # Embedded
     postgresql  # Database
     pstree  # Process tree
