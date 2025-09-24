@@ -8,7 +8,7 @@
   };
   system.defaults.loginwindow.LoginwindowText = "Lamport";
   local.homebrew.extraCasks = [
-    "docker"
+    "docker-desktop"
     "firefox"
     "microsoft-teams"
     "sequel-ace"

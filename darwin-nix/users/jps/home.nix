@@ -1,8 +1,10 @@
 { pkgs, pkgs-unstable, lib, osConfig, ... }: {
   imports = [
+    ./embedded.nix
     ./ghostty.nix
     ./git.nix
     ./helix.nix
+    ./kubernetes.nix
     ./rust.nix
     ./ssh.nix
     ./zsh.nix
@@ -15,14 +17,12 @@
   };
   home.packages = with pkgs; [
     ansible  # Remote orchestration
-    avrdude  # Embedded
     awscli2  # Amazon Web Services
     bat  # File viewer
     bruno  # Web/API testing client
     cinny-desktop  # Matrix chat client
     pkgs-unstable.codebook  # Spell checker LSP
     delta  # Coloured diff/blame
-    dfu-util  # Embedded
     dig  # DNS query
     discord  # Community
     dockerfile-language-server-nodejs
@@ -31,20 +31,17 @@
     duf  # du alternative
     fd  # find alternative
     flameshot  # Screenshot/annotation
-    gcc-arm-embedded
     glances  # top alternative
     glow  # markdown render
     jq  # JSON viewer
     jqp  # TUI for interactive jq
     just  # Make alternative
     keepassxc  # Password manager
-    kubectl  # Kubernetes
     lazydocker  # TUI for docker management
     lazygit  # TUI for Git
     lldb  # Debugger
     maccy  # Clipboard
     marksman  # Markdown LS
-    minikube  # Kubernetes
     neofetch  # System info
     nil  # Nix LS
     nnn  # TUI file manager
@@ -58,6 +55,7 @@
     pstree  # Process tree
     qemu  # VMs
     qmk  # Keyboard firmware
+    slack  # Messaging
     sqlite  # Database
     ssm-session-manager-plugin  # AWS SSM CLI
     taplo  # TOML LS
@@ -86,7 +84,6 @@
     # rsync
     # rustup
     # sd  # String replacement
-    # slack  # Messaging
     # element-desktop  # matrix chat room, pulls in all kinds of junk
 
     # Broken packages

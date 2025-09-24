@@ -11,8 +11,9 @@
     homebrew = {
       enable = true;
       onActivation = {
-        # Set temporarily to true to get new casks
-        # After which you need to `sudo rm -rf ~/Applications/Nix\ Trampolines`
+        # Set temporarily to true to get new casks and run
+        # `sudo rm -rf ~/Applications/Nix\ Trampolines`
+        # before.
         autoUpdate = false;
         upgrade = false;
         cleanup = "zap";

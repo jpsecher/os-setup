@@ -8,7 +8,7 @@
   };
   system.defaults.loginwindow.LoginwindowText = "Shamir";
   local.homebrew.extraCasks = [
-    "docker"
+    "docker-desktop"
     "firefox"
     "google-chrome"
     "microsoft-teams"
