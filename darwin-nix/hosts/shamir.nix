@@ -14,6 +14,7 @@
     "microsoft-teams"
     "mouseless"
     "sequel-ace"
+    "steam"
   ];
   home-manager.users.jps.home.packages = with pkgs; [
     kubectl  # Kubernetes
