@@ -15,13 +15,13 @@
     "mouseless"
     "sequel-ace"
     "steam"
+    # "0-ad"  # RTS game
   ];
   home-manager.users.jps.home.packages = with pkgs; [
     kubectl  # Kubernetes
     k9s  # Kubernetes
     cutecom  # Serial comm
     rectangle  # Window manager
-    terragrunt  # Terraform
     utm  # Virtual Machine GUI
   ];
   environment.systemPackages = [];

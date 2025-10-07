@@ -15,7 +15,6 @@
     # "0-ad"  # RTS game
   ];
   home-manager.users.jps.home.packages = with pkgs; [
-    utm  # Virtual Machine GUI
   ];
   environment.systemPackages = [];
 }
