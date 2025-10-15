@@ -62,6 +62,7 @@
     terraform-ls
     tetex
     texlab
+    transmission_4  # Bittorrent client
     tree
     viu  # Terminal image viewer
     vscode-langservers-extracted
