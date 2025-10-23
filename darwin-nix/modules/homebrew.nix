@@ -27,6 +27,9 @@
         "codecrafters-io/homebrew-tap/codecrafters"
         "gurk"  # Signal TUI
       ];
+      masApps = {};
+      # greedyCasks = true;
+      # ^^^ does not exists, so you need to uninstall an reinstall certain casks, like google-drive.
       casks = [
         "alt-tab"
         "claude"
