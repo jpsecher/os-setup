@@ -26,5 +26,11 @@
 	colorMoved = plain
 	mnemonicPrefix = true
 	renames = true
+[color "diff"]
+    # commit = yellow
+    context = default dim
+    meta = blue reverse italic
+    frag = blue reverse italic
+    func = cyan
 [column]
 	ui = auto
