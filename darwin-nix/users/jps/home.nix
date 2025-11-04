@@ -49,6 +49,7 @@
     nodePackages.typescript-language-server
     obsidian  # Notes
     openscad  # CAD
+    pandoc  # Document format conversion
     pkgs-unstable.opentofu  # Terraform with OSS license
     pkgsCross.avr.buildPackages.gcc  # Embedded
     postgresql  # Database
@@ -60,8 +61,7 @@
     ssm-session-manager-plugin  # AWS SSM CLI
     taplo  # TOML LS
     terraform-ls
-    tetex
-    texlab
+    texliveSmall  # LaTeX
     transmission_4  # Bittorrent client
     tree
     viu  # Terminal image viewer
