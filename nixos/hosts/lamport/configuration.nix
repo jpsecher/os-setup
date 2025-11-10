@@ -5,6 +5,7 @@
       ./hardware-configuration.nix
       "${builtins.fetchGit {
         url="https://github.com/NixOS/nixos-hardware.git";
+        ## Found using nix-repl with fetchGit {url="https://github.com/nixos/nixos-hardware.git";}
         rev="52113c4f5cfd1e823001310e56d9c8d0699a6226";
       }}/apple/t2"
     ];
@@ -13,6 +14,14 @@
   networking.hostName = "lamport";
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
+  services.keyd = {
+    enable = true;
+    keyboards.default.settings = {
+      main = {
+        capslock = "overload(control, esc)";
+      };
+    };
+  };
   # i18n.defaultLocale = "en_US.UTF-8";
   # console = {
   #   font = "Lat2-Terminus16";
@@ -39,10 +48,6 @@
   users.users.${username} = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
-    # packages = with pkgs; [
-    #   tree
-    #   git
-    # ];
   };
   nix.settings = {
     trusted-users = [username];
@@ -50,16 +55,13 @@
   };
   nixpkgs.config.allowUnfree = true;
   time.timeZone = "Europe/Copenhagen";
-  # programs.firefox.enable = true;
-
-  # List packages installed in system profile.
-  # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
+    bat
+    curl
     git
     helix
+    tree
     wget
-    curl
-    bat
   ];
 
   # programs.mtr.enable = true;
@@ -70,17 +72,6 @@
 
   # services.openssh.enable = true;
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  # system.copySystemConfiguration = true;
-
   # Do not change
-  system.stateVersion = "25.11"; # Did you read the comment?
+  system.stateVersion = "25.11";
 }
