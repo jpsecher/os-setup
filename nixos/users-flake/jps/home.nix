@@ -1,21 +1,20 @@
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 {
-  # imports = [
-  #   ./alacritty.nix
+  imports = [
   #   ./chromium.nix
   #   ./dunst.nix
   #   ./git.nix
-  #   ./helix.nix
+    ./helix.nix
   #   ./sway.nix
   #   ./tmux.nix
   #   ./zsh.nix
-  # ];
+  ];
   # xdg.enable = true;
   # fonts.fontconfig.enable = true;
   home = {
-    stateVersion = "25.05";
-    username = "jps";
-    homeDirectory = "/home/jps";
+    stateVersion = "25.05";  # Don't change
+    username = username;
+    homeDirectory = "/home/${username}";
     sessionVariables = {
       EDITOR = "hx";
     };

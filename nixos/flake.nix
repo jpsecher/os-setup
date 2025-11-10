@@ -11,7 +11,7 @@
     nixosConfigurations = {
       lamport = let
         username = "jps";
-        specialArgs = { inherit username; };
+        specialArgs = { inherit username nixpkgs-unstable; };
       in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
