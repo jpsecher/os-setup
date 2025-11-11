@@ -29,6 +29,7 @@
       jqp  # TUI for interactive jq
       just  # Make alternative
       neofetch
+      lazygit
     ];
   };
 }
