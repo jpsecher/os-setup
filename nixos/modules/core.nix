@@ -52,10 +52,10 @@
 
   # services.pulseaudio.enable = true;
   # OR
-  # services.pipewire = {
-  #   enable = true;
-  #   pulse.enable = true;
-  # };
+  services.pipewire = {
+    enable = true;
+    pulse.enable = true;
+  };
   services.locate.enable = true;
   i18n.defaultLocale = "en_DK.UTF-8";
   i18n.extraLocaleSettings = {
