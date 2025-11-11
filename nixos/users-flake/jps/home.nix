@@ -23,6 +23,7 @@
       doggo  # dig alternative
       duf  # du alternative
       fd  # find alternative
+      git
       glances
       glow  # markdown render
       jq

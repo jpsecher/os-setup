@@ -4,14 +4,12 @@
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
   };
-  # system.stateVersion = 5;
   environment.etc."sudoers.d/${username}".text = ''
     ${username} ALL=(ALL) NOPASSWD:ALL
   '';
   environment.systemPackages = with pkgs; [
     bat
     curl
-    git
     helix
     tree
     wget
@@ -26,10 +24,10 @@
     experimental-features = ["nix-command" "flakes"];
     extra-nix-path = "nixpkgs=flake:nixpkgs";
   };
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
   # Configured with nmtui.
   networking.networkmanager.enable = true;
   # i18n.defaultLocale = "en_US.UTF-8";
@@ -41,4 +39,21 @@
       };
     };
   };
+  # console = {
+  #   font = "Lat2-Terminus16";
+  #   keyMap = "us";
+  #   useXkbConfig = true; # use xkb.options in tty.
+  # };
+  # services.xserver.enable = true;
+  # Configure keymap in X11
+  # services.xserver.xkb.layout = "us";
+  # services.xserver.xkb.options = "eurosign:e,caps:escape";
+  # services.printing.enable = true;
+
+  # services.pulseaudio.enable = true;
+  # OR
+  # services.pipewire = {
+  #   enable = true;
+  #   pulse.enable = true;
+  # };
 }
