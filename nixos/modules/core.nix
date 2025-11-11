@@ -4,9 +4,7 @@
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
   };
-  environment.etc."sudoers.d/${username}".text = ''
-    ${username} ALL=(ALL) NOPASSWD:ALL
-  '';
+  security.sudo.wheelNeedsPassword = false;
   environment.systemPackages = with pkgs; [
     bat
     curl
