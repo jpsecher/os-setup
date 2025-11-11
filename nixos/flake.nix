@@ -10,14 +10,16 @@
   {
     nixosConfigurations = {
       lamport = let
+        hostname = "lamport";
         username = "jps";
-        specialArgs = { inherit username nixpkgs-unstable; };
+        specialArgs = { inherit hostname username nixpkgs-unstable; };
       in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
           system = "x86_64-linux";
           modules = [
-            ./hosts/lamport/configuration.nix
+            ./hosts/${hostname}/configuration.nix
+            ./modules/gui.nix
             home-manager.nixosModules.home-manager {
               home-manager = {
                 useGlobalPkgs = true;

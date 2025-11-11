@@ -5,7 +5,7 @@
   #   ./dunst.nix
   #   ./git.nix
     ./helix.nix
-  #   ./sway.nix
+    ./sway.nix
   #   ./tmux.nix
   #   ./zsh.nix
   ];
