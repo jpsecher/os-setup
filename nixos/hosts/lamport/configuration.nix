@@ -17,8 +17,6 @@
     efi.canTouchEfiVariables = true;
   };
   networking.hostName = "lamport";
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.libinput.enable = true;
   time.timeZone = "Europe/Copenhagen";
   # services.openssh.enable = true;
 

@@ -6,7 +6,7 @@
     ./helix.nix
     ./sway.nix
   #   ./tmux.nix
-  #   ./zsh.nix
+    ./zsh.nix
   ];
   xdg.enable = true;
   fonts.fontconfig.enable = true;
@@ -66,6 +66,8 @@
       zls  # Zig LS
       # Fonts
       meslo-lgs-nf
+      powerline-fonts
+      terminus_font
     ];
   };
 }

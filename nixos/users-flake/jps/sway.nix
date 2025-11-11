@@ -1,13 +1,12 @@
 { pkgs, config, hostname, ... }:
-# let
-#   mod = "Mod4";
-# in {
-{
+let
+  mod = "Mod4";
+in {
   wayland.windowManager.sway = {
     enable = true;
     # TODO: Mod4 + L to `systemctl suspend`
     config = {
-      modifier = "Mod4";
+      modifier = mod;
       terminal = "ghostty";
       input = {
         "type:keyboard" = {

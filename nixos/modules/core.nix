@@ -1,8 +1,12 @@
 { pkgs, username, ... }:
 {
+  programs.zsh.enable = true;
+  environment.shells = [ pkgs.zsh ];
   users.users.${username} = {
+    description = "Jens Peter Secher";
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
+    shell = pkgs.zsh;
   };
   security.sudo.wheelNeedsPassword = false;
   environment.systemPackages = with pkgs; [
