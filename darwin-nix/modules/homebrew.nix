@@ -24,7 +24,7 @@
       };
       taps = [];
       brews = [
-        "codecrafters-io/homebrew-tap/codecrafters"
+        # "codecrafters-io/homebrew-tap/codecrafters"
         "gurk"  # Signal TUI
       ];
       masApps = {};
@@ -33,14 +33,10 @@
       casks = [
         "alt-tab"
         "claude"
-        "freecad"
+        "firefox"
         "ghostty"
         "google-drive"
         "inkscape"
-        "homerow"
-        "kicad"
-        "roon"
-        "prusaslicer"
         "signal"
         "thunderbird"
         "vlc"
@@ -48,6 +44,7 @@
         # -------------
         # "azure-data-studio"
         # "beekeeper-studio"
+        # "homerow"
         # "the-unarchiver"
       ] ++ config.local.homebrew.extraCasks;
     };

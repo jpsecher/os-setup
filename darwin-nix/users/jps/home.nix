@@ -21,7 +21,6 @@
     bat  # File viewer
     bruno  # Web/API testing client
     cinny-desktop  # Matrix chat client
-    pkgs-unstable.codebook  # Spell checker LSP
     delta  # Coloured diff/blame
     dig  # DNS query
     discord  # Community
@@ -37,39 +36,37 @@
     jqp  # TUI for interactive jq
     just  # Make alternative
     keepassxc  # Password manager
-    lazydocker  # TUI for docker management
     lazygit  # TUI for Git
     lldb  # Debugger
     maccy  # Clipboard
     marksman  # Markdown LS
     neofetch  # System info
     nil  # Nix LS
-    nnn  # TUI file manager
     nodePackages.bash-language-server
     nodePackages.typescript-language-server
     obsidian  # Notes
     openscad  # CAD
     pandoc  # Document format conversion
+    pkgs-unstable.codebook  # Spell checker LSP
     pkgs-unstable.opentofu  # Terraform with OSS license
     pkgsCross.avr.buildPackages.gcc  # Embedded
     postgresql  # Database
     pstree  # Process tree
     qemu  # VMs
     qmk  # Keyboard firmware
-    slack  # Messaging
+    rectangle  # Window manager
     sqlite  # Database
     ssm-session-manager-plugin  # AWS SSM CLI
     taplo  # TOML LS
     terraform-ls
     texliveSmall  # LaTeX
-    transmission_4  # Bittorrent client
     tree
     viu  # Terminal image viewer
     vscode-langservers-extracted
     watch  # Continues monitoring
+    yaml-language-server
     zig
     zls  # Zig LS
-    yaml-language-server
     (python3.withPackages (ps: with ps;
       [
         python-lsp-server
@@ -78,14 +75,16 @@
       ] ++ python-lsp-server.optional-dependencies.all))
     # Not installed
     # -------------
+    # element-desktop  # matrix chat room, pulls in all kinds of junk
+    # lazydocker  # TUI for docker management
     # mermaid-cli  # Render graphs from inside markdown
     # nix-index
+    # nnn  # TUI file manager
     # qbittorrent
     # ripgrep  # Recursive grep (rg)
     # rsync
     # rustup
     # sd  # String replacement
-    # element-desktop  # matrix chat room, pulls in all kinds of junk
 
     # Broken packages
     # ---------------

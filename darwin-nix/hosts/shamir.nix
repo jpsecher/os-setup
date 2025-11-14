@@ -9,19 +9,21 @@
   system.defaults.loginwindow.LoginwindowText = "Shamir";
   local.homebrew.extraCasks = [
     "docker-desktop"
-    "firefox"
+    "freecad"
     "google-chrome"
+    "kicad"
     "microsoft-teams"
     "mouseless"
+    "prusaslicer"
+    "roon"
     "sequel-ace"
     "steam"
     # "0-ad"  # RTS game
   ];
   home-manager.users.jps.home.packages = with pkgs; [
-    kubectl  # Kubernetes
-    k9s  # Kubernetes
     cutecom  # Serial comm
-    rectangle  # Window manager
+    slack  # Messaging
+    transmission_4  # Bittorrent client
     utm  # Virtual Machine GUI
   ];
   environment.systemPackages = [];
