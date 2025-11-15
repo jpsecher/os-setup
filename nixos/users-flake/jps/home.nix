@@ -5,7 +5,6 @@
     ./git.nix
     ./helix.nix
     ./sway.nix
-  #   ./tmux.nix
     ./zsh.nix
   ];
   xdg.enable = true;

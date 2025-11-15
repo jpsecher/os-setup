@@ -23,10 +23,11 @@ sudo cp $REPO/nixos/machines/$HOST/configuration /etc/nixos/configuration/nix
 sudo ln -s $REPO/nixos/users/$USER/home.nix /etc/nixos/home-$USER.nix
 
 # Google drive
-google-drive-ocamlfuse  # If not working, add -debug and dig out the URL
 mkdir ~/gdrive-personal
-google-drive-ocamlfuse -label personal ~/gdrive-personal
-ln -sf ~/repos/personal/os-setup/common/zsh/zlogin ~/.zlogin
+# First create an OAuth secret (https://console.developers.google.com/auth/clients)
+# or use an existing one.  Copy the id and secret to initialise the local configuration:
+google-drive-ocamlfuse -id xxx -secret yyy -label personal ~/gdrive-personal
+# If not working, add -debug and dig out the URL
 
 # To make Gnome respect xkbOptions:
 gsettings reset org.gnome.desktop.input-sources xkb-options
