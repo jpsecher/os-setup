@@ -1,5 +1,6 @@
 { pkgs, pkgs-unstable, lib, osConfig, ... }: {
   imports = [
+    ./aws.nix
     ./embedded.nix
     ./ghostty.nix
     ./git.nix
@@ -18,7 +19,6 @@
   };
   home.packages = with pkgs; [
     ansible  # Remote orchestration
-    awscli2  # Amazon Web Services
     bat  # File viewer
     bruno  # Web/API testing client
     cinny-desktop  # Matrix chat client
@@ -54,11 +54,9 @@
     pkgsCross.avr.buildPackages.gcc  # Embedded
     postgresql  # Database
     pstree  # Process tree
-    qemu  # VMs
     qmk  # Keyboard firmware
     rectangle  # Window manager
     sqlite  # Database
-    ssm-session-manager-plugin  # AWS SSM CLI
     taplo  # TOML LS
     terraform-ls
     texliveSmall  # LaTeX

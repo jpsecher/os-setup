@@ -10,6 +10,7 @@
   local.homebrew.extraCasks = [
     "docker-desktop"
     "microsoft-teams"
+    "sequel-ace"
   ];
   home-manager.users.jps.home.packages = with pkgs; [
     slack  # Messaging

@@ -22,6 +22,7 @@
   ];
   home-manager.users.jps.home.packages = with pkgs; [
     cutecom  # Serial comm
+    qemu  # VMs
     slack  # Messaging
     transmission_4  # Bittorrent client
     utm  # Virtual Machine GUI
