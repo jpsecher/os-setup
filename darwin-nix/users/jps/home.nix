@@ -7,6 +7,7 @@
     ./kubernetes.nix
     ./rust.nix
     ./ssh.nix
+    ./zig.nix
     ./zsh.nix
   ];
   _module.args.screenSize = osConfig.local.screen.size;
@@ -66,8 +67,6 @@
     vscode-langservers-extracted
     watch  # Continues monitoring
     yaml-language-server
-    zig
-    zls  # Zig LS
     (python3.withPackages (ps: with ps;
       [
         python-lsp-server
