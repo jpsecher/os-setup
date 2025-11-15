@@ -1,6 +1,7 @@
 { pkgs, username, ... }:
 {
   imports = [
+    ../nix/aws.nix
     ../nix/dunst.nix
     ../nix/git.nix
     ../nix/helix.nix
@@ -18,7 +19,6 @@
     };
     packages = with pkgs; [
       ansible
-      awscli2
       bruno  # API testing client
       clang
       clang-analyzer
@@ -54,7 +54,6 @@
       python312Packages.python-lsp-server
       scrot  # Screen capture CLI
       signal-desktop
-      ssm-session-manager-plugin  # AWS SSM CLI
       # terraform
       opentofu
       terraform-ls
