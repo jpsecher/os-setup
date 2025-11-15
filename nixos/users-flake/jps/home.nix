@@ -1,7 +1,7 @@
 { pkgs, username, ... }:
 {
   imports = [
-  #   ./dunst.nix
+    ./dunst.nix
   #   ./git.nix
     ./helix.nix
     ./sway.nix
@@ -36,20 +36,18 @@
       git
       glances
       glow  # markdown render
-      glow  # markdown render
       gnome-calculator
       google-drive-ocamlfuse
       helvum  # pipewire sound patchbay
       jq
-      jq
       jqp  # TUI for interactive jq
-      just  # Make alternative
       just  # Make alternative
       keepassxc
       lazygit
       libnotify
       neofetch
       nil  # Nix LS
+      nnn  # TUI file manager
       nodePackages_latest.typescript-language-server
       obsidian
       pavucontrol  # Sound control

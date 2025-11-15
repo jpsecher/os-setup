@@ -47,4 +47,3 @@ in {
   xdg.configFile."i3status-rust/config.toml".source = ../../../common/i3status-rust/${hostname}-config.toml;
   programs.i3status-rust.enable = true;
 }
-
