@@ -1,7 +1,7 @@
 { ... }:
 {
   nixpkgs.hostPlatform = "x86_64-darwin";
-  local.screen.resolution = "medium";
+  local.screen.size = "medium";
   networking = {
     computerName = "Brutalis";
     hostName = "brutalis";

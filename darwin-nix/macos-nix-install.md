@@ -78,7 +78,7 @@ https://github.com/andreivolt/nixos-config/blob/master/darwin-configuration.nix
 
 ## Cleanup
 
-	nix-collect-garbage -d
+    nix-collect-garbage -d
 
 ## Specific versions of packages
 
