@@ -42,6 +42,7 @@
     marksman  # Markdown LS
     neofetch  # System info
     nil  # Nix LS
+    nnn  # TUI file manager
     nodePackages.bash-language-server
     nodePackages.typescript-language-server
     obsidian  # Notes
@@ -79,7 +80,6 @@
     # lazydocker  # TUI for docker management
     # mermaid-cli  # Render graphs from inside markdown
     # nix-index
-    # nnn  # TUI file manager
     # qbittorrent
     # ripgrep  # Recursive grep (rg)
     # rsync
