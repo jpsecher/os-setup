@@ -19,12 +19,14 @@
           system = "x86_64-linux";
           modules = [
             ./hosts/${hostname}/configuration.nix
+            ../nix/screen-config.nix
             ./core.nix
             ./gui.nix
             home-manager.nixosModules.home-manager {
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
+                backupFileExtension = "backup";
                 extraSpecialArgs = inputs // specialArgs;
                 users.${username} = import ./home.nix;
               };

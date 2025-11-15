@@ -22,6 +22,7 @@
         home-manager = {
           useGlobalPkgs = true;
           useUserPackages = true;
+          backupFileExtension = "backup";
           users.jps = { ... }: {
             imports = [ ./users/jps/home.nix ];
           };

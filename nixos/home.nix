@@ -1,4 +1,4 @@
-{ pkgs, username, ... }:
+{ pkgs, username, osConfig, ... }:
 {
   imports = [
     ../nix/aws.nix
@@ -7,7 +7,9 @@
     ../nix/helix.nix
     ../nix/sway.nix
     ../nix/zsh.nix
+    ../nix/ghostty.nix
   ];
+  _module.args.screenSize = osConfig.local.screen.size;
   xdg.enable = true;
   fonts.fontconfig.enable = true;
   home = {
