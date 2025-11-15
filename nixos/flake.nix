@@ -18,8 +18,8 @@
           inherit specialArgs;
           system = "x86_64-linux";
           modules = [
-            ./hosts/${hostname}/configuration.nix
             ../nix/screen-config.nix
+            ./hosts/${hostname}/configuration.nix
             ./core.nix
             ./gui.nix
             home-manager.nixosModules.home-manager {

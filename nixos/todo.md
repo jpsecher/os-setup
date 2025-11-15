@@ -6,4 +6,4 @@
 ## Refactor
 
 - [ ] i3status-rust configs under each host/machine
-- [ ] 
+- [ ] screen size should be font size, or calculated by dpi?
