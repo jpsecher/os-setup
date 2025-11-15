@@ -55,7 +55,7 @@
     postgresql  # Database
     pstree  # Process tree
     qmk  # Keyboard firmware
-    rectangle  # Window manager
+    rclone
     sqlite  # Database
     taplo  # TOML LS
     terraform-ls
