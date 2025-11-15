@@ -10,7 +10,15 @@
      sessionPackages = [ pkgs.sway ];
      defaultSession = "sway";
   };
-  security.polkit.enable = true;
+  security = {
+    rtkit.enable = true;
+    polkit.enable = true;
+    pam.services.swaylock = {};
+    sudo-rs = {
+      enable = true;
+      wheelNeedsPassword = false;
+    };
+  };
   environment.systemPackages = with pkgs; [
     sway
     ghostty
