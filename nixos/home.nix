@@ -1,11 +1,11 @@
 { pkgs, username, ... }:
 {
   imports = [
-    ./dunst.nix
-    ./git.nix
-    ./helix.nix
-    ./sway.nix
-    ./zsh.nix
+    ../nix/dunst.nix
+    ../nix/git.nix
+    ../nix/helix.nix
+    ../nix/sway.nix
+    ../nix/zsh.nix
   ];
   xdg.enable = true;
   fonts.fontconfig.enable = true;

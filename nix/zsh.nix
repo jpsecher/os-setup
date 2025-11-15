@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let
-  configThemeNormal = ../../../common/zsh/p10k.zsh;
-  configThemeTty = ../../../common/zsh/p10k-portable.zsh;
+  configThemeNormal = ../common/zsh/p10k.zsh;
+  configThemeTty = ../common/zsh/p10k-portable.zsh;
 in
 {
   programs.zsh = {

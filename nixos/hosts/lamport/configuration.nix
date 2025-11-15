@@ -1,7 +1,6 @@
 { pkgs, ... }:
 {
   imports = [
-    ../../modules/core.nix
     ./hardware-configuration.nix
     ## Apple T2 security chip is needed for keyboard & mouse.
     "${builtins.fetchGit {

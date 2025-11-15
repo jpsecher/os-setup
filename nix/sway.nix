@@ -30,7 +30,7 @@ in {
       }];
     };
   };
-  xdg.dataFile."lockscreen-background".source = ../../../common/backgrounds/the-matrix.png;
+  xdg.dataFile."lockscreen-background".source = ../common/backgrounds/the-matrix.png;
   programs.swaylock = {
     enable = true;
     settings = {
@@ -44,6 +44,6 @@ in {
       { event = "lock"; command = "lock"; }
     ];
   };
-  xdg.configFile."i3status-rust/config.toml".source = ../../../common/i3status-rust/${hostname}-config.toml;
+  xdg.configFile."i3status-rust/config.toml".source = ../common/i3status-rust/${hostname}-config.toml;
   programs.i3status-rust.enable = true;
 }

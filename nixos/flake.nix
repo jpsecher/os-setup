@@ -19,13 +19,14 @@
           system = "x86_64-linux";
           modules = [
             ./hosts/${hostname}/configuration.nix
-            ./modules/gui.nix
+            ./core.nix
+            ./gui.nix
             home-manager.nixosModules.home-manager {
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 extraSpecialArgs = inputs // specialArgs;
-                users.${username} = import ./users-flake/${username}/home.nix;
+                users.${username} = import ./home.nix;
               };
             }
           ];
