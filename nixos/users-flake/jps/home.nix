@@ -2,7 +2,7 @@
 {
   imports = [
     ./dunst.nix
-  #   ./git.nix
+    ./git.nix
     ./helix.nix
     ./sway.nix
   #   ./tmux.nix
