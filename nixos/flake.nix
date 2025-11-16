@@ -12,8 +12,7 @@
       lamport = let
         hostname = "lamport";
         username = "jps";
-        status-line = "disk-mem-cpu-net-sound-battery-notify-time";
-        specialArgs = { inherit hostname username status-line nixpkgs-unstable; };
+        specialArgs = { inherit hostname username nixpkgs-unstable; };
       in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;

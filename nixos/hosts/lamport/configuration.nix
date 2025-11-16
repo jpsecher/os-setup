@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, hostname, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -15,14 +15,13 @@
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
   };
-  networking.hostName = "lamport";
+  networking.hostName = hostname;
+  # services.openssh.enable = true;
   time.timeZone = "Europe/Copenhagen";
   local = {
     font-size = "xxsmall";
     status-line = "disk-mem-cpu-net-sound-battery-notify-time";
   };
-  # services.openssh.enable = true;
-
-  # Do not change.
+  ## Do not change.
   system.stateVersion = "25.11";
 }
