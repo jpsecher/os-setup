@@ -1,7 +1,6 @@
-{ pkgs, ... }:
+{ pkgs, hostname, ... }:
 {
   imports = [
-    ../../modules/core.nix
     ./hardware-configuration.nix
     ## Apple T2 security chip is needed for keyboard & mouse.
     "${builtins.fetchGit {
@@ -16,10 +15,14 @@
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
   };
-  networking.hostName = "lamport";
-  time.timeZone = "Europe/Copenhagen";
+  networking.hostName = hostname;
+  # services.printing.enable = true;
   # services.openssh.enable = true;
-
-  # Do not change.
+  time.timeZone = "Europe/Copenhagen";
+  local = {
+    font-size = "xxsmall";
+    status-line = "disk-mem-cpu-net-sound-battery-notify-time";
+  };
+  ## Do not change.
   system.stateVersion = "25.11";
 }

@@ -1,17 +1,21 @@
 { pkgs, pkgs-unstable, lib, osConfig, ... }: {
   imports = [
-    ./aws.nix
-    ./embedded.nix
+    ../nix/aws.nix
+    ../nix/embedded.nix
+    ../nix/git.nix
+    ../nix/helix.nix
+    ../nix/kubernetes.nix
+    ../nix/python.nix
+    ../nix/rust.nix
+    ../nix/ssh.nix
+    ../nix/zig.nix
+    ../nix/zsh.nix
+    ## OS-specific
     ./ghostty.nix
-    ./git.nix
-    ./helix.nix
-    ./kubernetes.nix
-    ./rust.nix
-    ./ssh.nix
-    ./zig.nix
-    ./zsh.nix
   ];
-  _module.args.screenSize = osConfig.local.screen.size;
+  _module.args = {
+    font-size = osConfig.local.font-size;
+  };
   home.stateVersion = "24.05";  ## Do not change
   programs.home-manager.enable = true;
   home.sessionVariables = {
@@ -65,12 +69,6 @@
     vscode-langservers-extracted
     watch  # Continues monitoring
     yaml-language-server
-    (python3.withPackages (ps: with ps;
-      [
-        python-lsp-server
-        python-lsp-ruff
-        pylsp-rope
-      ] ++ python-lsp-server.optional-dependencies.all))
     # Not installed
     # -------------
     # element-desktop  # matrix chat room, pulls in all kinds of junk

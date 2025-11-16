@@ -1,4 +1,4 @@
-{ pkgs, config, hostname, ... }:
+{ pkgs, config, status-line, ... }:
 let
   mod = "Mod4";
 in {
@@ -30,7 +30,8 @@ in {
       }];
     };
   };
-  xdg.dataFile."lockscreen-background".source = ../../../common/backgrounds/the-matrix.png;
+  ## TODO: refactor this out
+  xdg.dataFile."lockscreen-background".source = ../common/backgrounds/the-matrix.png;
   programs.swaylock = {
     enable = true;
     settings = {
@@ -44,6 +45,6 @@ in {
       { event = "lock"; command = "lock"; }
     ];
   };
-  xdg.configFile."i3status-rust/config.toml".source = ../../../common/i3status-rust/${hostname}-config.toml;
+  xdg.configFile."i3status-rust/config.toml".source = ../common/i3status-rust/${status-line}.toml;
   programs.i3status-rust.enable = true;
 }

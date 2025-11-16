@@ -3,6 +3,7 @@
   programs.zsh.enable = true;
   environment.shells = [ pkgs.zsh ];
   users.users.${username} = {
+    ## TODO: refactor this out
     description = "Jens Peter Secher";
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
@@ -32,7 +33,6 @@
   };
   # Configured with nmtui.
   networking.networkmanager.enable = true;
-  # i18n.defaultLocale = "en_US.UTF-8";
   services.keyd = {
     enable = true;
     keyboards.default.settings = {
@@ -48,19 +48,12 @@
     # keyMap = "us";
     useXkbConfig = true; # use xkb.options in tty.
   };
-  # services.xserver.enable = true;
-  # Configure keymap in X11
-  # services.xserver.xkb.layout = "us";
-  # services.xserver.xkb.options = "eurosign:e,caps:escape";
-  # services.printing.enable = true;
-
-  # services.pulseaudio.enable = true;
-  # OR
   services.pipewire = {
     enable = true;
     pulse.enable = true;
   };
   services.locate.enable = true;
+  ## TODO: refactor these out
   i18n.defaultLocale = "en_DK.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "da_DK.UTF-8";

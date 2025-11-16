@@ -11,19 +11,20 @@
   outputs = { self, nix-darwin, nixpkgs, nixpkgs-unstable, home-manager }:
   let
     commonModules = [
-      ./modules/core.nix
-      ./modules/homebrew.nix
-      ./modules/system-defaults.nix
-      ./modules/fonts.nix
-      ./modules/screen-config.nix
-      ./modules/terraform.nix
+      ../nix/os-config.nix
+      ./core.nix
+      ./homebrew.nix
+      ./system-defaults.nix
+      ./fonts.nix
+      ./terraform.nix
       home-manager.darwinModules.home-manager {
         users.users.jps.home = "/Users/jps";
         home-manager = {
           useGlobalPkgs = true;
           useUserPackages = true;
+          backupFileExtension = "backup";
           users.jps = { ... }: {
-            imports = [ ./users/jps/home.nix ];
+            imports = [ ./home.nix ];
           };
         };
       }

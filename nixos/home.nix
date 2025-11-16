@@ -1,13 +1,22 @@
-{ pkgs, username, ... }:
+{ pkgs, username, osConfig, ... }:
 {
   imports = [
-    ./dunst.nix
-    ./git.nix
-    ./helix.nix
-    ./sway.nix
-  #   ./tmux.nix
-    ./zsh.nix
+    ../nix/aws.nix
+    ../nix/dunst.nix
+    ../nix/ghostty.nix
+    ../nix/git.nix
+    ../nix/helix.nix
+    ../nix/python.nix
+    ../nix/sway.nix
+    ../nix/zig.nix
+    ../nix/zsh.nix
+    ## OS-specific
+    ./terraform-1.57.nix
   ];
+  _module.args = {
+    font-size = osConfig.local.font-size;
+    status-line = osConfig.local.status-line;
+  };
   xdg.enable = true;
   fonts.fontconfig.enable = true;
   home = {
@@ -17,9 +26,15 @@
     sessionVariables = {
       EDITOR = "hx";
     };
+    # TODO: has no any effect
+    pointerCursor = {
+      gtk.enable = true;
+      package = pkgs.phinger-cursors;
+      name = "Phinger-cursors-light";
+      size = 48;
+    };
     packages = with pkgs; [
       ansible
-      awscli2
       bruno  # API testing client
       clang
       clang-analyzer
@@ -31,6 +46,7 @@
       duf  # du alternative
       fd  # find alternative
       feh  # image viewer
+      file
       firefox
       freecad
       git
@@ -51,17 +67,12 @@
       nodePackages_latest.typescript-language-server
       obsidian
       pavucontrol  # Sound control
-      python312
-      python312Packages.python-lsp-server
       scrot  # Screen capture CLI
       signal-desktop
-      ssm-session-manager-plugin  # AWS SSM CLI
       # terraform
       opentofu
       terraform-ls
       thunderbird
-      zig
-      zls  # Zig LS
       # Fonts
       meslo-lgs-nf
       powerline-fonts

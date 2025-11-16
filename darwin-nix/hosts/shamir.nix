@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   nixpkgs.hostPlatform = "aarch64-darwin";
-  local.screen.size = "xlarge";
+  local.font-size = "xlarge";
   networking = {
     computerName = "Shamir";
     hostName = "shamir";

@@ -3,7 +3,7 @@
   ## Generate script to show specific settings
   environment.systemPackages = [
     (pkgs.writeShellScriptBin "debug-settings" ''
-      echo "Screen size: ${config.local.screen.size}"
+      echo "Screen size: ${config.local.font-size}"
       echo "Menu bar hidden: ${toString config.system.defaults.NSGlobalDomain._HIHideMenuBar}"
     '')
   ];
@@ -62,7 +62,7 @@
         KeyRepeat = 2;
         "com.apple.keyboard.fnState" = true;
         "com.apple.mouse.tapBehavior" = 1;
-      } // lib.optionalAttrs (config.local.screen.size == "xsmall") {
+      } // lib.optionalAttrs (config.local.font-size == "xsmall") {
         "_HIHideMenuBar" = true;
       };
       CustomSystemPreferences."com.apple.Spotlight"."orderedItems" = [
