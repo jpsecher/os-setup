@@ -12,13 +12,15 @@
       lamport = let
         hostname = "lamport";
         username = "jps";
-        specialArgs = { inherit hostname username nixpkgs-unstable; };
+        status-line = "disk-mem-cpu-net-sound-battery-notify-time";
+        specialArgs = { inherit hostname username status-line nixpkgs-unstable; };
       in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
           system = "x86_64-linux";
+          ## TODO: refactor these out
           modules = [
-            ../nix/screen-config.nix
+            ../nix/os-config.nix
             ./hosts/${hostname}/configuration.nix
             ./core.nix
             ./gui.nix

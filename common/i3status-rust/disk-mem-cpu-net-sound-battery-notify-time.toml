@@ -1,11 +1,8 @@
-# disk-mem-cpu-net-sound-bat-notify-time
 [[block]]
-alert = 10.0
 block = "disk_space"
-info_type = "available"
-interval = 60
 path = "/"
-warning = 20.0
+format_alt = " (use $used) "
+interval = 60
 
 [[block]]
 block = "memory"
@@ -15,6 +12,7 @@ interval = 5
 
 [[block]]
 block = "cpu"
+format_alt = " $barchart "
 interval = 2
 
 [[block]]

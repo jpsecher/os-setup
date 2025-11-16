@@ -9,7 +9,10 @@
     ../nix/zsh.nix
     ../nix/ghostty.nix
   ];
-  _module.args.screenSize = osConfig.local.screen.size;
+  _module.args = {
+    font-size = osConfig.local.font-size;
+    status-line = osConfig.local.status-line;
+  };
   xdg.enable = true;
   fonts.fontconfig.enable = true;
   home = {

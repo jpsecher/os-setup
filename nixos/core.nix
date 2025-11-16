@@ -3,6 +3,7 @@
   programs.zsh.enable = true;
   environment.shells = [ pkgs.zsh ];
   users.users.${username} = {
+    ## TODO: refactor this out
     description = "Jens Peter Secher";
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
@@ -61,6 +62,7 @@
     pulse.enable = true;
   };
   services.locate.enable = true;
+  ## TODO: refactor these out
   i18n.defaultLocale = "en_DK.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "da_DK.UTF-8";

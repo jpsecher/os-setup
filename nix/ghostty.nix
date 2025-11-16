@@ -1,12 +1,12 @@
-{ screenSize, ... }:
+{ font-size, ... }:
 let
   configPath = ../common/ghostty;
   configFile =
-    if screenSize == "medium" then configPath + /config-medium
-    else if screenSize == "large" then configPath + /config-large
-    else if screenSize == "xlarge" then configPath + /config-xlarge
-    else if screenSize == "xsmall" then configPath + /config-xsmall
-    else if screenSize == "xxsmall" then configPath + /config-xxsmall
+    if font-size == "medium" then configPath + /config-medium
+    else if font-size == "large" then configPath + /config-large
+    else if font-size == "xlarge" then configPath + /config-xlarge
+    else if font-size == "xsmall" then configPath + /config-xsmall
+    else if font-size == "xxsmall" then configPath + /config-xxsmall
     else configPath + /config-small;
 in
 {
