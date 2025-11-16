@@ -17,7 +17,7 @@
   };
   networking.hostName = "lamport";
   time.timeZone = "Europe/Copenhagen";
-  local.screen.size = "xsmall";
+  local.screen.size = "xxsmall";
   # services.openssh.enable = true;
 
   # Do not change.

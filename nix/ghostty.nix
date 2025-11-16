@@ -6,6 +6,7 @@ let
     else if screenSize == "large" then configPath + /config-large
     else if screenSize == "xlarge" then configPath + /config-xlarge
     else if screenSize == "xsmall" then configPath + /config-xsmall
+    else if screenSize == "xxsmall" then configPath + /config-xxsmall
     else configPath + /config-small;
 in
 {
