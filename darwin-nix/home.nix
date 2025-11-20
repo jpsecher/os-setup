@@ -58,7 +58,6 @@
     pkgsCross.avr.buildPackages.gcc  # Embedded
     postgresql  # Database
     pstree  # Process tree
-    qmk  # Keyboard firmware
     rclone
     sqlite  # Database
     taplo  # TOML LS
