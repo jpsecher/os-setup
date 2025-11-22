@@ -1,5 +1,5 @@
-result/
-*-files.lst
-*-files.txt
+result
+.meta/*-files.lst
+.meta/*-files.txt
 common/secrets/*
 !common/secrets/.place-holder
