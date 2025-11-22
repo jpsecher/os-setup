@@ -1,4 +1,4 @@
-{ pkgs, username, osConfig, ... }:
+{ pkgs, username, hostname, osConfig, ... }:
 {
   imports = [
     ../nix/aws.nix
@@ -12,13 +12,81 @@
     ../nix/zsh.nix
     ## OS-specific
     ./terraform-1.57.nix
-  ];
+  ] ++ (
+    if builtins.pathExists ./hosts/${hostname}/${hostname}-home.nix
+    then [ ./hosts/${hostname}/${hostname}-home.nix ]
+    else []
+  );
   _module.args = {
     font-size = osConfig.local.font-size;
     status-line = osConfig.local.status-line;
   };
   xdg.enable = true;
   fonts.fontconfig.enable = true;
+
+  # accounts.email.accounts = {
+  #   personal = {
+  #     primary = true;
+  #     address = "jpsecher@gmail.com";
+  #     realName = "Jens Peter Secher";
+  #     imap = {
+  #       host = "imap.gmail.com";
+  #       port = 993;
+  #     };
+  #     smtp = {
+  #       host = "smtp.gmail.com";
+  #       port = 587;
+  #     };
+  #   };
+  # };
+  programs.thunderbird = {
+    enable = true;
+    profiles = {
+      "personal" = {
+        isDefault = true;
+        settings = {
+          "mail.html_compose" = false;
+          "mail.identity.default.compose_html" = false;
+          "mail.identity.default.fcc" = false;  # Don't save to Sent folder
+          "mail.identity.default.doBcc" = true;
+          "mail.identity.default.reply_on_top" = 1;  # Reply above quote (0=below, 1=above, 2=select)
+          "mailnews.reply_header_type" = 2;  # Reply header format (0=none, 1=author, 2=author+date)
+          "mail.pane_config.dynamic" = 2;  # Classic view (0=wide, 1=classic, 2=vertical)
+          "mailnews.default_sort_order" = 2;  # Sort descending (1=asc, 2=desc)
+          "mailnews.default_sort_type" = 18;  # Sort by date (17=thread, 18=date, 19=priority, etc.)
+          "mailnews.mark_message_read.auto" = true;
+          "mail.remote_content.disable" = false;
+          "mail.inline_attachments" = true;
+          "mail.chat.enabled" = true;
+          "calendar.integration.notify" = true;
+          "mail.biff.show_alert" = true;
+          "mail.biff.play_sound" = false; 
+          "mail.startup.enabledMailCheckOnce" = true;
+        };
+      };
+      "Kaleidoscope" = {
+        settings = {
+          "mail.html_compose" = false;
+          "mail.identity.default.compose_html" = false;
+          "mail.identity.default.fcc" = false;  # Don't save to Sent folder
+          "mail.identity.default.doBcc" = true;
+          "mail.identity.default.reply_on_top" = 1;  # Reply above quote (0=below, 1=above, 2=select)
+          "mailnews.reply_header_type" = 2;  # Reply header format (0=none, 1=author, 2=author+date)
+          "mail.pane_config.dynamic" = 1;  # Classic view (0=wide, 1=classic, 2=vertical)
+          "mailnews.default_sort_order" = 2;  # Sort descending (1=asc, 2=desc)
+          "mailnews.default_sort_type" = 18;  # Sort by date (17=thread, 18=date, 19=priority, etc.)
+          "mailnews.mark_message_read.auto" = true;
+          "mail.remote_content.disable" = false;
+          "mail.inline_attachments" = true;
+          "mail.chat.enabled" = true;
+          "calendar.integration.notify" = true;
+          "mail.biff.show_alert" = true;
+          "mail.biff.play_sound" = false; 
+          "mail.startup.enabledMailCheckOnce" = true;
+        };
+      };
+    };
+  };
   home = {
     stateVersion = "25.05";  # Don't change
     username = username;
@@ -26,53 +94,48 @@
     sessionVariables = {
       EDITOR = "hx";
     };
-    # TODO: has no any effect
     pointerCursor = {
-      gtk.enable = true;
-      package = pkgs.phinger-cursors;
-      name = "Phinger-cursors-light";
-      size = 48;
+      name = "Adwaita";
+      package = pkgs.adwaita-icon-theme;
+      size = 16;
+      x11 = {
+        enable = true;
+        defaultCursor = "Adwaita";
+      };
     };
     packages = with pkgs; [
       ansible
       bruno  # API testing client
-      clang
-      clang-analyzer
-      clangStdenv
-      clang-tools
       dig
-      docker
       doggo  # dig alternative
       duf  # du alternative
       fd  # find alternative
       feh  # image viewer
       file
       firefox
-      freecad
       git
       glances
       glow  # markdown render
       gnome-calculator
       google-drive-ocamlfuse
       helvum  # pipewire sound patchbay
-      jq
+      jq  # JSON processor
       jqp  # TUI for interactive jq
       just  # Make alternative
-      keepassxc
+      keepassxc  # Password manager
       lazygit
       libnotify
       neofetch
       nil  # Nix LS
       nnn  # TUI file manager
       nodePackages_latest.typescript-language-server
-      obsidian
+      obsidian  # Markdown notes
       pavucontrol  # Sound control
       scrot  # Screen capture CLI
-      signal-desktop
-      # terraform
-      opentofu
+      signal-desktop  # Messenger
+      opentofu  # Terraform fork
       terraform-ls
-      thunderbird
+      # thunderbird  # Email & calendar
       # Fonts
       meslo-lgs-nf
       powerline-fonts
