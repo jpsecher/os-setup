@@ -7,6 +7,13 @@ in {
     # TODO: Mod4 + L to `systemctl suspend`
     config = {
       modifier = mod;
+      window = {
+        titlebar = false;
+        border = 2;
+        hideEdgeBorders = "smart";
+      };
+      workspaceAutoBackAndForth = true;
+      defaultWorkspace = "1";  # does not work
       terminal = "ghostty";
       input = {
         "type:keyboard" = {
