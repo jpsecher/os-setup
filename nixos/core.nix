@@ -1,10 +1,9 @@
-{ pkgs, username, ... }:
+{ pkgs, username, realname, locale-default, locale-extra, ... }:
 {
   programs.zsh.enable = true;
   environment.shells = [ pkgs.zsh ];
   users.users.${username} = {
-    ## TODO: refactor this out
-    description = "Jens Peter Secher";
+    description = realname;
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
     shell = pkgs.zsh;
@@ -20,7 +19,7 @@
   # security.pam.services.sudo_local.touchIdAuth = true;
   nixpkgs.config = {
     allowUnfree = true;
-    allowBroken = true;
+    # allowBroken = true;
   };
   nix.settings = {
     trusted-users = [username];
@@ -33,6 +32,14 @@
   };
   # Configured with nmtui.
   networking.networkmanager.enable = true;
+  services.avahi = {
+    enable = true;
+    nssmdns = true;
+    publish = {
+      enable = true;
+      userServices = true;
+    };
+  };
   services.keyd = {
     enable = true;
     keyboards.default.settings = {
@@ -41,11 +48,18 @@
       };
     };
   };
+  ## Make libinput work with keyd to disable trackpad when writing, see
+  ## https://www.reddit.com/r/NixOS/comments/yprnch/comment/mtz0djk/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
+  environment.etc."libinput/local-overrides.quirks".text = pkgs.lib.mkForce ''
+    [Serial Keyboards]
+    MatchUdevType=keyboard
+    MatchName=keyd virtual keyboard
+    AttrKeyboardIntegration=internal
+  '';
   console = {
     font = "ter-powerline-v32b";
     packages = with pkgs; [ terminus_font powerline-fonts ];
     earlySetup = true;
-    # keyMap = "us";
     useXkbConfig = true; # use xkb.options in tty.
   };
   services.pipewire = {
@@ -53,17 +67,16 @@
     pulse.enable = true;
   };
   services.locate.enable = true;
-  ## TODO: refactor these out
-  i18n.defaultLocale = "en_DK.UTF-8";
+  i18n.defaultLocale = locale-default;
   i18n.extraLocaleSettings = {
-    LC_ADDRESS = "da_DK.UTF-8";
-    LC_IDENTIFICATION = "da_DK.UTF-8";
-    LC_MEASUREMENT = "da_DK.UTF-8";
-    LC_MONETARY = "da_DK.UTF-8";
-    LC_NAME = "da_DK.UTF-8";
-    LC_NUMERIC = "da_DK.UTF-8";
-    LC_PAPER = "da_DK.UTF-8";
-    LC_TELEPHONE = "da_DK.UTF-8";
-    LC_TIME = "da_DK.UTF-8";
+    LC_ADDRESS = locale-extra;
+    LC_IDENTIFICATION = locale-extra;
+    LC_MEASUREMENT = locale-extra;
+    LC_MONETARY = locale-extra;
+    LC_NAME = locale-extra;
+    LC_NUMERIC = locale-extra;
+    LC_PAPER = locale-extra;
+    LC_TELEPHONE = locale-extra;
+    LC_TIME = locale-extra;
   };
 }

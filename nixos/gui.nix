@@ -5,6 +5,7 @@
   services.xserver = {
     enable = true;
   };
+  services.libinput.enable = true;
   services.displayManager = {
      sddm.enable = true;
      sessionPackages = [ pkgs.sway ];
@@ -20,12 +21,14 @@
     };
   };
   environment.systemPackages = with pkgs; [
-    sway
     ghostty
-    wl-clipboard
-    slurp
     grim
     mako
+    slurp
+    sway
+    wl-clipboard
+    # wmctrl
+    # xdotool
   ];
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
