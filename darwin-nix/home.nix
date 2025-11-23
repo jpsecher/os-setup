@@ -6,6 +6,7 @@
     ../nix/helix.nix
     ../nix/kubernetes.nix
     ../nix/python.nix
+    ../nix/qmk.nix
     ../nix/rust.nix
     ../nix/ssh.nix
     ../nix/zig.nix
