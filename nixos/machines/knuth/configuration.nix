@@ -45,7 +45,11 @@ in {
     enable = true;
     restartIfChanged = false;
   };
-  services.avahi.enable = true;
+  services.avahi = {
+    enable = true;
+    nssmdns = true;
+    openFirewall = true;
+  };
   services.locate.enable = true;
   services.printing.enable = true;
   sound.enable = true;

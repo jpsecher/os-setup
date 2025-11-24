@@ -56,6 +56,21 @@
             }
           ];
         };
+      knuth = let
+        hostname = "knuth";
+        multiarch = "x86_64-linux";
+      in
+        nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit hostname username realname locale-default locale-extra; };
+          system = multiarch;
+          modules = commonModules ++ [
+            ./gui.nix
+            ./hosts/${hostname}/configuration.nix {
+               home-manager.users.${username}._module.args.pkgs-unstable = unstable.${multiarch};
+               home-manager.extraSpecialArgs = { inherit hostname; };
+            }
+          ];
+        };
     };
   };
 }
