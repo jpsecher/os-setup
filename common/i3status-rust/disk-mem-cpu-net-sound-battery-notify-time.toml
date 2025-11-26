@@ -1,7 +1,7 @@
 [[block]]
 block = "cpu"
-format_alt = " $barchart "
-interval = 2
+format_alt = " $frequency{ $boost|} "
+interval = 1
 
 [[block]]
 block = "memory"
@@ -16,6 +16,11 @@ format_alt = " (use $used) "
 interval = 60
 
 [[block]]
+block = "battery"
+format = " $icon  $time"
+device = "BAT0"
+
+[[block]]
 block = "net"
 format = " $icon {$signal_strength $ssid $ip ^icon_net_down$speed_down.eng(prefix:K) ^icon_net_up$speed_up.eng(prefix:K)} "
 interval = 5
@@ -24,12 +29,12 @@ interval = 5
 block = "sound"
 
 [[block]]
-block = "battery"
-format = " $icon  $time"
-device = "BAT0"
+block = "notify"
 
 [[block]]
-block = "notify"
+block = "external_ip"
+use_ipv4 = true
+format = " $ip $utc_offset "
 
 [[block]]
 block = "time"

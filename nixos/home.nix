@@ -126,6 +126,7 @@
       google-drive-ocamlfuse
       helvum  # pipewire sound patchbay
       inkscape  # SVG image manipulation
+      imagemagick  # CLI image manipulation
       jq  # JSON processor
       jqp  # TUI for interactive jq
       just  # Make alternative
