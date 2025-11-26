@@ -46,3 +46,7 @@ args = ["serve", "-log-file", "/dev/null"]
 
 [[language]]
 name = "rust"
+
+[[language]]
+name = "zig"
+auto-format = true
