@@ -52,7 +52,7 @@ in {
   };
   services.locate.enable = true;
   services.printing.enable = true;
-  sound.enable = true;
+  # sound.enable = true;
   hardware.pulseaudio.enable = false;
   hardware.opengl.enable = true;
   services.xserver = {
