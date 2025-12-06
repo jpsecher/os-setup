@@ -22,7 +22,7 @@
     packages = with pkgs; [
       # Checkout if builtins.currentSystem == "x86_64-linux" then ...
       #utm
-      afpfs-ng  # Apple FS
+      # afpfs-ng  # Apple FS
       ansible
       avrdude
       awscli2
@@ -48,7 +48,7 @@
       freecad
       glances
       glow  # markdown render
-      gnome.gnome-calculator
+      gnome-calculator
       google-drive-ocamlfuse
       helvum  # pipewire sound patchbay
       jq
@@ -71,8 +71,8 @@
       obsidian
       openscad
       pavucontrol  # Sound control
-      python310
-      python310Packages.python-lsp-server
+      # python310
+      # python310Packages.python-lsp-server
       remmina  # Windows remote server client
       ripgrep  # Recursive grep (rg)
       roon-bridge
