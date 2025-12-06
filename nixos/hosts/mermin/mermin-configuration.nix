@@ -15,7 +15,7 @@
   };
   time.timeZone = "Europe/Copenhagen";
   local = {
-    font-size = "xsmall";
+    font-size = "xxsmall";
     status-line = "cpu-mem-disk-battery-plainnet-vol-notify-time";
   };
   powerManagement = {
