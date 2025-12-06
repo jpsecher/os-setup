@@ -2,12 +2,12 @@
 {
   imports = [
     ./alacritty.nix
-    ./chromium.nix
+    # ./chromium.nix
     ./dunst.nix
     ./git.nix
     ./helix.nix
     ./sway.nix
-    ./tmux.nix
+    # ./tmux.nix
     ./zsh.nix
   ];
   xdg.enable = true;
