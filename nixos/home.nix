@@ -41,6 +41,7 @@
   # };
   programs.thunderbird = {
     enable = true;
+    # languagePacks = [ "dk" "en-US" ];
     profiles = {
       "personal" = {
         isDefault = true;
@@ -63,6 +64,11 @@
           "mail.biff.play_sound" = false; 
           "mail.startup.enabledMailCheckOnce" = true;
         };
+        # https://github.com/nix-community/home-manager/issues/5654
+        # extensions = [
+        #   pkgs.quick-folder-move:
+        #   4e4d29ee-da81-4b83-8712-edf666859875
+        # ];
       };
       "Kaleidoscope" = {
         settings = {
@@ -119,6 +125,8 @@
       gnome-calculator
       google-drive-ocamlfuse
       helvum  # pipewire sound patchbay
+      inkscape  # SVG image manipulation
+      imagemagick  # CLI image manipulation
       jq  # JSON processor
       jqp  # TUI for interactive jq
       just  # Make alternative

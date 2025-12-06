@@ -6,6 +6,12 @@ in {
     enable = true;
     # TODO: Mod4 + L to `systemctl suspend`
     config = {
+      # TODO:
+      # assign [class="Ghostty"] 1;
+      defaultWorkspace = "1";  # does not work
+      # startup = [
+      #   { command = "ghostty"; }
+      # ];
       modifier = mod;
       window = {
         titlebar = false;
@@ -13,7 +19,6 @@ in {
         hideEdgeBorders = "smart";
       };
       workspaceAutoBackAndForth = true;
-      defaultWorkspace = "1";  # does not work
       terminal = "ghostty";
       input = {
         "type:keyboard" = {
@@ -29,16 +34,13 @@ in {
           dwt = "enable";
         };
       };
-      startup = [
-        { command = "ghostty"; }
-      ];
       bars = [{
         statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs";
       }];
     };
   };
   ## TODO: refactor this out
-  xdg.dataFile."lockscreen-background".source = ../common/backgrounds/the-matrix.png;
+  xdg.dataFile."lockscreen-background".source = ../common/backgrounds/1443504-the-matrix-wallpaper-1920x1200-high-resolution.jpg;
   programs.swaylock = {
     enable = true;
     settings = {

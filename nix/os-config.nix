@@ -20,6 +20,7 @@
     in lib.mkOption {
       type = lib.types.enum [
         standard
+        "cpu-mem-disk-battery-plainnet-vol-notify-time"
       ];
       default = standard;
       description = "Status bar contents";

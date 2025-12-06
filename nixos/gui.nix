@@ -7,9 +7,24 @@
   };
   services.libinput.enable = true;
   services.displayManager = {
-     sddm.enable = true;
-     sessionPackages = [ pkgs.sway ];
-     defaultSession = "sway";
+    sddm = {
+      enable = true;
+      enableHidpi = true;
+      wayland.enable = true;
+      # settings = {
+      #   General.Xft.DPI = 196;
+      # };
+      theme = "chili";
+      # Elegant
+      # catppuccin-mocha
+      # chili
+      # sugar-dark
+      # "maya"
+      # elarun
+      # maldives
+    };
+    sessionPackages = [ pkgs.sway ];
+    defaultSession = "sway";
   };
   security = {
     rtkit.enable = true;
@@ -25,6 +40,11 @@
     grim
     mako
     slurp
+    sddm-chili-theme
+    sddm-sugar-dark
+    catppuccin-sddm
+    where-is-my-sddm-theme
+    elegant-sddm
     sway
     wl-clipboard
     # wmctrl

@@ -22,7 +22,7 @@ device = "BAT0"
 
 [[block]]
 block = "net"
-format = " $icon {$signal_strength $ssid $ip ^icon_net_down$speed_down.eng(prefix:K) ^icon_net_up$speed_up.eng(prefix:K)} "
+format = " $icon {$ip ^icon_net_down$speed_down.eng(prefix:K) ^icon_net_up$speed_up.eng(prefix:K)} "
 interval = 5
 
 [[block]]
