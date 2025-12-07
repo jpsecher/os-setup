@@ -1,7 +1,7 @@
 { pkgs, hostname, ... }:
 {
   imports = [
-    ./hardware-configuration.nix
+    ./${hostname}-hardware.nix
     ## Apple T2 security chip is needed for keyboard & mouse.
     "${builtins.fetchGit {
       url="https://github.com/NixOS/nixos-hardware.git";
