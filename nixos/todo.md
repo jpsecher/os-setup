@@ -11,6 +11,7 @@
 - [ ] glances: iowait_careful=80 iowait_warning=90 iowait_critical=100
 - [x] volume control?
 - [ ] brightness control?
+- [ ] profile pictures to common
 
 ## Refactor
 
