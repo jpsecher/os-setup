@@ -12,6 +12,7 @@
 - [x] volume control?
 - [ ] brightness control?
 - [ ] profile pictures to common
+- [ ] docker group
 
 ## Refactor
 

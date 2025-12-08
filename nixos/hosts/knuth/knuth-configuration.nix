@@ -27,11 +27,11 @@
   };
   services.avahi = {
     enable = true;
-    nssmdns = true;
+    nssmdns4 = true;
     openFirewall = true;
   };
-  hardware.pulseaudio.enable = false;
-  hardware.opengl.enable = true;
+  services.pulseaudio.enable = false;
+  hardware.graphics.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
