@@ -16,7 +16,7 @@
   time.timeZone = "Europe/Copenhagen";
   local = {
     font-size = "xxsmall";
-    status-line = "cpu-mem-disk-battery-plainnet-vol-notify-time";
+    status-line = "focus-cpu-mem-disk-bat-plainnet-notify-sound-pub-time";
   };
   powerManagement = {
     cpuFreqGovernor = "conservative";

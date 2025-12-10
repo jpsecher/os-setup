@@ -22,6 +22,7 @@
         standard
         "cpu-mem-disk-battery-plainnet-vol-notify-time"
         "disk-mem-cpu-net-sound-batteryx2-notify-time"
+        "focus-cpu-mem-disk-bat-plainnet-notify-sound-pub-time"
       ];
       default = standard;
       description = "Status bar contents";
