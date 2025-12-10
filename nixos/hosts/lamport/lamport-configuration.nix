@@ -11,9 +11,10 @@
   ];
   ## Git is needed for the above T2 repo.
   environment.systemPackages = [ pkgs.git ];
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
+  boot = {
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+    postBootCommands = "mount -o remount,ro,bind,noatime,discard /nix/store";
   };
   networking.hostName = hostname;
   # services.printing.enable = true;
