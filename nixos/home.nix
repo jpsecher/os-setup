@@ -7,6 +7,7 @@
     ../nix/git.nix
     ../nix/helix.nix
     ../nix/python.nix
+    ../nix/ssh.nix
     ../nix/sway.nix
     ../nix/zig.nix
     ../nix/zsh.nix
