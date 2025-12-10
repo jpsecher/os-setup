@@ -6,6 +6,7 @@
     ../nix/ghostty.nix
     ../nix/git.nix
     ../nix/helix.nix
+    ../nix/kubernetes.nix
     ../nix/python.nix
     ../nix/ssh.nix
     ../nix/sway.nix

@@ -35,6 +35,7 @@ in {
         };
       };
       bars = [{
+        position = "top";
         statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs";
       }];
     };
