@@ -21,7 +21,7 @@
   time.timeZone = "Europe/Copenhagen";
   local = {
     font-size = "xxsmall";
-    status-line = "disk-mem-cpu-net-sound-battery-notify-time";
+    status-line = "focus-cpu-mem-disk-bat-net-notify-sound-pub-temp-time";
   };
   ## Do not change.
   system.stateVersion = "25.11";
