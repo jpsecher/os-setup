@@ -141,6 +141,7 @@
       nodePackages_latest.typescript-language-server
       obsidian  # Markdown notes
       pavucontrol  # Sound control
+      roon-tui  # Music player
       scrot  # Screen capture CLI
       signal-desktop  # Messenger
       opentofu  # Terraform fork
