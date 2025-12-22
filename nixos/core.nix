@@ -49,7 +49,7 @@
     };
   };
   ## Make libinput work with keyd to disable trackpad when writing, see
-  ## https://www.reddit.com/r/NixOS/comments/yprnch/comment/mtz0djk/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
+  ## https://www.reddit.com/r/NixOS/comments/yprnch/comment/mtz0djk/
   environment.etc."libinput/local-overrides.quirks".text = pkgs.lib.mkForce ''
     [Serial Keyboards]
     MatchUdevType=keyboard

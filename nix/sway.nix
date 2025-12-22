@@ -28,7 +28,7 @@ in {
         };
         "type:touchpad" = {
           natural_scroll = "enable";
-          scroll_factor = "0.5";
+          scroll_factor = "0.2";
           tap = "enable";
           # Disable-while-typing
           dwt = "enable";
