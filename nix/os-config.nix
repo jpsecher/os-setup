@@ -2,7 +2,9 @@
 {
   options.local = {
     ## --------------------------------------------------------------
-    font-size = lib.mkOption {
+    font-size =
+    ## --------------------------------------------------------------
+    lib.mkOption {
       type = lib.types.enum [
         "xxsmall"
         "xsmall"
@@ -15,7 +17,9 @@
       description = "Screen size, propagates to configuration files";
     };
     ## --------------------------------------------------------------
-    status-line = let
+    status-line =
+    ## --------------------------------------------------------------
+    let
       standard = "disk-mem-cpu-net-sound-battery-notify-time";
     in lib.mkOption {
       type = lib.types.enum [
@@ -27,6 +31,13 @@
       ];
       default = standard;
       description = "Status bar contents";
+    };
+    ## --------------------------------------------------------------
+    after-resume-command =
+    ## --------------------------------------------------------------
+    lib.mkOption {
+      type = lib.types.string;
+      default = "";
     };
   };
   config = {};

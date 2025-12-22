@@ -1,4 +1,4 @@
-{ pkgs, username, hostname, osConfig, ... }:
+{ pkgs, username, hostname, ... }:
 {
   imports = [
     ../nix/aws.nix
@@ -20,8 +20,8 @@
     else []
   );
   _module.args = {
-    font-size = osConfig.local.font-size;
-    status-line = osConfig.local.status-line;
+    # font-size = osConfig.local.font-size;
+    # status-line = osConfig.local.status-line;
   };
   xdg.enable = true;
   fonts.fontconfig.enable = true;
@@ -146,7 +146,6 @@
       signal-desktop  # Messenger
       opentofu  # Terraform fork
       terraform-ls
-      # thunderbird  # Email & calendar
       # Fonts
       meslo-lgs-nf
       powerline-fonts

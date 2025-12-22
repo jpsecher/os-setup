@@ -1,6 +1,8 @@
-{ pkgs, config, status-line, ... }:
+{ pkgs, config, osConfig, ... }:
 let
   mod = "Mod4";
+  after-resume-command = osConfig.local.after-resume-command;
+  status-line = osConfig.local.status-line;
 in {
   wayland.windowManager.sway = {
     enable = true;
@@ -53,7 +55,9 @@ in {
     events = [
       { event = "before-sleep"; command = "${pkgs.swaylock}/bin/swaylock"; }
       { event = "lock"; command = "lock"; }
-    ];
+    ] ++ (if after-resume-command == "" then [] else [
+      { event = "after-resume"; command = after-resume-command; }
+    ]);
   };
   xdg.configFile."i3status-rust/config.toml".source = ../common/i3status-rust/${status-line}.toml;
   programs.i3status-rust.enable = true;

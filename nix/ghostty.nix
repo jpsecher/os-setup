@@ -1,6 +1,7 @@
-{ font-size, ... }:
+{ osConfig, ... }:
 let
   configPath = ../common/ghostty;
+  font-size = osConfig.local.font-size;
   configFile =
     if font-size == "medium" then configPath + /config-medium
     else if font-size == "large" then configPath + /config-large
