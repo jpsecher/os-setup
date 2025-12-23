@@ -41,6 +41,10 @@ use_ipv4 = true
 format = " $ip $country "
 
 [[block]]
+block = "backlight"
+device = "intel_backlight"
+
+[[block]]
 block = "temperature"
 format = " $icon $average "
 
