@@ -20,11 +20,16 @@
   # services.printing.enable = true;
   # services.openssh.enable = true;
   time.timeZone = "Europe/Copenhagen";
-  local = let path = "/run/current-system/sw/bin"; in {
+  local = let
+    path = "/run/current-system/sw/bin";
+    rmmod = "${path}/rmmod";
+    modprobe = "${path}/modprobe";
+    sudo = "/run/wrappers/bin/sudo";
+  in {
     font-size = "xxsmall";
     status-line = "focus-cpu-mem-disk-bat-net-notify-sound-pub-temp-time";
     ## The NIC dies after sleep, so restart the drivers.
-    after-resume-command = "/run/wrappers/bin/sudo sh -c '${path}/rmmod brcmfmac_wcc; ${path}/rmmod brcmfmac; ${path}/modprobe brcmfmac'";
+    after-resume-command = "${sudo} sh -c '${rmmod} brcmfmac_wcc; ${rmmod} brcmfmac; ${modprobe} brcmfmac'";
   };
   ## Do not change.
   system.stateVersion = "25.11";
