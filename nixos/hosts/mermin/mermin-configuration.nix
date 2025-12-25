@@ -18,12 +18,12 @@ in {
   local = {
     font-size = "xxsmall";
     status-line = "focus-cpu-mem-disk-bat-plainnet-notify-sound-pub-time";
-    # status-line = "focus-cpu-mem-disk-bat-plainnet-notify-sound-pub-temp-time";
   };
   powerManagement = {
     cpuFreqGovernor = "conservative";
   };
   nixpkgs.config.permittedInsecurePackages = [
+    "broadcom-sta-6.30.223.271-59-6.12.57"
     "broadcom-sta-6.30.223.271-59-6.12.63"
   ];
   system.stateVersion = "24.05"; # Don't change

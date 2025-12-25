@@ -27,7 +27,6 @@
         "cpu-mem-disk-battery-plainnet-vol-notify-time"
         "disk-mem-cpu-net-sound-batteryx2-notify-time"
         "focus-cpu-mem-disk-bat-net-notify-sound-pub-temp-time"
-        "focus-cpu-mem-disk-bat-plainnet-notify-sound-pub-temp-time"
         "focus-cpu-mem-disk-bat-plainnet-notify-sound-pub-time"
       ];
       default = standard;
