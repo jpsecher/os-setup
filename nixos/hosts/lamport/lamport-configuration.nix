@@ -1,5 +1,6 @@
 { pkgs, hostname, ... }:
-{
+let disk-id = "c5b7a295-fe77-4711-8d8c-f82015532a5e";
+in {
   imports = [
     ./${hostname}-hardware.nix
     ## Apple T2 security chip is needed for keyboard & mouse.
@@ -15,6 +16,7 @@
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
     postBootCommands = "mount -o remount,ro,bind,noatime,discard /nix/store";
+    initrd.luks.devices."luks-${disk-id}".device = "/dev/disk/by-uuid/${disk-id}";
   };
   networking.hostName = hostname;
   # services.printing.enable = true;
