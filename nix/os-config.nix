@@ -36,7 +36,7 @@
     after-resume-command =
     ## --------------------------------------------------------------
     lib.mkOption {
-      type = lib.types.string;
+      type = lib.types.str;
       default = "";
     };
   };
