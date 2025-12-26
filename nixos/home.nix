@@ -43,7 +43,7 @@
   # };
   programs.thunderbird = {
     enable = true;
-    # languagePacks = [ "dk" "en-US" ];
+    # languagePacks = [ "dk" "en-US" "en-UK" ];
     profiles = {
       "personal" = {
         isDefault = true;
