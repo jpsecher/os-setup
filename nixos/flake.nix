@@ -49,6 +49,8 @@
           specialArgs = { inherit hostname username realname locale-default locale-extra; };
           system = multiarch;
           modules = commonModules ++ [
+            ## Auto login instead of using a DM because password has been
+            ## typed in already for the LUKS disc decryption.
             ./gui-auto-login.nix
             ./hosts/${hostname}/${hostname}-configuration.nix {
                home-manager.users.${username}._module.args.pkgs-unstable = unstable.${multiarch};
@@ -64,8 +66,6 @@
           specialArgs = { inherit hostname username realname locale-default locale-extra; };
           system = multiarch;
           modules = commonModules ++ [
-            ## Auto login instead of using a DM because password has been
-            ## typed in already for the LUKS disc decryption.
             ./gui-auto-login.nix
             ./hosts/${hostname}/${hostname}-configuration.nix {
                home-manager.users.${username}._module.args.pkgs-unstable = unstable.${multiarch};
@@ -81,8 +81,6 @@
           specialArgs = { inherit hostname username realname locale-default locale-extra; };
           system = multiarch;
           modules = commonModules ++ [
-            ## Auto login instead of using a DM because password has been
-            ## typed in already for the LUKS disc decryption.
             ./gui-auto-login.nix
             ./hosts/${hostname}/${hostname}-configuration.nix {
                home-manager.users.${username}._module.args.pkgs-unstable = unstable.${multiarch};

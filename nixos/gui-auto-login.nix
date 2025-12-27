@@ -17,6 +17,7 @@
   security = {
     rtkit.enable = true;
     polkit.enable = true;
+    # TODO: Only line that should be here in gui-*
     pam.services.swaylock = {};
     sudo-rs = {
       enable = true;

@@ -25,6 +25,10 @@
   };
   xdg.enable = true;
   fonts.fontconfig.enable = true;
+  services.mako = {
+    enable = true;
+    extraConfig = "font=Ubuntu Condensed 10";
+  };
 
   # accounts.email.accounts = {
   #   personal = {

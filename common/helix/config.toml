@@ -8,7 +8,7 @@ cursorline = true
 color-modes = true
 text-width = 88
 popup-border = "popup"
-end-of-line-diagnostics = "hint"
+# end-of-line-diagnostics = "hint"
 
 [editor.inline-diagnostics]
 cursor-line = "error"
