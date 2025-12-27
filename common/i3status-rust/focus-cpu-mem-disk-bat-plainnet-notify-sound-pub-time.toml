@@ -23,11 +23,12 @@ block = "battery"
 format = " $icon  $time"
 device = "BAT0"
 
-[[block]]
-block = "net"
-format = " $icon {^icon_net_down$speed_down.eng(prefix:K) ^icon_net_up$speed_up.eng(prefix:K)} "
-format_alt = " $icon $ip "
-interval = 5
+# Mermin NIC keeps producing kernel errors when enabled:
+# [[block]]
+# block = "net"
+# format = " $icon {^icon_net_down$speed_down.eng(prefix:K) ^icon_net_up$speed_up.eng(prefix:K)} "
+# format_alt = " $icon $ip "
+# interval = 5
 
 [[block]]
 block = "sound"

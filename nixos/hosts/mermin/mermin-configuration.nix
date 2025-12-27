@@ -17,6 +17,7 @@ in {
   time.timeZone = "Europe/Copenhagen";
   local = {
     font-size = "xxsmall";
+    # Mermin NIC keeps producing kernel errors when net part is enabled:
     status-line = "focus-cpu-mem-disk-bat-plainnet-notify-sound-pub-time";
   };
   powerManagement = {
